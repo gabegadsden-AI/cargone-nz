@@ -87,6 +87,28 @@
     .chips{display:flex;flex-wrap:wrap;gap:.6rem}
     .chip{background:var(--soft);border-radius:100px;padding:.45rem 1rem;font-size:.84rem}
 
+    /* Ratings & Reviews */
+    .ratehead{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem}
+    .raterow{display:flex;gap:2.2rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:1.3rem}
+    .bigscore .num{font-size:3.2rem;font-weight:800;line-height:1}
+    .bigscore .outof{color:var(--g4);font-size:.9rem;font-weight:600}
+    .bars{flex:1;min-width:210px;max-width:360px}
+    .barrow{display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem}
+    .barrow .blbl{font-size:.6rem;color:var(--g4);width:56px;text-align:right;letter-spacing:1px}
+    .btrack{flex:1;height:5px;background:var(--soft);border-radius:100px;overflow:hidden}
+    .bfill{height:100%;background:var(--g4);border-radius:100px}
+    .ratecount{color:var(--g4);font-size:.8rem;margin-top:.4rem}
+    .revscroll{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.5rem;scroll-snap-type:x mandatory;scrollbar-width:none}
+    .revscroll::-webkit-scrollbar{display:none}
+    .revcard{flex:0 0 300px;scroll-snap-align:start;background:var(--soft);border-radius:var(--radius);padding:1.25rem}
+    .revhead{display:flex;justify-content:space-between;gap:.5rem;font-size:.88rem;font-weight:700;margin-bottom:.15rem}
+    .revhead .rdate{color:var(--g4);font-weight:400;font-size:.76rem;flex-shrink:0}
+    .revstars{color:#f5a623;font-size:.78rem;letter-spacing:2px;margin-bottom:.5rem}
+    .revcard p{font-size:.85rem;color:var(--ink);line-height:1.6}
+    .starpick{display:flex;gap:.3rem;font-size:1.8rem;cursor:pointer;user-select:none}
+    .starpick span{color:#d2d2d7;transition:color .1s}
+    .starpick span.on{color:#f5a623}
+
     /* FAQ */
     .faq details{border-bottom:1px solid var(--line)}
     .faq details:last-child{border-bottom:none}
@@ -264,6 +286,15 @@
       </div>
     </div>
 
+    <!-- Ratings & Reviews -->
+    <div class="sec" id="reviews-section">
+      <div class="ratehead">
+        <h2 class="sectitle">Ratings &amp; <span>Reviews</span></h2>
+        <button class="btn btno" id="review-open" style="font-size:.84rem;padding:.5rem 1.2rem">&#x2B50; Write a Review</button>
+      </div>
+      <div id="reviews-container"><div class="spinner"></div></div>
+    </div>
+
     <!-- Buy & sell safely -->
     <div class="sec">
       <h2 class="sectitle">Buy &amp; Sell <span>Safely</span></h2>
@@ -349,6 +380,7 @@
     <div class="tabbar">
       <button class="tabbtn active" id="tbl">&#x1F697; Listings</button>
       <button class="tabbtn" id="tbe">&#x1F4AC; Enquiries</button>
+      <button class="tabbtn" id="tbr">&#x2B50; Reviews</button>
     </div>
     <div id="tab-listings">
       <h2 class="sectitle">All <span>Listings</span></h2>
@@ -357,6 +389,10 @@
     <div id="tab-enquiries" style="display:none">
       <h2 class="sectitle">Buyer <span>Enquiries</span></h2>
       <div class="tablewrap"><table><thead><tr><th>Buyer</th><th>Interest</th><th>Message</th><th>Contact</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-enquiries-body"></tbody></table></div>
+    </div>
+    <div id="tab-reviews" style="display:none">
+      <h2 class="sectitle">Customer <span>Reviews</span></h2>
+      <div class="tablewrap"><table><thead><tr><th>Name</th><th>Rating</th><th>Review</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-reviews-body"></tbody></table></div>
     </div>
   </div>
 </div>
@@ -455,6 +491,32 @@
     <div class="modalft" id="contact-footer">
       <button class="btn btno" id="contact-cancel">Cancel</button>
       <button class="btn btng" id="contact-submit">Send Enquiry</button>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEW MODAL -->
+<div class="overlay" id="m-review">
+  <div class="modal modalsm">
+    <div class="modalhd">
+      <div class="modalttl">&#x2B50; Write a Review</div>
+      <button class="modalx" id="review-close">&times;</button>
+    </div>
+    <div class="modalbdy">
+      <div id="review-form">
+        <div class="fgrp" style="margin-bottom:1rem"><label class="flbl">Your Name <em>*</em></label><input class="finp" id="rn" placeholder="e.g. Sarah M."/></div>
+        <div class="fgrp" style="margin-bottom:1rem"><label class="flbl">Rating <em>*</em></label>
+          <div class="starpick" id="star-pick"><span data-v="1">&#9733;</span><span data-v="2">&#9733;</span><span data-v="3">&#9733;</span><span data-v="4">&#9733;</span><span data-v="5">&#9733;</span></div>
+        </div>
+        <div class="fgrp"><label class="flbl">Your Review <em>*</em></label><textarea class="ftxt" id="rc" placeholder="How was your experience with CarGone NZ?"></textarea></div>
+      </div>
+      <div id="review-success" style="display:none">
+        <div class="successbox"><h3>&#x2705; Thanks for your review!</h3><p>It will appear on the site once it's been approved.</p></div>
+      </div>
+    </div>
+    <div class="modalft" id="review-footer">
+      <button class="btn btno" id="review-cancel">Cancel</button>
+      <button class="btn btng" id="review-submit">Submit Review</button>
     </div>
   </div>
 </div>
@@ -897,6 +959,102 @@ document.addEventListener('DOMContentLoaded', function() {
     }).catch(function(e) { showToast('Error: ' + e.message); });
   });
 
+  // ── REVIEWS ──
+  var reviewRating = 0;
+
+  function starStr(n) { var s = ''; for (var i = 0; i < n; i++) s += '★'; return s; }
+
+  function loadReviews() {
+    api({ action:'list', entity:'Review' }).then(function(data) {
+      var rows = Array.isArray(data) ? data : (data.items || []);
+      renderReviews(rows.filter(function(r) { return r.status === 'Approved'; }));
+    }).catch(function() { renderReviews([]); });
+  }
+
+  function renderReviews(list) {
+    var c = g('reviews-container'); c.innerHTML = '';
+    if (!list.length) {
+      var p = document.createElement('p');
+      p.style.cssText = 'color:var(--g4);font-size:.9rem';
+      p.textContent = 'No reviews yet — be the first to share your experience.';
+      c.appendChild(p); return;
+    }
+    var avg = list.reduce(function(s, r) { return s + (Number(r.rating) || 0); }, 0) / list.length;
+    var counts = [0,0,0,0,0];
+    list.forEach(function(r) { var v = Math.round(Number(r.rating)||0); if (v >= 1 && v <= 5) counts[v-1]++; });
+
+    var row = document.createElement('div'); row.className = 'raterow';
+    var bs = document.createElement('div'); bs.className = 'bigscore';
+    var n = document.createElement('div'); n.className = 'num'; n.textContent = avg.toFixed(1);
+    var o = document.createElement('div'); o.className = 'outof'; o.textContent = 'out of 5';
+    bs.appendChild(n); bs.appendChild(o);
+    var bars = document.createElement('div'); bars.className = 'bars';
+    for (var s = 5; s >= 1; s--) {
+      var br = document.createElement('div'); br.className = 'barrow';
+      var bl = document.createElement('span'); bl.className = 'blbl'; bl.textContent = starStr(s);
+      var bt = document.createElement('div'); bt.className = 'btrack';
+      var bf = document.createElement('div'); bf.className = 'bfill';
+      bf.style.width = Math.round(counts[s-1] / list.length * 100) + '%';
+      bt.appendChild(bf); br.appendChild(bl); br.appendChild(bt); bars.appendChild(br);
+    }
+    var rc = document.createElement('div'); rc.className = 'ratecount';
+    rc.textContent = list.length + (list.length === 1 ? ' review' : ' reviews');
+    bars.appendChild(rc);
+    row.appendChild(bs); row.appendChild(bars);
+    c.appendChild(row);
+
+    var scroll = document.createElement('div'); scroll.className = 'revscroll';
+    list.forEach(function(r) {
+      var card = document.createElement('div'); card.className = 'revcard';
+      var head = document.createElement('div'); head.className = 'revhead';
+      var nm = document.createElement('span'); nm.textContent = r.reviewer_name || 'Anonymous';
+      var dt = document.createElement('span'); dt.className = 'rdate';
+      var d = new Date(r.created_date || r.created_at || '');
+      dt.textContent = isNaN(d) ? '' : d.toLocaleDateString('en-NZ', { day:'numeric', month:'short', year:'numeric' });
+      head.appendChild(nm); head.appendChild(dt);
+      var st = document.createElement('div'); st.className = 'revstars'; st.textContent = starStr(Math.round(Number(r.rating)||0));
+      var tx = document.createElement('p'); tx.textContent = r.comment || '';
+      card.appendChild(head); card.appendChild(st); card.appendChild(tx);
+      scroll.appendChild(card);
+    });
+    c.appendChild(scroll);
+  }
+
+  function openReview() {
+    g('rn').value = ''; g('rc').value = ''; reviewRating = 0;
+    Array.from(g('star-pick').children).forEach(function(s) { s.classList.remove('on'); });
+    g('review-form').style.display = 'block';
+    g('review-success').style.display = 'none';
+    g('review-footer').style.display = 'flex';
+    openModal('m-review');
+  }
+  g('review-open').addEventListener('click', openReview);
+  g('review-close').addEventListener('click', function() { closeModal('m-review'); });
+  g('review-cancel').addEventListener('click', function() { closeModal('m-review'); });
+  g('m-review').addEventListener('click', function(e) { if (e.target === this) closeModal('m-review'); });
+
+  Array.from(g('star-pick').children).forEach(function(s) {
+    s.addEventListener('click', function() {
+      reviewRating = parseInt(this.getAttribute('data-v'));
+      Array.from(g('star-pick').children).forEach(function(t) {
+        t.classList.toggle('on', parseInt(t.getAttribute('data-v')) <= reviewRating);
+      });
+    });
+  });
+
+  g('review-submit').addEventListener('click', function() {
+    if (!val('rn') || !reviewRating || !val('rc')) { showToast('Please add your name, a star rating and a review'); return; }
+    var btn = g('review-submit'); btn.disabled = true; btn.textContent = 'Submitting...';
+    api({ action:'create', entity:'Review' }, 'POST', {
+      reviewer_name: val('rn'), rating: reviewRating, comment: val('rc'), status: 'Pending'
+    }).then(function() {
+      g('review-form').style.display = 'none';
+      g('review-success').style.display = 'block';
+      g('review-footer').style.display = 'none';
+    }).catch(function(e) { showToast('Error: ' + e.message); })
+    .finally(function() { btn.disabled = false; btn.textContent = 'Submit Review'; });
+  });
+
   // ── ADMIN LOGIN ──
   g('login-close').addEventListener('click', function() { closeModal('m-login'); });
   g('login-cancel').addEventListener('click', function() { closeModal('m-login'); });
@@ -916,15 +1074,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // ── ADMIN TABS ──
-  g('tbl').addEventListener('click', function() {
-    g('tab-listings').style.display = 'block'; g('tab-enquiries').style.display = 'none';
-    g('tbl').classList.add('active'); g('tbe').classList.remove('active');
-  });
-  g('tbe').addEventListener('click', function() {
-    g('tab-listings').style.display = 'none'; g('tab-enquiries').style.display = 'block';
-    g('tbe').classList.add('active'); g('tbl').classList.remove('active');
-    loadAdminEnquiries();
-  });
+  var adminTabs = { tbl:'tab-listings', tbe:'tab-enquiries', tbr:'tab-reviews' };
+  function showTab(which) {
+    Object.keys(adminTabs).forEach(function(k) {
+      g(adminTabs[k]).style.display = (k === which) ? 'block' : 'none';
+      g(k).classList.toggle('active', k === which);
+    });
+  }
+  g('tbl').addEventListener('click', function() { showTab('tbl'); });
+  g('tbe').addEventListener('click', function() { showTab('tbe'); loadAdminEnquiries(); });
+  g('tbr').addEventListener('click', function() { showTab('tbr'); loadAdminReviews(); });
 
   // ── ADMIN LISTINGS ──
   function loadAdminListings() {
@@ -1000,8 +1159,48 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(function() { showToast('Failed.'); });
   }
 
+  // ── ADMIN REVIEWS ──
+  function loadAdminReviews() {
+    var tb = g('admin-reviews-body');
+    tb.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr>';
+    api({ action:'list', entity:'Review' }).then(function(data) {
+      var rows = Array.isArray(data) ? data : (data.items||[]);
+      if (!rows.length) { tb.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:2.5rem;color:var(--g6)">No reviews yet.</td></tr>'; return; }
+      var sc = { Pending:'bylw', Approved:'bgrn', Hidden:'bgry' };
+      tb.innerHTML = '';
+      rows.forEach(function(r) {
+        var tr = document.createElement('tr');
+        var nt = document.createElement('td'); var nb = document.createElement('strong');
+        nb.textContent = r.reviewer_name || ''; nt.appendChild(nb); tr.appendChild(nt);
+        var rt = document.createElement('td'); rt.style.cssText = 'color:#f5a623;letter-spacing:1px';
+        rt.textContent = starStr(Math.round(Number(r.rating)||0)); tr.appendChild(rt);
+        var ct = document.createElement('td'); ct.style.cssText = 'max-width:240px;font-size:.82rem;color:var(--g4)';
+        ct.textContent = (r.comment||'').substring(0,100) + (r.comment && r.comment.length > 100 ? '...' : '');
+        tr.appendChild(ct);
+        var st = document.createElement('td'); var sb = document.createElement('span');
+        sb.className = 'bdg ' + (sc[r.status]||'bgry'); sb.textContent = r.status || 'Pending';
+        st.appendChild(sb); tr.appendChild(st);
+        var atd = document.createElement('td'); atd.style.cssText = 'display:flex;gap:.4rem';
+        function mkBtn(cls, txt, rid, stat) {
+          var b = document.createElement('button'); b.className = cls; b.textContent = txt;
+          b.addEventListener('click', function() { setReviewStatus(rid, stat); }); atd.appendChild(b);
+        }
+        if (r.status !== 'Approved') mkBtn('abg','Approve', r.id, 'Approved');
+        if (r.status !== 'Hidden')   mkBtn('abr','Hide',    r.id, 'Hidden');
+        tr.appendChild(atd); tb.appendChild(tr);
+      });
+    }).catch(function() { tb.innerHTML = '<tr><td colspan="5" style="text-align:center;color:#b91c1c;padding:2rem">Could not load reviews — has the Review entity been created in Base44?</td></tr>'; });
+  }
+
+  function setReviewStatus(id, status) {
+    api({ action:'update', entity:'Review', id:id }, 'POST', { status:status })
+      .then(function() { showToast('Review ' + status.toLowerCase()); loadAdminReviews(); loadReviews(); })
+      .catch(function() { showToast('Failed.'); });
+  }
+
   // ── BOOT ──
   loadListings();
+  loadReviews();
 
 }); // end DOMContentLoaded
 </script>
