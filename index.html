@@ -87,6 +87,20 @@
     .chips{display:flex;flex-wrap:wrap;gap:.6rem}
     .chip{background:var(--soft);border-radius:100px;padding:.45rem 1rem;font-size:.84rem}
 
+    /* FAQ */
+    .faq details{border-bottom:1px solid var(--line)}
+    .faq details:last-child{border-bottom:none}
+    .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:.95rem 0;font-size:.95rem;font-weight:600}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:'+';color:var(--grn);font-size:1.25rem;font-weight:700;margin-left:1rem;flex-shrink:0}
+    .faq details[open] summary::after{content:'\2013'}
+    .faq .faqa{padding:0 0 1rem;font-size:.88rem;color:var(--g4);line-height:1.65;max-width:680px}
+
+    /* Bottom CTA */
+    .ctasec{text-align:center}
+    .ctasec h2{font-size:1.5rem;font-weight:800;letter-spacing:-.3px;margin-bottom:.4rem}
+    .ctasec p{color:var(--g4);font-size:.92rem;margin-bottom:1.4rem}
+
     /* Info list */
     .infolist{font-size:.88rem}
     .inforow{display:flex;justify-content:space-between;padding:.7rem 0;border-bottom:1px solid var(--line)}
@@ -250,6 +264,45 @@
       </div>
     </div>
 
+    <!-- Buy & sell safely -->
+    <div class="sec">
+      <h2 class="sectitle">Buy &amp; Sell <span>Safely</span></h2>
+      <div class="howgrid">
+        <div class="howstep"><div class="howico">&#x1F91D;</div><h3>Meet in person</h3><p>View the car in daylight, at the seller's place or somewhere public, and take a friend along if you can.</p></div>
+        <div class="howstep"><div class="howico">&#x1F50D;</div><h3>Inspect before paying</h3><p>Look the car over, take a test drive, and never pay a deposit or full price sight unseen.</p></div>
+        <div class="howstep"><div class="howico">&#x1F4CB;</div><h3>Sort the paperwork</h3><p>Buyer and seller each complete change of ownership with Waka Kotahi NZTA at handover &mdash; it's free and takes minutes online.</p></div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="sec faq" id="faq-section">
+      <h2 class="sectitle">Frequently Asked <span>Questions</span></h2>
+      <details>
+        <summary>Is listing really free?</summary>
+        <div class="faqa">Yes &mdash; completely free. No listing fees, no success fees, ever. List your car, sell it, and keep every dollar.</div>
+      </details>
+      <details>
+        <summary>What can I list?</summary>
+        <div class="faqa">Cars, vans, utes, 4WDs and SUVs in any condition &mdash; running or not. You can sell the whole car, give it away for scrap, or part it out piece by piece.</div>
+      </details>
+      <details>
+        <summary>How do buyers contact me?</summary>
+        <div class="faqa">Buyers enquire through the form on your listing, and their name, contact details and message come straight to you. You deal with them directly &mdash; no middleman.</div>
+      </details>
+      <details>
+        <summary>Do I need a WOF or rego to list?</summary>
+        <div class="faqa">No. Cars without a current WOF or rego are welcome &mdash; just be upfront about it in your description so buyers know what they're getting.</div>
+      </details>
+      <details>
+        <summary>What happens when my car sells?</summary>
+        <div class="faqa">Your listing gets a SOLD banner so buyers can see it's gone, and the enquiry form is switched off. Don't forget to sort change of ownership with NZTA at handover.</div>
+      </details>
+      <details>
+        <summary>How does change of ownership work?</summary>
+        <div class="faqa">Both the buyer and the seller notify Waka Kotahi NZTA of the sale &mdash; it's a quick online form (or at an agent like NZ Post), free for the seller, and protects you both from future fines or fees on the vehicle.</div>
+      </details>
+    </div>
+
     <!-- Information -->
     <div class="sec">
       <h2 class="sectitle">Information</h2>
@@ -259,6 +312,16 @@
         <div class="inforow"><span class="k">Listing cost</span><span>Free</span></div>
         <div class="inforow"><span class="k">Listing types</span><span>Sell &middot; Scrap &middot; Parts</span></div>
         <div class="inforow"><span class="k">Contact</span><span style="color:var(--grn);cursor:pointer" id="info-list-link">List a car or enquire on a listing</span></div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="sec ctasec">
+      <h2>Ready to get that car gone?</h2>
+      <p>Listing is free and takes about five minutes.</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
+        <button class="btn btng btnlg" id="cta-list">+ List My Car &mdash; Free</button>
+        <button class="btn btno btnlg" id="cta-browse">Browse Listings</button>
       </div>
     </div>
 
@@ -502,6 +565,8 @@ document.addEventListener('DOMContentLoaded', function() {
   g('admin-back').addEventListener('click', function() { showPage('page-home'); });
   g('admin-logout').addEventListener('click', function() { showPage('page-home'); });
   g('info-list-link').addEventListener('click', function() { openModal('m-sell'); });
+  g('cta-list').addEventListener('click', function() { openModal('m-sell'); });
+  g('cta-browse').addEventListener('click', function() { g('listings-section').scrollIntoView({behavior:'smooth'}); });
 
   // ── SELL MODAL ──
   g('sell-close').addEventListener('click', function() { closeModal('m-sell'); });
