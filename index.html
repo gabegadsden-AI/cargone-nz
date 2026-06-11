@@ -3,118 +3,176 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CarGone NZ</title>
+  <title>CarGone NZ — Sell, Scrap or Part Out Your Car | NZ-Wide</title>
+  <meta name="description" content="CarGone NZ connects sellers with buyers across New Zealand. Sell your unwanted car, scrap it, or part it out — fast, free and simple."/>
+  <meta property="og:title" content="CarGone NZ — Turn Your Unwanted Car Into Cash or Closure"/>
+  <meta property="og:description" content="Sell it, scrap it, or part it out. List your car free in minutes and connect directly with buyers across New Zealand."/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <style>
-    :root{--blk:#0a0a0a;--drk:#111111;--grn:#16a34a;--gl:#22c55e;--gd:#15803d;--w:#fff;--g4:#a1a1aa;--g6:#52525b;--g2:#e4e4e7}
+    :root{--grn:#16a34a;--gd:#15803d;--gl:#16a34a;--ink:#1d1d1f;--g4:#6e6e73;--g6:#8e8e93;--line:#e5e5ea;--soft:#f5f5f7;--w:#fff;--radius:16px;--shadow:0 4px 24px rgba(0,0,0,.07)}
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Inter',sans-serif;background:var(--blk);color:var(--w);min-height:100vh}
-    nav{background:var(--drk);border-bottom:1px solid #1f1f1f;padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-    .logo{display:flex;align-items:center;gap:.4rem;font-size:1.4rem;font-weight:900;cursor:pointer;letter-spacing:-.5px}
-    .logo .gr{color:var(--gl)}.logo .nz{color:var(--g4);font-weight:500;font-size:1rem}
+    body{font-family:'Inter',sans-serif;background:#fff;color:var(--ink);min-height:100vh}
+    nav{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .logo{display:flex;align-items:center;gap:.4rem;font-size:1.35rem;font-weight:900;cursor:pointer;letter-spacing:-.5px}
+    .logo .gr{color:var(--grn)}.logo .nz{color:var(--g4);font-weight:500;font-size:1rem}
     .navlinks{display:flex;gap:1.5rem;align-items:center}
-    .nb{background:none;border:none;color:var(--g4);font-size:.93rem;font-weight:500;cursor:pointer;font-family:inherit;padding:.3rem 0;transition:color .15s}.nb:hover{color:var(--w)}
-    .btn{padding:.6rem 1.4rem;border-radius:8px;font-weight:600;font-size:.9rem;cursor:pointer;border:none;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem;font-family:inherit}
+    .nb{background:none;border:none;color:var(--g4);font-size:.93rem;font-weight:500;cursor:pointer;font-family:inherit;padding:.3rem 0;transition:color .15s}.nb:hover{color:var(--ink)}
+    .btn{padding:.6rem 1.5rem;border-radius:100px;font-weight:700;font-size:.9rem;cursor:pointer;border:none;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem;font-family:inherit}
     .btng{background:var(--grn);color:#fff}.btng:hover{background:var(--gd)}
-    .btno{background:transparent;border:1.5px solid #3f3f3f;color:var(--w)}.btno:hover{border-color:var(--w)}
-    .btnlg{padding:.85rem 2rem;font-size:1rem;border-radius:10px}
-    .hero{padding:5.5rem 2rem 4rem;text-align:center;background:radial-gradient(ellipse at center top,#16a34a18 0%,transparent 65%)}
-    .pill{display:inline-block;background:#16a34a20;border:1px solid #16a34a50;color:var(--gl);padding:.3rem 1rem;border-radius:100px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.5rem}
-    .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-2px;margin-bottom:1.2rem}
-    .hero h1 em{color:var(--gl);font-style:normal}
-    .hero p{font-size:1.1rem;color:var(--g4);max-width:520px;margin:0 auto 2.5rem;line-height:1.75}
-    .heroctarow{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);background:#1a1a1a;border-top:1px solid #222;border-bottom:1px solid #222}
-    .stat{padding:1.75rem 1.5rem;text-align:center;border-right:1px solid #222}.stat:last-child{border-right:none}
-    .statnum{font-size:2rem;font-weight:900;color:var(--gl)}.statlbl{font-size:.75rem;color:var(--g4);margin-top:.3rem;text-transform:uppercase;letter-spacing:.04em}
-    .sec{padding:3rem 2rem;max-width:1200px;margin:0 auto}
-    .sectitle{font-size:1.6rem;font-weight:800;margin-bottom:1.75rem}.sectitle span{color:var(--gl)}
-    .filterbar{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem;padding:1.25rem;background:var(--drk);border-radius:12px;border:1px solid #1f1f1f}
-    .filterbar select,.filterbar input{background:#0a0a0a;border:1.5px solid #2a2a2a;color:var(--w);padding:.55rem 1rem;border-radius:8px;font-size:.88rem;font-family:inherit;flex:1;min-width:140px;cursor:pointer}
+    .btno{background:var(--soft);border:none;color:var(--ink)}.btno:hover{background:#ebebf0}
+    .btnlg{padding:.8rem 2rem;font-size:1rem}
+    .wrap{max-width:980px;margin:0 auto;padding:0 1.5rem}
+
+    /* App Store-style product header */
+    .product{display:flex;gap:1.6rem;align-items:flex-start;padding:3rem 0 1.9rem}
+    .appicon{width:118px;height:118px;border-radius:26px;background:linear-gradient(135deg,var(--grn),var(--gd));display:flex;align-items:center;justify-content:center;font-size:3.4rem;box-shadow:var(--shadow);flex-shrink:0}
+    .pinfo h1{font-size:1.7rem;font-weight:900;letter-spacing:-.5px;line-height:1.15}
+    .pinfo .psub{color:var(--g4);font-size:1rem;margin-top:.15rem}
+    .pinfo .pdev{color:var(--grn);font-size:.85rem;font-weight:600;margin-top:.15rem}
+    .pacts{display:flex;align-items:center;gap:.75rem;margin-top:.95rem;flex-wrap:wrap}
+    .sharebtn{width:36px;height:36px;border-radius:50%;background:var(--soft);color:var(--grn);border:none;font-size:1rem;cursor:pointer;font-weight:700}
+    .sharebtn:hover{background:#ebebf0}
+
+    /* Stats strip */
+    .stats{display:flex;overflow-x:auto;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.1rem 0;scrollbar-width:none}
+    .stats::-webkit-scrollbar{display:none}
+    .stat{flex:1;min-width:128px;text-align:center;padding:0 1.1rem;border-right:1px solid var(--line)}.stat:last-child{border-right:none}
+    .statlbl{font-size:.68rem;color:var(--g4);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:.15rem}
+    .statnum{font-size:1.45rem;font-weight:800;color:var(--g4)}
+    .statsub{font-size:.74rem;color:var(--g6)}
+
+    /* Sections */
+    .sec{padding:1.9rem 0;border-bottom:1px solid var(--line)}
+    .sec:last-of-type{border-bottom:none}
+    .sectitle{font-size:1.4rem;font-weight:800;letter-spacing:-.3px;margin-bottom:1.25rem}.sectitle span{color:var(--grn)}
+
+    /* Filters */
+    .filterbar{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1.5rem;padding:1rem;background:var(--soft);border-radius:14px}
+    .filterbar select,.filterbar input{background:#fff;border:1.5px solid var(--line);color:var(--ink);padding:.55rem 1rem;border-radius:10px;font-size:.88rem;font-family:inherit;flex:1;min-width:135px;cursor:pointer}
     .filterbar select:focus,.filterbar input:focus{outline:none;border-color:var(--grn)}
-    .cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
-    .carcard{background:var(--drk);border:1px solid #1f1f1f;border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s;cursor:pointer}
-    .carcard:hover{transform:translateY(-3px);border-color:var(--grn)}
-    .cardimg{width:100%;height:190px;background:#0d0d0d;display:flex;align-items:center;justify-content:center;font-size:3.5rem;color:#2a2a2a;overflow:hidden}
+
+    /* Listing cards */
+    .cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.25rem}
+    .carcard{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,box-shadow .2s;cursor:pointer}
+    .carcard:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .cardimg{position:relative;width:100%;height:185px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:3.2rem;color:#c7c7cc;overflow:hidden}
     .cardimg img{width:100%;height:100%;object-fit:cover}
-    .cardbody{padding:1.25rem}
-    .cardtitle{font-size:1.05rem;font-weight:700;margin-bottom:.3rem}
-    .cardsub{font-size:.82rem;color:var(--g4);margin-bottom:.75rem}
-    .badgeset{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.85rem}
-    .bdg{padding:.22rem .6rem;border-radius:100px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
-    .bgrn{background:#16a34a20;color:var(--gl);border:1px solid #16a34a40}
-    .bylw{background:#ca8a0420;color:#fbbf24;border:1px solid #ca8a0440}
-    .bred{background:#dc262620;color:#f87171;border:1px solid #dc262640}
-    .bgry{background:#27272a;color:var(--g4)}
-    .cardprice{font-size:1.35rem;font-weight:900;color:var(--gl)}
-    .cardfoot{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:1rem;border-top:1px solid #1a1a1a}
-    .cardloc{font-size:.8rem;color:var(--g4)}
-    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:300;display:none;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(6px)}
+    .soldwrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.45)}
+    .soldwrap span{background:#dc2626;color:#fff;font-weight:800;letter-spacing:.18em;font-size:1rem;padding:.4rem 2.6rem;transform:rotate(-12deg);border-radius:6px;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+    .cardbody{padding:1.15rem 1.25rem 1.25rem}
+    .cardtitle{font-size:1.02rem;font-weight:700;margin-bottom:.25rem}
+    .cardsub{font-size:.8rem;color:var(--g4);margin-bottom:.7rem}
+    .badgeset{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.8rem}
+    .bdg{padding:.22rem .65rem;border-radius:100px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .bgrn{background:#16a34a14;color:var(--gd)}
+    .bylw{background:#ca8a0414;color:#a16207}
+    .bred{background:#dc262614;color:#b91c1c}
+    .bgry{background:var(--soft);color:var(--g4)}
+    .cardprice{font-size:1.3rem;font-weight:900;color:var(--grn)}
+    .cardprice.sold{color:var(--g4)}
+    .cardfoot{display:flex;align-items:center;justify-content:space-between;margin-top:.95rem;padding-top:.95rem;border-top:1px solid var(--soft)}
+    .cardloc{font-size:.78rem;color:var(--g4)}
+
+    /* How it works */
+    .howgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem}
+    .howstep{background:var(--soft);border-radius:var(--radius);padding:1.5rem 1.25rem}
+    .howico{width:48px;height:48px;background:#16a34a14;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:.85rem}
+    .howstep h3{font-size:.95rem;font-weight:700;margin-bottom:.35rem}
+    .howstep p{font-size:.82rem;color:var(--g4);line-height:1.6}
+
+    /* About + chips */
+    .aboutp{font-size:.95rem;color:var(--ink);line-height:1.7;max-width:740px;margin-bottom:.9rem}
+    .chips{display:flex;flex-wrap:wrap;gap:.6rem}
+    .chip{background:var(--soft);border-radius:100px;padding:.45rem 1rem;font-size:.84rem}
+
+    /* Info list */
+    .infolist{font-size:.88rem}
+    .inforow{display:flex;justify-content:space-between;padding:.7rem 0;border-bottom:1px solid var(--line)}
+    .inforow:last-child{border-bottom:none}
+    .inforow .k{color:var(--g4)}
+
+    /* Modals */
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:300;display:none;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(6px)}
     .overlay.open{display:flex}
-    .modal{background:var(--drk);border:1px solid #2a2a2a;border-radius:16px;width:100%;max-width:680px;max-height:92vh;overflow-y:auto}
+    .modal{background:#fff;border-radius:18px;width:100%;max-width:680px;max-height:92vh;overflow-y:auto;box-shadow:0 18px 60px rgba(0,0,0,.25)}
     .modalsm{max-width:440px}
-    .modalhd{padding:1.5rem 1.75rem;border-bottom:1px solid #1f1f1f;display:flex;align-items:center;justify-content:space-between}
-    .modalttl{font-size:1.1rem;font-weight:800}
-    .modalx{background:#1f1f1f;border:none;color:var(--g4);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;line-height:1}
-    .modalx:hover{background:#2a2a2a;color:#fff}
-    .modalbdy{padding:1.75rem}
-    .modalft{padding:1.25rem 1.75rem;border-top:1px solid #1f1f1f;display:flex;justify-content:flex-end;gap:.75rem}
+    .modalhd{padding:1.4rem 1.75rem;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:2}
+    .modalttl{font-size:1.08rem;font-weight:800}
+    .modalx{background:var(--soft);border:none;color:var(--g4);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;line-height:1}
+    .modalx:hover{background:#ebebf0;color:var(--ink)}
+    .modalbdy{padding:1.6rem 1.75rem}
+    .modalft{padding:1.2rem 1.75rem;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:.75rem}
     .fg2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
     .fcol{grid-column:1/-1}
     .fgrp{display:flex;flex-direction:column;gap:.4rem}
-    .flbl{font-size:.82rem;font-weight:600;color:var(--g2)}.flbl em{color:var(--gl);font-style:normal}
-    .finp,.fsel,.ftxt{background:#0a0a0a;border:1.5px solid #2a2a2a;color:#fff;padding:.7rem 1rem;border-radius:10px;font-size:.92rem;font-family:inherit;width:100%;transition:border-color .2s}
+    .flbl{font-size:.8rem;font-weight:600;color:var(--ink)}.flbl em{color:var(--grn);font-style:normal}
+    .finp,.fsel,.ftxt{background:#fff;border:1.5px solid var(--line);color:var(--ink);padding:.7rem 1rem;border-radius:10px;font-size:.92rem;font-family:inherit;width:100%;transition:border-color .2s}
     .finp:focus,.fsel:focus,.ftxt:focus{outline:none;border-color:var(--grn)}
     .ftxt{resize:vertical;min-height:85px}
-    .fsep{font-size:.73rem;font-weight:700;color:var(--gl);text-transform:uppercase;letter-spacing:.1em;margin:1.25rem 0 .75rem;padding-bottom:.5rem;border-bottom:1px solid #16a34a30}
-    .partrow{background:#0a0a0a;border:1px solid #222;border-radius:10px;padding:1rem;display:grid;grid-template-columns:2fr 1fr auto;gap:.75rem;align-items:end;margin-bottom:.75rem}
-    .btnrm{background:#dc262620;border:1px solid #dc262640;color:#f87171;padding:.6rem .9rem;border-radius:8px;cursor:pointer;font-family:inherit;font-size:.9rem}
-    .btnadd{background:#16a34a18;border:1.5px dashed #16a34a50;color:var(--gl);padding:.65rem 1rem;border-radius:8px;cursor:pointer;font-size:.88rem;font-weight:600;width:100%;font-family:inherit}
-    .btnadd:hover{background:#16a34a28}
-    .photodrop{border:2px dashed #2a2a2a;border-radius:10px;padding:2rem;text-align:center;cursor:pointer;transition:border-color .2s;margin-top:.5rem}
+    .fsep{font-size:.72rem;font-weight:700;color:var(--gd);text-transform:uppercase;letter-spacing:.1em;margin:1.25rem 0 .75rem;padding-bottom:.5rem;border-bottom:1px solid #16a34a30}
+    .partrow{background:var(--soft);border-radius:12px;padding:1rem;display:grid;grid-template-columns:2fr 1fr auto;gap:.75rem;align-items:end;margin-bottom:.75rem}
+    .partrow .finp{background:#fff}
+    .btnrm{background:#dc262612;border:none;color:#b91c1c;padding:.6rem .9rem;border-radius:8px;cursor:pointer;font-family:inherit;font-size:.9rem}
+    .btnadd{background:#16a34a10;border:1.5px dashed #16a34a50;color:var(--gd);padding:.65rem 1rem;border-radius:10px;cursor:pointer;font-size:.88rem;font-weight:600;width:100%;font-family:inherit}
+    .btnadd:hover{background:#16a34a1c}
+    .photodrop{border:2px dashed var(--line);border-radius:12px;padding:2rem;text-align:center;cursor:pointer;transition:border-color .2s;margin-top:.5rem}
     .photodrop:hover{border-color:var(--grn)}
     .photoprev{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem}
-    .photothumb{width:80px;height:60px;object-fit:cover;border-radius:7px;border:1px solid #2a2a2a}
-    .howsec{background:var(--drk);padding:5rem 2rem;border-top:1px solid #1a1a1a}
-    .howgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;max-width:960px;margin:2.5rem auto 0}
-    .howstep{text-align:center}
-    .howico{width:64px;height:64px;background:#16a34a18;border:1px solid #16a34a40;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 1rem}
-    .howstep h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
-    .howstep p{font-size:.83rem;color:var(--g4);line-height:1.65}
-    .detgrid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1rem 0}
-    .detitem label{font-size:.75rem;color:var(--g4);display:block;margin-bottom:.2rem}
-    .detitem span{font-size:.92rem;font-weight:600}
-    .partitem{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1rem;background:#0a0a0a;border-radius:8px;margin-bottom:.5rem}
-    .partname{font-weight:600;font-size:.88rem}.partprice{color:var(--gl);font-weight:700}
-    .successbox{background:#16a34a18;border:1px solid #16a34a40;border-radius:12px;padding:2rem;text-align:center}
-    .successbox h3{color:var(--gl);font-size:1.2rem;margin-bottom:.4rem}
+    .photothumb{width:80px;height:60px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+
+    /* Detail gallery */
+    .gal{position:relative;border-radius:14px;overflow:hidden;background:var(--soft);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;margin-bottom:.6rem}
+    .gal img{width:100%;height:100%;object-fit:cover}
+    .gal .noimg{font-size:3rem;color:#c7c7cc}
+    .galarrow{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);border:none;font-size:1.05rem;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+    .galarrow:hover{background:#fff}
+    .galprev{left:10px}.galnext{right:10px}
+    .galpill{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.55);color:#fff;font-size:.74rem;padding:.25rem .7rem;border-radius:100px}
+    .galthumbs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.1rem}
+    .galthumbs img{width:72px;height:54px;object-fit:cover;border-radius:8px;border:2px solid transparent;cursor:pointer}
+    .galthumbs img.active{border-color:var(--grn)}
+    .detgrid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:1rem 0;background:var(--soft);border-radius:14px;padding:1.1rem}
+    .detitem label{font-size:.72rem;color:var(--g4);display:block;margin-bottom:.15rem}
+    .detitem span{font-size:.9rem;font-weight:600}
+    .partitem{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1rem;background:var(--soft);border-radius:10px;margin-bottom:.5rem}
+    .partname{font-weight:600;font-size:.88rem}.partprice{color:var(--gd);font-weight:700}
+    .soldnote{background:#dc262610;border:1px solid #dc262630;color:#b91c1c;border-radius:12px;padding:1rem;text-align:center;font-weight:600;font-size:.9rem;margin-top:1.5rem}
+    .successbox{background:#16a34a10;border:1px solid #16a34a30;border-radius:12px;padding:2rem;text-align:center}
+    .successbox h3{color:var(--gd);font-size:1.2rem;margin-bottom:.4rem}
     .successbox p{color:var(--g4);font-size:.88rem;margin-top:.3rem}
-    .adminbar{background:var(--drk);border-bottom:1px solid #1a1a1a;padding:1rem 2rem;display:flex;align-items:center;gap:1rem}
+
+    /* Admin */
+    .adminbar{background:var(--soft);border-bottom:1px solid var(--line);padding:1rem 2rem;display:flex;align-items:center;gap:1rem}
     .adminpill{background:var(--gd);color:#fff;padding:.2rem .75rem;border-radius:100px;font-size:.72rem;font-weight:700;text-transform:uppercase}
-    .tabbar{display:flex;gap:.3rem;background:#0a0a0a;padding:.4rem;border-radius:10px;margin-bottom:2rem}
-    .tabbtn{flex:1;padding:.65rem;border-radius:8px;border:none;background:transparent;color:var(--g4);font-size:.88rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s}
-    .tabbtn.active{background:var(--drk);color:#fff}
-    .tablewrap{background:var(--drk);border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;overflow-x:auto}
+    .tabbar{display:flex;gap:.3rem;background:var(--soft);padding:.4rem;border-radius:12px;margin-bottom:2rem}
+    .tabbtn{flex:1;padding:.65rem;border-radius:9px;border:none;background:transparent;color:var(--g4);font-size:.88rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s}
+    .tabbtn.active{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+    .tablewrap{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;overflow-x:auto}
     table{width:100%;border-collapse:collapse;min-width:680px}
-    th{background:#0a0a0a;padding:.9rem 1rem;text-align:left;font-size:.75rem;font-weight:700;color:var(--g4);text-transform:uppercase;letter-spacing:.05em}
-    td{padding:.9rem 1rem;font-size:.87rem;border-top:1px solid #181818;vertical-align:middle}
-    tr:hover td{background:#0d0d0d}
-    .abg{background:#16a34a20;border:1px solid #16a34a40;color:var(--gl);padding:.3rem .75rem;border-radius:7px;cursor:pointer;font-size:.77rem;font-weight:700;font-family:inherit}
-    .abr{background:#dc262620;border:1px solid #dc262640;color:#f87171;padding:.3rem .75rem;border-radius:7px;cursor:pointer;font-size:.77rem;font-weight:700;font-family:inherit}
-    .emptystate{text-align:center;padding:5rem 2rem}
-    .emptyico{font-size:4rem;margin-bottom:1rem}
-    .emptystate h3{color:var(--g4);font-size:1.1rem;margin-bottom:.5rem}
-    footer{background:var(--drk);border-top:1px solid #1a1a1a;padding:3rem 2rem;text-align:center}
-    .footlinks{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
-    .footlinks a{color:var(--g4);font-size:.85rem;cursor:pointer;text-decoration:none;transition:color .2s}
-    .footlinks a:hover{color:var(--w)}
-    footer p{color:var(--g6);font-size:.82rem}
+    th{background:var(--soft);padding:.9rem 1rem;text-align:left;font-size:.73rem;font-weight:700;color:var(--g4);text-transform:uppercase;letter-spacing:.05em}
+    td{padding:.9rem 1rem;font-size:.87rem;border-top:1px solid var(--soft);vertical-align:middle}
+    tr:hover td{background:#fafafa}
+    .abg{background:#16a34a14;border:none;color:var(--gd);padding:.35rem .75rem;border-radius:8px;cursor:pointer;font-size:.77rem;font-weight:700;font-family:inherit}
+    .abr{background:#dc262612;border:none;color:#b91c1c;padding:.35rem .75rem;border-radius:8px;cursor:pointer;font-size:.77rem;font-weight:700;font-family:inherit}
+    .emptystate{text-align:center;padding:4rem 2rem}
+    .emptyico{font-size:3.4rem;margin-bottom:1rem}
+    .emptystate h3{color:var(--g4);font-size:1.05rem;margin-bottom:.5rem}
+    footer{border-top:1px solid var(--line);padding:2.4rem 2rem;text-align:center}
+    .footlinks{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.2rem}
+    .footlinks a{color:var(--g4);font-size:.84rem;cursor:pointer;text-decoration:none;transition:color .2s}
+    .footlinks a:hover{color:var(--ink)}
+    footer p{color:var(--g6);font-size:.8rem}
     .page{display:none}.page.active{display:block}
-    .spinner{width:40px;height:40px;border:3px solid #1f1f1f;border-top-color:var(--grn);border-radius:50%;animation:spn .8s linear infinite;margin:4rem auto}
+    .spinner{width:40px;height:40px;border:3px solid var(--line);border-top-color:var(--grn);border-radius:50%;animation:spn .8s linear infinite;margin:4rem auto}
     @keyframes spn{to{transform:rotate(360deg)}}
-    .toast{position:fixed;bottom:2rem;right:2rem;background:#15803d;color:#fff;padding:1rem 1.5rem;border-radius:12px;font-weight:600;font-size:.88rem;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,.6)}
-    ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--drk)}::-webkit-scrollbar-thumb{background:#2a2a2a;border-radius:10px}
-    @media(max-width:620px){.fg2{grid-template-columns:1fr}.partrow{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat{border-right:none;border-bottom:1px solid #222}.hidemob{display:none}}
+    .toast{position:fixed;bottom:2rem;right:2rem;background:var(--gd);color:#fff;padding:1rem 1.5rem;border-radius:14px;font-weight:600;font-size:.88rem;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+    @media(max-width:620px){
+      .fg2{grid-template-columns:1fr}.partrow{grid-template-columns:1fr}
+      .product{flex-wrap:wrap}.appicon{width:92px;height:92px;border-radius:21px;font-size:2.6rem}
+      .hidemob{display:none}
+    }
   </style>
 </head>
 <body>
@@ -130,39 +188,80 @@
 </nav>
 
 <div class="page active" id="page-home">
-  <div class="hero">
-    <div class="pill">&#x1F1F3;&#x1F1FF; New Zealand's Unwanted Car Marketplace</div>
-    <h1>Turn Your <em>Unwanted Car</em><br/>Into Cash or Closure</h1>
-    <p>Sell it, scrap it, or part it out. CarGone NZ connects sellers with buyers across New Zealand &mdash; fast, free and simple.</p>
-    <div class="heroctarow">
-      <button class="btn btng btnlg" id="hero-list">&#x1F697; List My Car &mdash; Free</button>
-      <button class="btn btno btnlg" id="hero-browse">Browse Listings</button>
+  <div class="wrap">
+
+    <!-- App Store-style product header -->
+    <header class="product">
+      <div class="appicon">&#x1F697;</div>
+      <div class="pinfo">
+        <h1>CarGone NZ</h1>
+        <div class="psub">Turn your unwanted car into cash or closure</div>
+        <div class="pdev">Sell it, scrap it, or part it out &middot; NZ-wide</div>
+        <div class="pacts">
+          <button class="btn btng" id="hero-browse">Browse Listings</button>
+          <button class="btn btno" id="hero-list">+ List My Car &mdash; Free</button>
+          <button class="sharebtn" id="site-share" title="Share CarGone NZ">&#x2197;</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats strip -->
+    <div class="stats">
+      <div class="stat"><div class="statlbl">Active Listings</div><div class="statnum" id="stat-count">0</div><div class="statsub">live now</div></div>
+      <div class="stat"><div class="statlbl">Listing Fee</div><div class="statnum">$0</div><div class="statsub">free, always</div></div>
+      <div class="stat"><div class="statlbl">Coverage</div><div class="statnum">NZ</div><div class="statsub">nationwide</div></div>
+      <div class="stat"><div class="statlbl">Process</div><div class="statnum">Fast</div><div class="statsub">list in minutes</div></div>
     </div>
-  </div>
-  <div class="stats">
-    <div class="stat"><div class="statnum" id="stat-count">0</div><div class="statlbl">Active Listings</div></div>
-    <div class="stat"><div class="statnum">Free</div><div class="statlbl">To List</div></div>
-    <div class="stat"><div class="statnum">NZ</div><div class="statlbl">Nationwide</div></div>
-    <div class="stat"><div class="statnum">Fast</div><div class="statlbl">Easy Process</div></div>
-  </div>
-  <div class="sec" id="listings-section">
-    <h2 class="sectitle">Available <span>Listings</span></h2>
-    <div class="filterbar">
-      <select id="f-type"><option value="">All Types</option><option>Sell the car</option><option>Get rid of it (free/scrap)</option><option>Sell the parts</option></select>
-      <select id="f-cond"><option value="">All Conditions</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Poor</option><option>Parts Only</option></select>
-      <select id="f-loc"><option value="">All Regions</option><option>Auckland</option><option>Wellington</option><option>Christchurch</option><option>Hamilton</option><option>Tauranga</option><option>Dunedin</option><option>Other</option></select>
-      <input type="text" id="f-q" placeholder="Search make or model..."/>
+
+    <!-- Listings -->
+    <div class="sec" id="listings-section">
+      <h2 class="sectitle">Available <span>Listings</span></h2>
+      <div class="filterbar">
+        <select id="f-type"><option value="">All Types</option><option>Sell the car</option><option>Get rid of it (free/scrap)</option><option>Sell the parts</option></select>
+        <select id="f-cond"><option value="">All Conditions</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Poor</option><option>Parts Only</option></select>
+        <select id="f-loc"><option value="">All Regions</option><option>Auckland</option><option>Wellington</option><option>Christchurch</option><option>Hamilton</option><option>Tauranga</option><option>Dunedin</option><option>Other</option></select>
+        <select id="f-sold"><option value="">Show Sold</option><option value="hide">Hide Sold</option><option value="only">Sold Only</option></select>
+        <input type="text" id="f-q" placeholder="Search make or model..."/>
+      </div>
+      <div id="listings-container"><div class="spinner"></div></div>
     </div>
-    <div id="listings-container"><div class="spinner"></div></div>
-  </div>
-  <div class="howsec" id="how-section">
-    <div style="text-align:center"><div class="pill">Simple Process</div><h2 style="font-size:1.9rem;font-weight:900;margin-top:.75rem;letter-spacing:-1px">How CarGone NZ Works</h2></div>
-    <div class="howgrid">
-      <div class="howstep"><div class="howico">&#x1F4DD;</div><h3>1. List Your Car</h3><p>Fill in your details, upload photos, choose &mdash; sell, scrap or part it out.</p></div>
-      <div class="howstep"><div class="howico">&#x1F440;</div><h3>2. Get Seen</h3><p>Your listing goes live instantly, visible to buyers across New Zealand.</p></div>
-      <div class="howstep"><div class="howico">&#x1F4AC;</div><h3>3. Get Enquiries</h3><p>Buyers contact you directly through the built-in enquiry form.</p></div>
-      <div class="howstep"><div class="howico">&#x2705;</div><h3>4. Done Deal</h3><p>Agree on a price, sort the handover, and get that car gone!</p></div>
+
+    <!-- How it works -->
+    <div class="sec" id="how-section">
+      <h2 class="sectitle">How CarGone NZ <span>Works</span></h2>
+      <div class="howgrid">
+        <div class="howstep"><div class="howico">&#x1F4DD;</div><h3>1. List Your Car</h3><p>Fill in your details, upload photos, choose &mdash; sell, scrap or part it out.</p></div>
+        <div class="howstep"><div class="howico">&#x1F440;</div><h3>2. Get Seen</h3><p>Your listing goes live instantly, visible to buyers across New Zealand.</p></div>
+        <div class="howstep"><div class="howico">&#x1F4AC;</div><h3>3. Get Enquiries</h3><p>Buyers contact you directly through the built-in enquiry form.</p></div>
+        <div class="howstep"><div class="howico">&#x2705;</div><h3>4. Done Deal</h3><p>Agree on a price, sort the handover, and get that car gone!</p></div>
+      </div>
     </div>
+
+    <!-- About -->
+    <div class="sec">
+      <h2 class="sectitle">About <span>CarGone NZ</span></h2>
+      <p class="aboutp">CarGone NZ is New Zealand's marketplace for unwanted cars. Sell it, scrap it, or part it out &mdash; list free in minutes and connect directly with buyers across the country. We handle the platform; you handle the handshake.</p>
+      <div class="chips">
+        <span class="chip">&#x1F3F7;&#xFE0F; Free to list</span>
+        <span class="chip">&#x1F1F3;&#x1F1FF; NZ-wide</span>
+        <span class="chip">&#x1F91D; No middleman</span>
+        <span class="chip">&#x1F4F8; Photo galleries</span>
+        <span class="chip">&#x267B;&#xFE0F; Scrap &amp; parts friendly</span>
+      </div>
+    </div>
+
+    <!-- Information -->
+    <div class="sec">
+      <h2 class="sectitle">Information</h2>
+      <div class="infolist">
+        <div class="inforow"><span class="k">Marketplace</span><span>CarGone NZ</span></div>
+        <div class="inforow"><span class="k">Coverage</span><span>All of New Zealand</span></div>
+        <div class="inforow"><span class="k">Listing cost</span><span>Free</span></div>
+        <div class="inforow"><span class="k">Listing types</span><span>Sell &middot; Scrap &middot; Parts</span></div>
+        <div class="inforow"><span class="k">Contact</span><span style="color:var(--grn);cursor:pointer" id="info-list-link">List a car or enquire on a listing</span></div>
+      </div>
+    </div>
+
   </div>
   <footer>
     <div class="footlinks">
@@ -183,7 +282,7 @@
     <button class="btn btno" id="admin-back" style="font-size:.82rem;padding:.4rem 1rem">&larr; Back</button>
     <button class="btn btno" id="admin-logout" style="font-size:.82rem;padding:.4rem 1rem">Logout</button>
   </div>
-  <div class="sec">
+  <div class="wrap" style="padding-top:2rem;padding-bottom:3rem">
     <div class="tabbar">
       <button class="tabbtn active" id="tbl">&#x1F697; Listings</button>
       <button class="tabbtn" id="tbe">&#x1F4AC; Enquiries</button>
@@ -258,7 +357,10 @@
   <div class="modal" style="max-width:760px">
     <div class="modalhd">
       <div class="modalttl" id="detail-title">Car Details</div>
-      <button class="modalx" id="detail-close">&times;</button>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <button class="sharebtn" id="detail-share" title="Share this listing">&#x2197;</button>
+        <button class="modalx" id="detail-close">&times;</button>
+      </div>
     </div>
     <div class="modalbdy" id="detail-body"></div>
   </div>
@@ -306,7 +408,7 @@
         <label class="flbl">Password</label>
         <input class="finp" id="admin-pass" type="password" placeholder="Enter admin password"/>
       </div>
-      <div id="login-err" style="color:#f87171;font-size:.83rem;display:none">Incorrect password. Try again.</div>
+      <div id="login-err" style="color:#b91c1c;font-size:.83rem;display:none">Incorrect password. Try again.</div>
     </div>
     <div class="modalft">
       <button class="btn btno" id="login-cancel">Cancel</button>
@@ -319,12 +421,15 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   var BASE = 'https://agent-e-286fe43d.base44.app/functions/cargoneNZ';
-  var ADMIN_PW = 'CarGoneAdmin2026!';
+  // SHA-256 hash of the admin password — the password itself is never stored in this file
+  var ADMIN_HASH = '14258cfc755ed10b61ec000d4bd26708897ed4c47eca3cbaab65478e624b2614';
   var allListings = [];
   var currentId = null;
   var photoUrls = [];
   var partIdx = 0;
+  var galIdx = 0;
   var condMap = { Excellent:'bgrn', Good:'bgrn', Fair:'bylw', Poor:'bred', 'Parts Only':'bgry' };
+  var pendingListingId = new URLSearchParams(window.location.search).get('listing');
 
   function g(id) { return document.getElementById(id); }
   function val(id) { var e = g(id); return e ? e.value.trim() : ''; }
@@ -346,6 +451,29 @@ document.addEventListener('DOMContentLoaded', function() {
     if (body) opts.body = JSON.stringify(body);
     return fetch(BASE + '?' + qs, opts).then(function(r) { return r.json(); });
   }
+
+  // ── SHARE ──
+  function listingUrl(id) {
+    return window.location.origin + window.location.pathname + '?listing=' + encodeURIComponent(id);
+  }
+  function shareUrl(url, title) {
+    if (navigator.share) {
+      navigator.share({ title: title, url: url }).catch(function(){});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function() { showToast('Link copied to clipboard!'); });
+    } else {
+      window.prompt('Copy this link:', url);
+    }
+  }
+  g('site-share').addEventListener('click', function() {
+    shareUrl(window.location.origin + window.location.pathname, 'CarGone NZ — Sell, Scrap or Part Out Your Car');
+  });
+  g('detail-share').addEventListener('click', function() {
+    if (!currentId) return;
+    var l = allListings.find(function(x) { return x.id === currentId; });
+    var title = l ? [l.year, l.make, l.model].filter(Boolean).join(' ') + ' — CarGone NZ' : 'CarGone NZ Listing';
+    shareUrl(listingUrl(currentId), title);
+  });
 
   // Year dropdown
   var syr = g('syr');
@@ -373,6 +501,7 @@ document.addEventListener('DOMContentLoaded', function() {
   g('foot-admin').addEventListener('click', function() { g('admin-pass').value=''; g('login-err').style.display='none'; openModal('m-login'); });
   g('admin-back').addEventListener('click', function() { showPage('page-home'); });
   g('admin-logout').addEventListener('click', function() { showPage('page-home'); });
+  g('info-list-link').addEventListener('click', function() { openModal('m-sell'); });
 
   // ── SELL MODAL ──
   g('sell-close').addEventListener('click', function() { closeModal('m-sell'); });
@@ -462,13 +591,25 @@ document.addEventListener('DOMContentLoaded', function() {
     return 'Parts Available';
   }
 
+  // Active listings first, then sold; Removed listings stay hidden from the public site
+  function publicListings() {
+    return allListings
+      .filter(function(l) { return l.status === 'Active' || l.status === 'Sold'; })
+      .sort(function(a, b) { return (a.status === 'Sold' ? 1 : 0) - (b.status === 'Sold' ? 1 : 0); });
+  }
+
   function loadListings() {
     g('listings-container').innerHTML = '<div class="spinner"></div>';
     api({ action:'list', entity:'CarListing' }).then(function(data) {
       allListings = Array.isArray(data) ? data : (data.items || []);
       var active = allListings.filter(function(l) { return l.status === 'Active'; });
       g('stat-count').textContent = String(active.length);
-      renderListings(active);
+      renderListings(publicListings());
+      if (pendingListingId) {
+        var target = allListings.find(function(l) { return l.id === pendingListingId; });
+        pendingListingId = null;
+        if (target) openDetail(target.id);
+      }
     }).catch(function(e) {
       g('listings-container').innerHTML = '<div class="emptystate"><div class="emptyico">!</div><h3>Could not load listings</h3><p style="color:var(--g4)">' + e.message + '</p></div>';
     });
@@ -479,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function() {
     c.innerHTML = '';
     if (!list.length) {
       var empty = document.createElement('div'); empty.className = 'emptystate';
-      var ico = document.createElement('div'); ico.className = 'emptyico'; ico.textContent = 'Car';
+      var ico = document.createElement('div'); ico.className = 'emptyico'; ico.textContent = '🚗';
       var h3 = document.createElement('h3'); h3.textContent = 'No listings yet';
       var p = document.createElement('p'); p.style.color = 'var(--g4)'; p.textContent = 'Be the first to list your car!';
       var btn = document.createElement('button'); btn.className = 'btn btng'; btn.style.marginTop = '1.5rem'; btn.textContent = '+ List My Car';
@@ -490,11 +631,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var grid = document.createElement('div'); grid.className = 'cardgrid';
     list.forEach(function(listing) {
       var lid = listing.id;
+      var isSold = listing.status === 'Sold';
       var card = document.createElement('div'); card.className = 'carcard';
       var imgDiv = document.createElement('div'); imgDiv.className = 'cardimg';
       if (listing.photos && listing.photos.length) {
-        var img = document.createElement('img'); img.src = listing.photos[0]; img.loading = 'lazy'; imgDiv.appendChild(img);
-      } else { imgDiv.textContent = 'Car'; }
+        var img = document.createElement('img'); img.src = listing.photos[0]; img.loading = 'lazy';
+        img.alt = [listing.year, listing.make, listing.model].filter(Boolean).join(' ');
+        imgDiv.appendChild(img);
+      } else { imgDiv.textContent = '🚗'; }
+      if (isSold) {
+        var sw = document.createElement('div'); sw.className = 'soldwrap';
+        var ss = document.createElement('span'); ss.textContent = 'SOLD'; sw.appendChild(ss);
+        imgDiv.appendChild(sw);
+      }
       var body = document.createElement('div'); body.className = 'cardbody';
       var title = document.createElement('div'); title.className = 'cardtitle';
       title.textContent = [listing.year, listing.make, listing.model].filter(Boolean).join(' ');
@@ -503,12 +652,18 @@ document.addEventListener('DOMContentLoaded', function() {
       var badges = document.createElement('div'); badges.className = 'badgeset';
       var b = document.createElement('span'); b.className = 'bdg ' + (condMap[listing.condition]||'bgry');
       b.textContent = listing.condition || ''; badges.appendChild(b);
-      var price = document.createElement('div'); price.className = 'cardprice'; price.textContent = priceLbl(listing);
+      var price = document.createElement('div'); price.className = 'cardprice' + (isSold ? ' sold' : '');
+      price.textContent = priceLbl(listing);
       var foot = document.createElement('div'); foot.className = 'cardfoot';
-      var loc = document.createElement('div'); loc.className = 'cardloc'; loc.textContent = 'Location: ' + (listing.location||'NZ');
-      var enqBtn = document.createElement('button'); enqBtn.className = 'btn btng';
-      enqBtn.style.fontSize = '.77rem'; enqBtn.style.padding = '.33rem .8rem'; enqBtn.textContent = 'Enquire';
-      (function(id) { enqBtn.addEventListener('click', function(e) { e.stopPropagation(); openContact(id); }); })(lid);
+      var loc = document.createElement('div'); loc.className = 'cardloc'; loc.textContent = '📍 ' + (listing.location||'NZ');
+      var enqBtn = document.createElement('button');
+      enqBtn.style.fontSize = '.77rem'; enqBtn.style.padding = '.33rem .9rem';
+      if (isSold) {
+        enqBtn.className = 'btn btno'; enqBtn.textContent = 'Sold'; enqBtn.disabled = true; enqBtn.style.cursor = 'default';
+      } else {
+        enqBtn.className = 'btn btng'; enqBtn.textContent = 'Enquire';
+        (function(id) { enqBtn.addEventListener('click', function(e) { e.stopPropagation(); openContact(id); }); })(lid);
+      }
       foot.appendChild(loc); foot.appendChild(enqBtn);
       body.appendChild(title); body.appendChild(sub); body.appendChild(badges); body.appendChild(price); body.appendChild(foot);
       card.appendChild(imgDiv); card.appendChild(body);
@@ -521,12 +676,14 @@ document.addEventListener('DOMContentLoaded', function() {
   g('f-type').addEventListener('change', filterListings);
   g('f-cond').addEventListener('change', filterListings);
   g('f-loc').addEventListener('change', filterListings);
+  g('f-sold').addEventListener('change', filterListings);
   g('f-q').addEventListener('input', filterListings);
 
   function filterListings() {
-    var t = val('f-type'), cond = val('f-cond'), loc = val('f-loc'), q = g('f-q').value.toLowerCase();
-    renderListings(allListings.filter(function(x) {
-      if (x.status !== 'Active') return false;
+    var t = val('f-type'), cond = val('f-cond'), loc = val('f-loc'), sold = val('f-sold'), q = g('f-q').value.toLowerCase();
+    renderListings(publicListings().filter(function(x) {
+      if (sold === 'hide' && x.status === 'Sold') return false;
+      if (sold === 'only' && x.status !== 'Sold') return false;
       if (t && x.listing_type !== t) return false;
       if (cond && x.condition !== cond) return false;
       if (loc && x.location !== loc) return false;
@@ -539,18 +696,79 @@ document.addEventListener('DOMContentLoaded', function() {
   g('detail-close').addEventListener('click', function() { closeModal('m-detail'); });
   g('m-detail').addEventListener('click', function(e) { if (e.target === this) closeModal('m-detail'); });
 
+  function buildGallery(l, isSold) {
+    var photos = (l.photos && l.photos.length) ? l.photos : [];
+    var galWrap = document.createElement('div');
+    var gal = document.createElement('div'); gal.className = 'gal';
+    var altBase = [l.year, l.make, l.model].filter(Boolean).join(' ');
+    galIdx = 0;
+
+    var mainImg = null;
+    if (photos.length) {
+      mainImg = document.createElement('img'); mainImg.src = photos[0]; mainImg.alt = altBase + ' — photo 1';
+      gal.appendChild(mainImg);
+    } else {
+      var ni = document.createElement('div'); ni.className = 'noimg'; ni.textContent = '🚗'; gal.appendChild(ni);
+    }
+    if (isSold) {
+      var sw = document.createElement('div'); sw.className = 'soldwrap';
+      var ss = document.createElement('span'); ss.textContent = 'SOLD'; sw.appendChild(ss);
+      gal.appendChild(sw);
+    }
+
+    var thumbs = document.createElement('div'); thumbs.className = 'galthumbs';
+    function showPhoto(i) {
+      if (!photos.length) return;
+      galIdx = (i + photos.length) % photos.length;
+      mainImg.src = photos[galIdx];
+      mainImg.alt = altBase + ' — photo ' + (galIdx + 1);
+      pill.textContent = (galIdx + 1) + ' / ' + photos.length;
+      Array.from(thumbs.children).forEach(function(t, j) { t.classList.toggle('active', j === galIdx); });
+    }
+
+    var pill = document.createElement('div');
+    if (photos.length > 1) {
+      var prev = document.createElement('button'); prev.className = 'galarrow galprev'; prev.innerHTML = '&#8249;';
+      prev.addEventListener('click', function(e) { e.stopPropagation(); showPhoto(galIdx - 1); });
+      var next = document.createElement('button'); next.className = 'galarrow galnext'; next.innerHTML = '&#8250;';
+      next.addEventListener('click', function(e) { e.stopPropagation(); showPhoto(galIdx + 1); });
+      pill.className = 'galpill'; pill.textContent = '1 / ' + photos.length;
+      gal.appendChild(prev); gal.appendChild(next); gal.appendChild(pill);
+
+      photos.forEach(function(p, i) {
+        var ti = document.createElement('img'); ti.src = p; ti.alt = altBase + ' thumbnail ' + (i + 1);
+        if (i === 0) ti.className = 'active';
+        ti.addEventListener('click', function() { showPhoto(i); });
+        thumbs.appendChild(ti);
+      });
+
+      // swipe support
+      var sx = null;
+      gal.addEventListener('touchstart', function(e) { sx = e.touches[0].clientX; });
+      gal.addEventListener('touchend', function(e) {
+        if (sx === null) return;
+        var dx = e.changedTouches[0].clientX - sx;
+        if (Math.abs(dx) > 40) showPhoto(galIdx + (dx < 0 ? 1 : -1));
+        sx = null;
+      });
+    }
+
+    galWrap.appendChild(gal);
+    if (photos.length > 1) galWrap.appendChild(thumbs);
+    return galWrap;
+  }
+
   function openDetail(id) {
     currentId = id;
     openModal('m-detail');
     var body = g('detail-body'); body.innerHTML = '<div class="spinner"></div>';
     var l = allListings.find(function(x) { return x.id === id; }); if (!l) return;
+    var isSold = l.status === 'Sold';
     g('detail-title').textContent = [l.year, l.make, l.model].filter(Boolean).join(' ');
     body.innerHTML = '';
-    if (l.photos && l.photos.length) {
-      var pr = document.createElement('div'); pr.style.cssText = 'display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem';
-      l.photos.forEach(function(p) { var pi = document.createElement('img'); pi.src = p; pi.style.cssText = 'height:160px;border-radius:10px;object-fit:cover;flex:1;min-width:130px'; pr.appendChild(pi); });
-      body.appendChild(pr);
-    }
+
+    body.appendChild(buildGallery(l, isSold));
+
     var dg = document.createElement('div'); dg.className = 'detgrid';
     [['Make',l.make],['Model',l.model],['Year',l.year],['Odometer',l.odometer?Number(l.odometer).toLocaleString()+' km':'N/A'],['Condition',l.condition],['Location',l.location],['Listing Type',l.listing_type],['Price',priceLbl(l)]].forEach(function(f) {
       var d = document.createElement('div'); d.className = 'detitem';
@@ -579,9 +797,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }).catch(function(){});
     }
-    var cb = document.createElement('button'); cb.className = 'btn btng'; cb.style.cssText = 'width:100%;margin-top:1.5rem'; cb.textContent = 'Contact Seller';
-    (function(cid) { cb.addEventListener('click', function() { closeModal('m-detail'); openContact(cid); }); })(id);
-    body.appendChild(cb);
+    if (isSold) {
+      var sn = document.createElement('div'); sn.className = 'soldnote';
+      sn.textContent = 'This car has been sold.';
+      body.appendChild(sn);
+    } else {
+      var cb = document.createElement('button'); cb.className = 'btn btng'; cb.style.cssText = 'width:100%;margin-top:1.5rem;justify-content:center'; cb.textContent = 'Contact Seller';
+      (function(cid) { cb.addEventListener('click', function() { closeModal('m-detail'); openContact(cid); }); })(id);
+      body.appendChild(cb);
+    }
   }
 
   // ── CONTACT MODAL ──
@@ -613,9 +837,17 @@ document.addEventListener('DOMContentLoaded', function() {
   g('login-cancel').addEventListener('click', function() { closeModal('m-login'); });
   g('m-login').addEventListener('click', function(e) { if (e.target === this) closeModal('m-login'); });
   g('admin-pass').addEventListener('keydown', function(e) { if (e.key === 'Enter') g('login-submit').click(); });
+  function sha256Hex(str) {
+    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str)).then(function(buf) {
+      return Array.from(new Uint8Array(buf)).map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+    });
+  }
   g('login-submit').addEventListener('click', function() {
-    if (g('admin-pass').value === ADMIN_PW) { closeModal('m-login'); showPage('page-admin'); loadAdminListings(); }
-    else { g('login-err').style.display = 'block'; }
+    if (!window.crypto || !crypto.subtle) { showToast('Admin login requires a secure (https) connection'); return; }
+    sha256Hex(g('admin-pass').value).then(function(h) {
+      if (h === ADMIN_HASH) { closeModal('m-login'); showPage('page-admin'); loadAdminListings(); }
+      else { g('login-err').style.display = 'block'; }
+    });
   });
 
   // ── ADMIN TABS ──
@@ -643,7 +875,7 @@ document.addEventListener('DOMContentLoaded', function() {
         function td(html) { var t = document.createElement('td'); t.innerHTML = html; tr.appendChild(t); return t; }
         td([l.year,l.make,l.model].filter(Boolean).join(' ') + '<br/><small style="color:var(--g6)">' + (l.location||'') + '</small>');
         td((l.seller_name||'') + '<br/><small style="color:var(--g6)">' + (l.seller_email||'') + '</small>');
-        td(l.listing_type||''); 
+        td(l.listing_type||'');
         td('<span class="bdg '+(condMap[l.condition]||'bgry')+'">'+(l.condition||'')+'</span>');
         td(l.sale_price ? 'NZD $'+Number(l.sale_price).toLocaleString() : l.listing_type==='Get rid of it (free/scrap)' ? 'Free' : 'Parts');
         td('<span class="bdg '+(sc[l.status]||'bgry')+'">'+(l.status||'Active')+'</span>');
@@ -657,7 +889,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (l.status !== 'Active')  mkBtn('abg','Restore',   l.id, 'Active');
         tr.appendChild(atd); tb.appendChild(tr);
       });
-    }).catch(function(e) { tb.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#f87171;padding:2rem">Error: '+e.message+'</td></tr>'; });
+    }).catch(function(e) { tb.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#b91c1c;padding:2rem">Error: '+e.message+'</td></tr>'; });
   }
 
   function setListingStatus(id, status) {
@@ -694,7 +926,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (enq.status !== 'Closed')    mkBtn('abr','Close',     enq.id, 'Closed');
         tr.appendChild(atd); tb.appendChild(tr);
       });
-    }).catch(function() { tb.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#f87171;padding:2rem">Failed.</td></tr>'; });
+    }).catch(function() { tb.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#b91c1c;padding:2rem">Failed.</td></tr>'; });
   }
 
   function setEnqStatus(id, status) {
