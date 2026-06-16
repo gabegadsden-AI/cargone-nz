@@ -182,7 +182,7 @@
 (function(){
   var BASE='https://agent-e-286fe43d.base44.app/functions/cargoneNZ';
   var ADMIN_PW='CarGoneAdmin2026!';
-  var allListings=[],currentId=null,selectedFiles=[],uploadedPhotoUrls=[],partIdx=0;
+  var allListings=[],currentId=null,selectedFiles=[],partIdx=0;
   var condMap={Excellent:'bgrn',Good:'bgrn',Fair:'bylw',Poor:'bred','Parts Only':'bgry'};
 
   function api(p,method,body){
@@ -192,35 +192,38 @@
     return fetch(BASE+'?'+qs,opts).then(function(r){return r.json();}).then(function(d){if(d&&d.error)throw new Error(d.error);return d;});
   }
 
-  // Upload photo to server storage — returns a CDN URL
-  async function uploadPhoto(file) {
+  // Upload photo via ImgBB free API (no auth needed, free tier, permanent hosting)
+  var IMGBB_KEY = 'da5f1f8282e5afb0f1ec8566a89d88ce';
+  function uploadPhoto(file) {
     return new Promise(function(resolve, reject) {
-      // First compress the image
       var reader = new FileReader();
       reader.onload = function(e) {
         var img = new Image();
         img.onload = function() {
-          var MAX = 900, w = img.width, h = img.height;
+          // Compress to max 1000px, 70% quality
+          var MAX = 1000, w = img.width, h = img.height;
           if(w > MAX){h = Math.round(h*MAX/w); w = MAX;}
           if(h > MAX){w = Math.round(w*MAX/h); h = MAX;}
           var c = document.createElement('canvas');
           c.width = w; c.height = h;
           c.getContext('2d').drawImage(img, 0, 0, w, h);
-          var dataUrl = c.toDataURL('image/jpeg', 0.65);
-          // Send to function to upload to file storage
-          fetch(BASE + '?action=upload-photo', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({dataUrl: dataUrl, filename: file.name || 'photo.jpg'})
-          }).then(function(r){return r.json();}).then(function(d){
-            if(d.error) reject(new Error(d.error));
-            else resolve(d.url);
-          }).catch(reject);
+          var dataUrl = c.toDataURL('image/jpeg', 0.70);
+          var base64 = dataUrl.split(',')[1];
+          // Upload to ImgBB
+          var fd = new FormData();
+          fd.append('key', IMGBB_KEY);
+          fd.append('image', base64);
+          fetch('https://api.imgbb.com/1/upload', { method: 'POST', body: fd })
+            .then(function(r){ return r.json(); })
+            .then(function(d){
+              if(d.success) resolve(d.data.url);
+              else reject(new Error('Photo upload failed: ' + (d.error && d.error.message || 'Unknown')));
+            }).catch(reject);
         };
-        img.onerror = function(){reject(new Error('Invalid image'));};
+        img.onerror = function(){ reject(new Error('Invalid image')); };
         img.src = e.target.result;
       };
-      reader.onerror = function(){reject(new Error('Cannot read file'));};
+      reader.onerror = function(){ reject(new Error('Cannot read file')); };
       reader.readAsDataURL(file);
     });
   }
@@ -246,45 +249,22 @@
   el('stp').addEventListener('change',function(){el('price-wrap').style.display=this.value==='Sell the car'?'flex':'none';el('parts-wrap').style.display=this.value==='Sell the parts'?'block':'none';});
   el('add-part-btn').addEventListener('click',function(){var i=partIdx++;var row=document.createElement('div');row.className='partrow';row.id='pr'+i;var g1=document.createElement('div');g1.className='fgrp';var l1=document.createElement('label');l1.className='flbl';l1.textContent='Part Name';var i1=document.createElement('input');i1.className='finp';i1.id='pn'+i;i1.placeholder='e.g. Engine, Gearbox';g1.appendChild(l1);g1.appendChild(i1);var g2=document.createElement('div');g2.className='fgrp';var l2=document.createElement('label');l2.className='flbl';l2.textContent='Price (NZD)';var i2=document.createElement('input');i2.className='finp';i2.type='number';i2.id='pp'+i;i2.placeholder='500';g2.appendChild(l2);g2.appendChild(i2);var rb=document.createElement('button');rb.className='btnrm';rb.type='button';rb.textContent='X';rb.addEventListener('click',function(){row.remove();});row.appendChild(g1);row.appendChild(g2);row.appendChild(rb);el('parts-list').appendChild(row);});
   function collectParts(){return Array.from(document.querySelectorAll('#parts-list .partrow')).map(function(r){var i=r.id.replace('pr','');return{part_name:el('pn'+i)?el('pn'+i).value:'',price:el('pp'+i)?parseFloat(el('pp'+i).value)||0:0,status:'Available'};}).filter(function(p){return!!p.part_name;});}
-
   el('photo-drop').addEventListener('click',function(){el('photo-input').click();});
-  el('photo-input').addEventListener('change',function(){
-    var newFiles = Array.from(this.files);
-    selectedFiles = selectedFiles.concat(newFiles).slice(0,5);
-    renderPreviews(); this.value='';
-  });
-  function renderPreviews(){
-    var prev=el('photo-previews');prev.innerHTML='';
-    selectedFiles.forEach(function(f,idx){
-      var url=URL.createObjectURL(f);
-      var wrap=document.createElement('div');wrap.className='thumbwrap';
-      var img=document.createElement('img');img.src=url;img.className='photothumb';
-      var del=document.createElement('button');del.className='thumbdel';del.textContent='×';
-      (function(i){del.addEventListener('click',function(e){e.stopPropagation();selectedFiles.splice(i,1);renderPreviews();});})(idx);
-      wrap.appendChild(img);wrap.appendChild(del);prev.appendChild(wrap);
-    });
-    el('photo-label').textContent=selectedFiles.length?selectedFiles.length+' photo(s) selected — click to add more':'Click to add photos (up to 5)';
-  }
+  el('photo-input').addEventListener('change',function(){selectedFiles=selectedFiles.concat(Array.from(this.files)).slice(0,5);renderPreviews();this.value='';});
+  function renderPreviews(){var prev=el('photo-previews');prev.innerHTML='';selectedFiles.forEach(function(f,idx){var url=URL.createObjectURL(f);var wrap=document.createElement('div');wrap.className='thumbwrap';var img=document.createElement('img');img.src=url;img.className='photothumb';var del=document.createElement('button');del.className='thumbdel';del.textContent='×';(function(i){del.addEventListener('click',function(e){e.stopPropagation();selectedFiles.splice(i,1);renderPreviews();});})(idx);wrap.appendChild(img);wrap.appendChild(del);prev.appendChild(wrap);});el('photo-label').textContent=selectedFiles.length?selectedFiles.length+' photo(s) selected — click to add more':'Click to add photos (up to 5)';}
 
   el('submit-btn').addEventListener('click',async function(){
     if(!val('sn')||!val('sp')||!val('se')||!val('sl')||!val('smk')||!val('smo')||!val('syr')||!val('sco')||!val('stp')){showToast('Please fill in all required fields',true);return;}
-    var btn=this; btn.disabled=true; btn.textContent='Processing...';
+    var btn=this;btn.disabled=true;btn.textContent='Processing...';
     try{
-      // Upload photos to file storage first, get back CDN URLs
       var photoUrls=[];
       for(var i=0;i<selectedFiles.length;i++){
         btn.textContent='Uploading photo '+(i+1)+' of '+selectedFiles.length+'...';
-        var photoUrl = await uploadPhoto(selectedFiles[i]);
-        photoUrls.push(photoUrl);
+        var u=await uploadPhoto(selectedFiles[i]);
+        photoUrls.push(u);
       }
       btn.textContent='Submitting listing...';
-      var listing=await api({action:'create',entity:'CarListing'},'POST',{
-        seller_name:val('sn'),seller_phone:val('sp'),seller_email:val('se'),location:val('sl'),
-        make:val('smk'),model:val('smo'),year:parseInt(val('syr')),
-        odometer:parseInt(el('sod').value)||null,condition:val('sco'),listing_type:val('stp'),
-        sale_price:parseFloat(el('spr').value)||null,description:val('sds'),
-        photos:photoUrls,status:'Active'
-      });
+      var listing=await api({action:'create',entity:'CarListing'},'POST',{seller_name:val('sn'),seller_phone:val('sp'),seller_email:val('se'),location:val('sl'),make:val('smk'),model:val('smo'),year:parseInt(val('syr')),odometer:parseInt(el('sod').value)||null,condition:val('sco'),listing_type:val('stp'),sale_price:parseFloat(el('spr').value)||null,description:val('sds'),photos:photoUrls,status:'Active'});
       if(val('stp')==='Sell the parts'){var parts=collectParts();for(var j=0;j<parts.length;j++){await api({action:'create',entity:'CarPart'},'POST',Object.assign({},parts[j],{car_listing_id:listing.id}));}}
       closeModal('m-sell');showToast('Your listing is live! 🎉');
       ['sn','sp','se','smo','sod','spr','sds'].forEach(function(id){if(el(id))el(id).value='';});
