@@ -277,7 +277,7 @@
 
 <script>
 (function() {
-  var BASE = 'https://agent-e-286fe43d.base44.app/functions/cargoneNZ';
+  var BASE = 'BASEURL';
   var ADMIN_PW = 'CarGoneAdmin2026!';
   var allListings = [];
   var currentId = null;
@@ -299,13 +299,29 @@
   }
 
   // ---- UPLOAD a single File to CDN, returns URL string ----
+  // Compress and convert image to base64 data URL (stored directly in entity)
   async function uploadFile(file) {
-    var fd = new FormData();
-    fd.append('file', file);
-    var res = await fetch(BASE + '?action=upload', { method: 'POST', body: fd });
-    var data = await res.json();
-    if (data.error) throw new Error(data.error);
-    return data.file_url;
+    return new Promise(function(resolve, reject) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var img = new Image();
+        img.onload = function() {
+          var canvas = document.createElement('canvas');
+          var MAX = 1200;
+          var w = img.width, h = img.height;
+          if (w > MAX) { h = Math.round(h * MAX / w); w = MAX; }
+          if (h > MAX) { w = Math.round(w * MAX / h); h = MAX; }
+          canvas.width = w; canvas.height = h;
+          var ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, w, h);
+          resolve(canvas.toDataURL('image/jpeg', 0.75));
+        };
+        img.onerror = function() { reject(new Error('Invalid image file')); };
+        img.src = e.target.result;
+      };
+      reader.onerror = function() { reject(new Error('Could not read file')); };
+      reader.readAsDataURL(file);
+    });
   }
 
   // ---- HELPERS ----
@@ -420,9 +436,9 @@
     var drop = el('photo-drop');
     drop.classList.add('uploading');
     prog.style.display = 'block';
+    prog.textContent = 'Processing photos...';
     var urls = [];
     for (var i = 0; i < selectedFiles.length; i++) {
-      prog.textContent = 'Uploading photo ' + (i+1) + ' of ' + selectedFiles.length + '...';
       var url = await uploadFile(selectedFiles[i]);
       urls.push(url);
     }
@@ -436,7 +452,7 @@
     if (!val('sn')||!val('sp')||!val('se')||!val('sl')||!val('smk')||!val('smo')||!val('syr')||!val('sco')||!val('stp')) {
       showToast('Please fill in all required fields', true); return;
     }
-    var btn = this; btn.disabled = true; btn.textContent = 'Uploading photos...';
+    var btn = this; btn.disabled = true; btn.textContent = 'Processing...';
     try {
       // 1. Upload photos first, get back CDN URLs
       var photoUrls = await uploadAllPhotos();
