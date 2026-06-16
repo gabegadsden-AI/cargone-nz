@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CarGone NZ</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <style>
@@ -31,7 +30,6 @@
     .sectitle{font-size:1.6rem;font-weight:800;margin-bottom:1.75rem}.sectitle span{color:var(--gl)}
     .filterbar{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem;padding:1.25rem;background:var(--drk);border-radius:12px;border:1px solid #1f1f1f}
     .filterbar select,.filterbar input{background:#0a0a0a;border:1.5px solid #2a2a2a;color:var(--w);padding:.55rem 1rem;border-radius:8px;font-size:.88rem;font-family:inherit;flex:1;min-width:140px;cursor:pointer}
-    .filterbar select:focus,.filterbar input:focus{outline:none;border-color:var(--grn)}
     .cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
     .carcard{background:var(--drk);border:1px solid #1f1f1f;border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s;cursor:pointer}
     .carcard:hover{transform:translateY(-3px);border-color:var(--grn)}
@@ -71,14 +69,12 @@
     .btnrm{background:#dc262620;border:1px solid #dc262640;color:#f87171;padding:.6rem .9rem;border-radius:8px;cursor:pointer;font-family:inherit;font-size:.9rem}
     .btnadd{background:#16a34a18;border:1.5px dashed #16a34a50;color:var(--gl);padding:.65rem 1rem;border-radius:8px;cursor:pointer;font-size:.88rem;font-weight:600;width:100%;font-family:inherit}
     .btnadd:hover{background:#16a34a28}
-    .photodrop{border:2px dashed #2a2a2a;border-radius:10px;padding:2rem;text-align:center;cursor:pointer;transition:border-color .2s;margin-top:.5rem;position:relative}
+    .photodrop{border:2px dashed #2a2a2a;border-radius:10px;padding:2rem;text-align:center;cursor:pointer;transition:border-color .2s;margin-top:.5rem}
     .photodrop:hover{border-color:var(--grn)}
-    .photodrop.uploading{border-color:var(--grn);opacity:.7;pointer-events:none}
-    .uploadprog{font-size:.82rem;color:var(--gl);margin-top:.5rem}
     .photoprev{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem}
-    .photothumb{width:80px;height:60px;object-fit:cover;border-radius:7px;border:1px solid #2a2a2a;position:relative}
     .thumbwrap{position:relative;display:inline-block}
-    .thumbdel{position:absolute;top:-5px;right:-5px;background:#dc2626;border:none;color:#fff;border-radius:50%;width:18px;height:18px;font-size:.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+    .photothumb{width:80px;height:60px;object-fit:cover;border-radius:7px;border:1px solid #2a2a2a}
+    .thumbdel{position:absolute;top:-5px;right:-5px;background:#dc2626;border:none;color:#fff;border-radius:50%;width:18px;height:18px;font-size:.7rem;cursor:pointer;line-height:1}
     .howsec{background:var(--drk);padding:5rem 2rem;border-top:1px solid #1a1a1a}
     .howgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;max-width:960px;margin:2.5rem auto 0}
     .howstep{text-align:center}
@@ -92,7 +88,6 @@
     .partname{font-weight:600;font-size:.88rem}.partprice{color:var(--gl);font-weight:700}
     .successbox{background:#16a34a18;border:1px solid #16a34a40;border-radius:12px;padding:2rem;text-align:center}
     .successbox h3{color:var(--gl);font-size:1.1rem;margin-bottom:.4rem}
-    .successbox p{color:var(--g4);font-size:.88rem}
     .adminbar{background:var(--drk);border-bottom:1px solid #1a1a1a;padding:1rem 2rem;display:flex;align-items:center;gap:1rem}
     .adminpill{background:var(--gd);color:#fff;padding:.2rem .75rem;border-radius:100px;font-size:.72rem;font-weight:700;text-transform:uppercase}
     .tabbar{display:flex;gap:.3rem;background:#0a0a0a;padding:.4rem;border-radius:10px;margin-bottom:2rem}
@@ -107,10 +102,9 @@
     .abr{background:#dc262620;border:1px solid #dc262640;color:#f87171;padding:.3rem .75rem;border-radius:7px;cursor:pointer;font-size:.77rem;font-weight:700;font-family:inherit}
     .emptystate{text-align:center;padding:5rem 2rem}
     .emptyico{font-size:4rem;margin-bottom:1rem}
-    .emptystate h3{color:var(--g4);font-size:1.1rem;margin-bottom:.5rem}
     footer{background:var(--drk);border-top:1px solid #1a1a1a;padding:3rem 2rem;text-align:center}
     .footlinks{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
-    .footlinks button{background:none;border:none;color:var(--g4);font-size:.85rem;cursor:pointer;font-family:inherit;transition:color .2s}
+    .footlinks button{background:none;border:none;color:var(--g4);font-size:.85rem;cursor:pointer;font-family:inherit}
     .footlinks button:hover{color:var(--w)}
     footer p{color:var(--g6);font-size:.82rem}
     .page{display:none}.page.active{display:block}
@@ -119,7 +113,6 @@
     .toast{position:fixed;bottom:2rem;right:2rem;background:#15803d;color:#fff;padding:1rem 1.5rem;border-radius:12px;font-weight:600;font-size:.88rem;z-index:9999;animation:tfu .3s ease;box-shadow:0 8px 30px rgba(0,0,0,.6)}
     .toasterr{background:#dc2626}
     @keyframes tfu{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}
-    ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--drk)}::-webkit-scrollbar-thumb{background:#2a2a2a;border-radius:10px}
     @media(max-width:620px){.fg2{grid-template-columns:1fr}.partrow{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat{border-right:none;border-bottom:1px solid #222}.hidemob{display:none}}
   </style>
 </head>
@@ -133,7 +126,6 @@
     <button class="nb" style="font-size:.8rem;color:var(--g6)" onclick="openAdminLogin()">Admin</button>
   </div>
 </nav>
-
 <div class="page active" id="page-home">
   <div class="hero">
     <div class="pill">&#x1F1F3;&#x1F1FF; New Zealand's Unwanted Car Marketplace</div>
@@ -174,589 +166,89 @@
     <p>&copy; 2026 CarGone NZ. All rights reserved.</p>
   </footer>
 </div>
-
 <div class="page" id="page-admin">
-  <div class="adminbar"><span style="font-weight:800">CarGone NZ</span><span class="adminpill">Admin</span><div style="flex:1"></div><button class="btn btno" onclick="goHome()" style="font-size:.82rem;padding:.4rem 1rem">&larr; Back</button><button class="btn btno" onclick="goHome()" style="font-size:.82rem;padding:.4rem 1rem">Logout</button></div>
+  <div class="adminbar"><span style="font-weight:800">CarGone NZ</span><span class="adminpill">Admin</span><div style="flex:1"></div><button class="btn btno" onclick="goHome()" style="font-size:.82rem;padding:.4rem 1rem">&larr; Back</button></div>
   <div class="sec">
     <div class="tabbar"><button class="tabbtn active" id="tbl" onclick="switchTab('listings')">&#x1F697; Listings</button><button class="tabbtn" id="tbe" onclick="switchTab('enquiries')">&#x1F4AC; Enquiries</button></div>
-    <div id="tab-listings"><h2 class="sectitle">All <span>Listings</span></h2><div class="tablewrap"><table><thead><tr><th>Car</th><th>Seller</th><th>Type</th><th>Condition</th><th>Price</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-listings-body"><tr><td colspan="7" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr></tbody></table></div></div>
-    <div id="tab-enquiries" style="display:none"><h2 class="sectitle">Buyer <span>Enquiries</span></h2><div class="tablewrap"><table><thead><tr><th>Buyer</th><th>Interest</th><th>Message</th><th>Contact</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-enquiries-body"><tr><td colspan="6" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr></tbody></table></div></div>
+    <div id="tab-listings"><h2 class="sectitle">All <span>Listings</span></h2><div class="tablewrap"><table><thead><tr><th>Car</th><th>Seller</th><th>Type</th><th>Condition</th><th>Price</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-listings-body"></tbody></table></div></div>
+    <div id="tab-enquiries" style="display:none"><h2 class="sectitle">Buyer <span>Enquiries</span></h2><div class="tablewrap"><table><thead><tr><th>Buyer</th><th>Interest</th><th>Message</th><th>Contact</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-enquiries-body"></tbody></table></div></div>
   </div>
 </div>
-
-<!-- SELL MODAL -->
-<div class="overlay" id="m-sell">
-  <div class="modal">
-    <div class="modalhd"><div class="modalttl">&#x1F697; List Your Unwanted Car</div><button class="modalx" id="sell-close">&times;</button></div>
-    <div class="modalbdy">
-      <div class="fsep">Your Details</div>
-      <div class="fg2">
-        <div class="fgrp"><label class="flbl">Full Name <em>*</em></label><input class="finp" id="sn" placeholder="e.g. John Smith"/></div>
-        <div class="fgrp"><label class="flbl">Phone <em>*</em></label><input class="finp" id="sp" type="tel" placeholder="021 xxx xxxx"/></div>
-        <div class="fgrp fcol"><label class="flbl">Email <em>*</em></label><input class="finp" id="se" type="email" placeholder="your@email.com"/></div>
-        <div class="fgrp"><label class="flbl">Region <em>*</em></label>
-          <select class="fsel" id="sl"><option value="">Select region...</option><option>Auckland</option><option>Wellington</option><option>Christchurch</option><option>Hamilton</option><option>Tauranga</option><option>Dunedin</option><option>Other</option></select>
-        </div>
-      </div>
-      <div class="fsep">Car Details</div>
-      <div class="fg2">
-        <div class="fgrp"><label class="flbl">Make <em>*</em></label>
-          <select class="fsel" id="smk"><option value="">Select make...</option><option>Toyota</option><option>Ford</option><option>Holden</option><option>Nissan</option><option>Mazda</option><option>Honda</option><option>Mitsubishi</option><option>Subaru</option><option>Hyundai</option><option>Kia</option><option>BMW</option><option>Mercedes-Benz</option><option>Volkswagen</option><option>Audi</option><option>Suzuki</option><option>Isuzu</option><option>Jeep</option><option>Land Rover</option><option>Chevrolet</option><option>Other</option></select>
-        </div>
-        <div class="fgrp"><label class="flbl">Model <em>*</em></label><input class="finp" id="smo" placeholder="e.g. Corolla, Ranger"/></div>
-        <div class="fgrp"><label class="flbl">Year <em>*</em></label><select class="fsel" id="syr"><option value="">Select year...</option></select></div>
-        <div class="fgrp"><label class="flbl">Odometer (km)</label><input class="finp" id="sod" type="number" placeholder="e.g. 180000"/></div>
-        <div class="fgrp"><label class="flbl">Condition <em>*</em></label>
-          <select class="fsel" id="sco"><option value="">Select condition...</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Poor</option><option>Parts Only</option></select>
-        </div>
-        <div class="fgrp"><label class="flbl">I Want To... <em>*</em></label>
-          <select class="fsel" id="stp"><option value="">Select option...</option><option value="Sell the car">Sell the Car</option><option value="Get rid of it (free/scrap)">Get Rid of It (Free / Scrap)</option><option value="Sell the parts">Sell the Parts</option></select>
-        </div>
-        <div class="fgrp fcol" id="price-wrap" style="display:none"><label class="flbl">Asking Price (NZD) <em>*</em></label><input class="finp" id="spr" type="number" placeholder="e.g. 2500"/></div>
-        <div class="fgrp fcol"><label class="flbl">Description</label><textarea class="ftxt" id="sds" placeholder="Known issues, history, why you are selling..."></textarea></div>
-      </div>
-      <div id="parts-wrap" style="display:none">
-        <div class="fsep">Parts for Sale</div>
-        <div id="parts-list"></div>
-        <button class="btnadd" id="add-part-btn">+ Add Part</button>
-      </div>
-      <div class="fsep">Photos</div>
-      <div class="photodrop" id="photo-drop">
-        <div style="font-size:2.5rem">&#x1F4F7;</div>
-        <p style="color:var(--g4);margin-top:.5rem">Click to upload photos (up to 5)</p>
-        <p class="uploadprog" id="upload-prog" style="display:none">Uploading...</p>
-      </div>
-      <input type="file" id="photo-input" multiple accept="image/*" style="display:none"/>
-      <div class="photoprev" id="photo-previews"></div>
-    </div>
-    <div class="modalft"><button class="btn btno" id="sell-cancel">Cancel</button><button class="btn btng" id="submit-btn">Submit Listing</button></div>
-  </div>
-</div>
-
-<!-- DETAIL MODAL -->
-<div class="overlay" id="m-detail">
-  <div class="modal" style="max-width:760px">
-    <div class="modalhd"><div class="modalttl" id="detail-title">Car Details</div><button class="modalx" id="detail-close">&times;</button></div>
-    <div class="modalbdy" id="detail-body"></div>
-  </div>
-</div>
-
-<!-- CONTACT MODAL -->
-<div class="overlay" id="m-contact">
-  <div class="modal modalsm">
-    <div class="modalhd"><div class="modalttl">&#x1F4EC; Contact Seller</div><button class="modalx" id="contact-close">&times;</button></div>
-    <div class="modalbdy">
-      <div id="contact-form">
-        <div class="fg2">
-          <div class="fgrp"><label class="flbl">Name <em>*</em></label><input class="finp" id="cn" placeholder="Your full name"/></div>
-          <div class="fgrp"><label class="flbl">Phone</label><input class="finp" id="cph" type="tel" placeholder="021 xxx xxxx"/></div>
-          <div class="fgrp fcol"><label class="flbl">Email <em>*</em></label><input class="finp" id="ce" type="email" placeholder="your@email.com"/></div>
-          <div class="fgrp fcol"><label class="flbl">Interested in...</label>
-            <select class="fsel" id="ctp"><option value="Whole Car">The whole car</option><option value="Specific Part">A specific part</option><option value="General Enquiry">General enquiry</option></select>
-          </div>
-          <div class="fgrp fcol"><label class="flbl">Message <em>*</em></label><textarea class="ftxt" id="cm" placeholder="Hi, I am interested in your car..."></textarea></div>
-        </div>
-      </div>
-      <div id="contact-success" style="display:none"><div class="successbox"><h3>&#x2705; Enquiry Sent!</h3><p style="margin-top:.5rem">The seller will be in touch soon.</p></div></div>
-    </div>
-    <div class="modalft" id="contact-footer"><button class="btn btno" id="contact-cancel">Cancel</button><button class="btn btng" id="contact-submit">Send Enquiry</button></div>
-  </div>
-</div>
-
-<!-- ADMIN LOGIN MODAL -->
-<div class="overlay" id="m-login">
-  <div class="modal modalsm">
-    <div class="modalhd"><div class="modalttl">&#x1F510; Admin Login</div><button class="modalx" id="login-close">&times;</button></div>
-    <div class="modalbdy">
-      <div class="fgrp" style="margin-bottom:1rem"><label class="flbl">Password</label><input class="finp" id="admin-pass" type="password" placeholder="Enter admin password"/></div>
-      <div id="login-err" style="color:#f87171;font-size:.83rem;display:none">Incorrect password.</div>
-    </div>
-    <div class="modalft"><button class="btn btno" id="login-cancel">Cancel</button><button class="btn btng" id="login-submit">Login</button></div>
-  </div>
-</div>
-
+<div class="overlay" id="m-sell"><div class="modal"><div class="modalhd"><div class="modalttl">&#x1F697; List Your Unwanted Car</div><button class="modalx" id="sell-close">&times;</button></div><div class="modalbdy"><div class="fsep">Your Details</div><div class="fg2"><div class="fgrp"><label class="flbl">Full Name <em>*</em></label><input class="finp" id="sn" placeholder="e.g. John Smith"/></div><div class="fgrp"><label class="flbl">Phone <em>*</em></label><input class="finp" id="sp" type="tel" placeholder="021 xxx xxxx"/></div><div class="fgrp fcol"><label class="flbl">Email <em>*</em></label><input class="finp" id="se" type="email" placeholder="your@email.com"/></div><div class="fgrp"><label class="flbl">Region <em>*</em></label><select class="fsel" id="sl"><option value="">Select region...</option><option>Auckland</option><option>Wellington</option><option>Christchurch</option><option>Hamilton</option><option>Tauranga</option><option>Dunedin</option><option>Other</option></select></div></div><div class="fsep">Car Details</div><div class="fg2"><div class="fgrp"><label class="flbl">Make <em>*</em></label><select class="fsel" id="smk"><option value="">Select make...</option><option>Toyota</option><option>Ford</option><option>Holden</option><option>Nissan</option><option>Mazda</option><option>Honda</option><option>Mitsubishi</option><option>Subaru</option><option>Hyundai</option><option>Kia</option><option>BMW</option><option>Mercedes-Benz</option><option>Volkswagen</option><option>Audi</option><option>Suzuki</option><option>Isuzu</option><option>Jeep</option><option>Land Rover</option><option>Chevrolet</option><option>Other</option></select></div><div class="fgrp"><label class="flbl">Model <em>*</em></label><input class="finp" id="smo" placeholder="e.g. Corolla, Ranger"/></div><div class="fgrp"><label class="flbl">Year <em>*</em></label><select class="fsel" id="syr"><option value="">Select year...</option></select></div><div class="fgrp"><label class="flbl">Odometer (km)</label><input class="finp" id="sod" type="number" placeholder="e.g. 180000"/></div><div class="fgrp"><label class="flbl">Condition <em>*</em></label><select class="fsel" id="sco"><option value="">Select condition...</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Poor</option><option>Parts Only</option></select></div><div class="fgrp"><label class="flbl">I Want To... <em>*</em></label><select class="fsel" id="stp"><option value="">Select option...</option><option value="Sell the car">Sell the Car</option><option value="Get rid of it (free/scrap)">Get Rid of It (Free / Scrap)</option><option value="Sell the parts">Sell the Parts</option></select></div><div class="fgrp fcol" id="price-wrap" style="display:none"><label class="flbl">Asking Price (NZD) <em>*</em></label><input class="finp" id="spr" type="number" placeholder="e.g. 2500"/></div><div class="fgrp fcol"><label class="flbl">Description</label><textarea class="ftxt" id="sds" placeholder="Known issues, history, why you are selling..."></textarea></div></div><div id="parts-wrap" style="display:none"><div class="fsep">Parts for Sale</div><div id="parts-list"></div><button class="btnadd" id="add-part-btn">+ Add Part</button></div><div class="fsep">Photos</div><div class="photodrop" id="photo-drop"><div style="font-size:2.5rem">&#x1F4F7;</div><p id="photo-label" style="color:var(--g4);margin-top:.5rem">Click to add photos (up to 5)</p></div><input type="file" id="photo-input" multiple accept="image/*" style="display:none"/><div class="photoprev" id="photo-previews"></div></div><div class="modalft"><button class="btn btno" id="sell-cancel">Cancel</button><button class="btn btng" id="submit-btn">Submit Listing</button></div></div></div>
+<div class="overlay" id="m-detail"><div class="modal" style="max-width:760px"><div class="modalhd"><div class="modalttl" id="detail-title">Car Details</div><button class="modalx" id="detail-close">&times;</button></div><div class="modalbdy" id="detail-body"></div></div></div>
+<div class="overlay" id="m-contact"><div class="modal modalsm"><div class="modalhd"><div class="modalttl">&#x1F4EC; Contact Seller</div><button class="modalx" id="contact-close">&times;</button></div><div class="modalbdy"><div id="contact-form"><div class="fg2"><div class="fgrp"><label class="flbl">Name <em>*</em></label><input class="finp" id="cn" placeholder="Your full name"/></div><div class="fgrp"><label class="flbl">Phone</label><input class="finp" id="cph" type="tel" placeholder="021 xxx xxxx"/></div><div class="fgrp fcol"><label class="flbl">Email <em>*</em></label><input class="finp" id="ce" type="email" placeholder="your@email.com"/></div><div class="fgrp fcol"><label class="flbl">Interested in...</label><select class="fsel" id="ctp"><option value="Whole Car">The whole car</option><option value="Specific Part">A specific part</option><option value="General Enquiry">General enquiry</option></select></div><div class="fgrp fcol"><label class="flbl">Message <em>*</em></label><textarea class="ftxt" id="cm" placeholder="Hi, I am interested in your car..."></textarea></div></div></div><div id="contact-success" style="display:none"><div class="successbox"><h3>&#x2705; Enquiry Sent!</h3><p style="margin-top:.5rem">The seller will be in touch soon.</p></div></div></div><div class="modalft" id="contact-footer"><button class="btn btno" id="contact-cancel">Cancel</button><button class="btn btng" id="contact-submit">Send Enquiry</button></div></div></div>
+<div class="overlay" id="m-login"><div class="modal modalsm"><div class="modalhd"><div class="modalttl">&#x1F510; Admin Login</div><button class="modalx" id="login-close">&times;</button></div><div class="modalbdy"><div class="fgrp" style="margin-bottom:1rem"><label class="flbl">Password</label><input class="finp" id="admin-pass" type="password" placeholder="Enter admin password"/></div><div id="login-err" style="color:#f87171;font-size:.83rem;display:none">Incorrect password.</div></div><div class="modalft"><button class="btn btno" id="login-cancel">Cancel</button><button class="btn btng" id="login-submit">Login</button></div></div></div>
 <script>
-(function() {
-  var BASE = 'BASEURL';
-  var ADMIN_PW = 'CarGoneAdmin2026!';
-  var allListings = [];
-  var currentId = null;
-  // Stores actual File objects selected by the user
-  var selectedFiles = [];
-  // Stores CDN URLs after upload (populated at submit time)
-  var uploadedPhotoUrls = [];
-  var partIdx = 0;
-  var condMap = { Excellent:'bgrn', Good:'bgrn', Fair:'bylw', Poor:'bred', 'Parts Only':'bgry' };
-
-  // ---- API ----
-  function api(params, method, body) {
-    var qs = Object.keys(params).map(function(k) {
-      return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
-    }).join('&');
-    var opts = { method: method || 'GET', headers: { 'Content-Type': 'application/json' } };
-    if (body) opts.body = JSON.stringify(body);
-    return fetch(BASE + '?' + qs, opts).then(function(r) { return r.json(); });
+(function(){
+  var BASE='https://agent-e-286fe43d.base44.app/functions/cargoneNZ';
+  var ADMIN_PW='CarGoneAdmin2026!';
+  var allListings=[],currentId=null,selectedFiles=[],partIdx=0;
+  var condMap={Excellent:'bgrn',Good:'bgrn',Fair:'bylw',Poor:'bred','Parts Only':'bgry'};
+  function api(p,method,body){
+    var qs=Object.keys(p).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(p[k]);}).join('&');
+    var opts={method:method||'GET',headers:{'Content-Type':'application/json'}};
+    if(body)opts.body=JSON.stringify(body);
+    return fetch(BASE+'?'+qs,opts).then(function(r){return r.json();}).then(function(d){if(d&&d.error)throw new Error(d.error);return d;});
   }
-
-  // ---- UPLOAD a single File to CDN, returns URL string ----
-  // Compress and convert image to base64 data URL (stored directly in entity)
-  async function uploadFile(file) {
-    return new Promise(function(resolve, reject) {
-      var reader = new FileReader();
-      reader.onload = function(e) {
-        var img = new Image();
-        img.onload = function() {
-          var canvas = document.createElement('canvas');
-          var MAX = 1200;
-          var w = img.width, h = img.height;
-          if (w > MAX) { h = Math.round(h * MAX / w); w = MAX; }
-          if (h > MAX) { w = Math.round(w * MAX / h); h = MAX; }
-          canvas.width = w; canvas.height = h;
-          var ctx = canvas.getContext('2d');
-          ctx.drawImage(img, 0, 0, w, h);
-          resolve(canvas.toDataURL('image/jpeg', 0.75));
-        };
-        img.onerror = function() { reject(new Error('Invalid image file')); };
-        img.src = e.target.result;
-      };
-      reader.onerror = function() { reject(new Error('Could not read file')); };
-      reader.readAsDataURL(file);
-    });
-  }
-
-  // ---- HELPERS ----
-  function el(id) { return document.getElementById(id); }
-  function val(id) { var e = el(id); return e ? e.value.trim() : ''; }
-  function openModal(id) { el(id).classList.add('open'); }
-  function closeModal(id) { el(id).classList.remove('open'); }
-  function showToast(msg, err) {
-    var t = document.createElement('div');
-    t.className = 'toast' + (err ? ' toasterr' : '');
-    t.textContent = msg;
-    document.body.appendChild(t);
-    setTimeout(function() { t.remove(); }, 3400);
-  }
-
-  // ---- YEAR DROPDOWN ----
-  (function() {
-    var s = el('syr');
-    for (var y = 2026; y >= 1970; y--) {
-      var o = document.createElement('option');
-      o.value = String(y); o.textContent = String(y); s.appendChild(o);
-    }
-  })();
-
-  // ---- NAV ----
-  function goHome() {
-    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
-    el('page-home').classList.add('active');
-    window.scrollTo(0, 0);
-  }
-  function goAdmin() {
-    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
-    el('page-admin').classList.add('active');
-    window.scrollTo(0, 0);
-    loadAdminListings();
-  }
-  function goListings() { el('listings-section').scrollIntoView({ behavior: 'smooth' }); }
-  function goHow() { el('how-section').scrollIntoView({ behavior: 'smooth' }); }
-  window.goHome = goHome; window.goListings = goListings; window.goHow = goHow;
-  window.openAdminLogin = function() { el('admin-pass').value = ''; el('login-err').style.display='none'; openModal('m-login'); };
-
-  // ---- SELL MODAL ----
-  function openSell() { openModal('m-sell'); }
-  function closeSell() { closeModal('m-sell'); }
-  window.openSell = openSell;
-  el('sell-close').addEventListener('click', closeSell);
-  el('sell-cancel').addEventListener('click', closeSell);
-  el('m-sell').addEventListener('click', function(e) { if (e.target === this) closeSell(); });
-
-  el('stp').addEventListener('change', function() {
-    var t = this.value;
-    el('price-wrap').style.display = (t === 'Sell the car') ? 'flex' : 'none';
-    el('parts-wrap').style.display = (t === 'Sell the parts') ? 'block' : 'none';
-  });
-
-  // ---- PARTS ----
-  el('add-part-btn').addEventListener('click', function() {
-    var i = partIdx++;
-    var row = document.createElement('div'); row.className = 'partrow'; row.id = 'pr' + i;
-    var g1 = document.createElement('div'); g1.className = 'fgrp';
-    var l1 = document.createElement('label'); l1.className = 'flbl'; l1.textContent = 'Part Name';
-    var i1 = document.createElement('input'); i1.className = 'finp'; i1.id = 'pn' + i; i1.placeholder = 'e.g. Engine, Gearbox';
-    g1.appendChild(l1); g1.appendChild(i1);
-    var g2 = document.createElement('div'); g2.className = 'fgrp';
-    var l2 = document.createElement('label'); l2.className = 'flbl'; l2.textContent = 'Price (NZD)';
-    var i2 = document.createElement('input'); i2.className = 'finp'; i2.type = 'number'; i2.id = 'pp' + i; i2.placeholder = '500';
-    g2.appendChild(l2); g2.appendChild(i2);
-    var rb = document.createElement('button'); rb.className = 'btnrm'; rb.type = 'button'; rb.textContent = 'X';
-    rb.addEventListener('click', function() { row.remove(); });
-    row.appendChild(g1); row.appendChild(g2); row.appendChild(rb);
-    el('parts-list').appendChild(row);
-  });
-
-  function collectParts() {
-    return Array.from(document.querySelectorAll('#parts-list .partrow')).map(function(r) {
-      var i = r.id.replace('pr', '');
-      return { part_name: el('pn'+i) ? el('pn'+i).value : '', price: el('pp'+i) ? parseFloat(el('pp'+i).value)||0 : 0, status: 'Available' };
-    }).filter(function(p) { return !!p.part_name; });
-  }
-
-  // ---- PHOTO SELECTION (store File objects, show local previews) ----
-  el('photo-drop').addEventListener('click', function() { el('photo-input').click(); });
-  el('photo-input').addEventListener('change', function() {
-    selectedFiles = Array.from(this.files).slice(0, 5);
-    renderPreviews();
-    this.value = ''; // reset so same file can be re-selected
-  });
-
-  function renderPreviews() {
-    var prev = el('photo-previews');
-    prev.innerHTML = '';
-    selectedFiles.forEach(function(f, idx) {
-      var url = URL.createObjectURL(f);
-      var wrap = document.createElement('div'); wrap.className = 'thumbwrap';
-      var img = document.createElement('img'); img.src = url; img.className = 'photothumb';
-      var del = document.createElement('button'); del.className = 'thumbdel'; del.textContent = '\u00d7';
-      del.addEventListener('click', function(e) {
-        e.stopPropagation();
-        selectedFiles.splice(idx, 1);
-        renderPreviews();
-      });
-      wrap.appendChild(img); wrap.appendChild(del); prev.appendChild(wrap);
-    });
-    el('photo-drop').querySelector('p').textContent =
-      selectedFiles.length ? selectedFiles.length + ' photo(s) selected — click to add more' : 'Click to upload photos (up to 5)';
-  }
-
-  // ---- UPLOAD ALL SELECTED FILES, return array of CDN URLs ----
-  async function uploadAllPhotos() {
-    if (!selectedFiles.length) return [];
-    var prog = el('upload-prog');
-    var drop = el('photo-drop');
-    drop.classList.add('uploading');
-    prog.style.display = 'block';
-    prog.textContent = 'Processing photos...';
-    var urls = [];
-    for (var i = 0; i < selectedFiles.length; i++) {
-      var url = await uploadFile(selectedFiles[i]);
-      urls.push(url);
-    }
-    drop.classList.remove('uploading');
-    prog.style.display = 'none';
-    return urls;
-  }
-
-  // ---- SUBMIT LISTING ----
-  el('submit-btn').addEventListener('click', async function() {
-    if (!val('sn')||!val('sp')||!val('se')||!val('sl')||!val('smk')||!val('smo')||!val('syr')||!val('sco')||!val('stp')) {
-      showToast('Please fill in all required fields', true); return;
-    }
-    var btn = this; btn.disabled = true; btn.textContent = 'Processing...';
-    try {
-      // 1. Upload photos first, get back CDN URLs
-      var photoUrls = await uploadAllPhotos();
-
-      btn.textContent = 'Submitting listing...';
-
-      // 2. Create listing with real CDN URLs
-      var listing = await api({ action:'create', entity:'CarListing' }, 'POST', {
-        seller_name:val('sn'), seller_phone:val('sp'), seller_email:val('se'), location:val('sl'),
-        make:val('smk'), model:val('smo'), year:parseInt(val('syr')),
-        odometer:parseInt(el('sod').value)||null, condition:val('sco'), listing_type:val('stp'),
-        sale_price:parseFloat(el('spr').value)||null, description:val('sds'),
-        photos: photoUrls,  // <-- real CDN URLs stored here
-        status:'Active'
-      });
-
-      // 3. Create parts if applicable
-      if (val('stp') === 'Sell the parts') {
-        var parts = collectParts();
-        for (var i = 0; i < parts.length; i++) {
-          await api({ action:'create', entity:'CarPart' }, 'POST', Object.assign({}, parts[i], { car_listing_id: listing.id }));
-        }
-      }
-
-      closeSell();
-      showToast('Your listing is live!');
-      // Reset form
-      ['sn','sp','se','smo','sod','spr','sds'].forEach(function(id){ if(el(id)) el(id).value=''; });
-      ['sl','smk','syr','sco','stp'].forEach(function(id){ if(el(id)) el(id).selectedIndex=0; });
-      el('parts-list').innerHTML=''; el('photo-previews').innerHTML='';
-      selectedFiles = []; uploadedPhotoUrls = [];
-      el('price-wrap').style.display='none'; el('parts-wrap').style.display='none';
-      el('photo-drop').querySelector('p').textContent = 'Click to upload photos (up to 5)';
+  function compressImage(file){return new Promise(function(resolve,reject){var reader=new FileReader();reader.onload=function(e){var img=new Image();img.onload=function(){var MAX=1200,w=img.width,h=img.height;if(w>MAX){h=Math.round(h*MAX/w);w=MAX;}if(h>MAX){w=Math.round(w*MAX/h);h=MAX;}var c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);resolve(c.toDataURL('image/jpeg',0.75));};img.onerror=function(){reject(new Error('Invalid image'));};img.src=e.target.result;};reader.onerror=function(){reject(new Error('Cannot read file'));};reader.readAsDataURL(file);});}
+  function el(id){return document.getElementById(id);}
+  function val(id){var e=el(id);return e?e.value.trim():'';}
+  function openModal(id){el(id).classList.add('open');}
+  function closeModal(id){el(id).classList.remove('open');}
+  function showToast(msg,err){var t=document.createElement('div');t.className='toast'+(err?' toasterr':'');t.textContent=msg;document.body.appendChild(t);setTimeout(function(){t.remove();},3400);}
+  (function(){var s=el('syr');for(var y=2026;y>=1970;y--){var o=document.createElement('option');o.value=String(y);o.textContent=String(y);s.appendChild(o);}})();
+  function goHome(){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});el('page-home').classList.add('active');window.scrollTo(0,0);}
+  function goAdmin(){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});el('page-admin').classList.add('active');window.scrollTo(0,0);loadAdminListings();}
+  function goListings(){el('listings-section').scrollIntoView({behavior:'smooth'});}
+  function goHow(){el('how-section').scrollIntoView({behavior:'smooth'});}
+  window.goHome=goHome;window.goListings=goListings;window.goHow=goHow;
+  window.openAdminLogin=function(){el('admin-pass').value='';el('login-err').style.display='none';openModal('m-login');};
+  window.openSell=function(){openModal('m-sell');};
+  window.switchTab=function(tab){el('tab-listings').style.display=tab==='listings'?'block':'none';el('tab-enquiries').style.display=tab==='enquiries'?'block':'none';el('tbl').classList.toggle('active',tab==='listings');el('tbe').classList.toggle('active',tab==='enquiries');if(tab==='enquiries')loadAdminEnquiries();};
+  window.filterListings=function(){var t=val('f-type'),co=val('f-cond'),l=val('f-loc'),q=el('f-q').value.toLowerCase();renderListings(allListings.filter(function(x){if(x.status!=='Active')return false;if(t&&x.listing_type!==t)return false;if(co&&x.condition!==co)return false;if(l&&x.location!==l)return false;if(q&&!((x.make||'')+' '+(x.model||'')).toLowerCase().includes(q))return false;return true;}));};
+  el('sell-close').addEventListener('click',function(){closeModal('m-sell');});
+  el('sell-cancel').addEventListener('click',function(){closeModal('m-sell');});
+  el('m-sell').addEventListener('click',function(e){if(e.target===this)closeModal('m-sell');});
+  el('stp').addEventListener('change',function(){el('price-wrap').style.display=this.value==='Sell the car'?'flex':'none';el('parts-wrap').style.display=this.value==='Sell the parts'?'block':'none';});
+  el('add-part-btn').addEventListener('click',function(){var i=partIdx++;var row=document.createElement('div');row.className='partrow';row.id='pr'+i;var g1=document.createElement('div');g1.className='fgrp';var l1=document.createElement('label');l1.className='flbl';l1.textContent='Part Name';var i1=document.createElement('input');i1.className='finp';i1.id='pn'+i;i1.placeholder='e.g. Engine, Gearbox';g1.appendChild(l1);g1.appendChild(i1);var g2=document.createElement('div');g2.className='fgrp';var l2=document.createElement('label');l2.className='flbl';l2.textContent='Price (NZD)';var i2=document.createElement('input');i2.className='finp';i2.type='number';i2.id='pp'+i;i2.placeholder='500';g2.appendChild(l2);g2.appendChild(i2);var rb=document.createElement('button');rb.className='btnrm';rb.type='button';rb.textContent='X';rb.addEventListener('click',function(){row.remove();});row.appendChild(g1);row.appendChild(g2);row.appendChild(rb);el('parts-list').appendChild(row);});
+  function collectParts(){return Array.from(document.querySelectorAll('#parts-list .partrow')).map(function(r){var i=r.id.replace('pr','');return{part_name:el('pn'+i)?el('pn'+i).value:'',price:el('pp'+i)?parseFloat(el('pp'+i).value)||0:0,status:'Available'};}).filter(function(p){return!!p.part_name;});}
+  el('photo-drop').addEventListener('click',function(){el('photo-input').click();});
+  el('photo-input').addEventListener('change',function(){selectedFiles=selectedFiles.concat(Array.from(this.files)).slice(0,5);renderPreviews();this.value='';});
+  function renderPreviews(){var prev=el('photo-previews');prev.innerHTML='';selectedFiles.forEach(function(f,idx){var url=URL.createObjectURL(f);var wrap=document.createElement('div');wrap.className='thumbwrap';var img=document.createElement('img');img.src=url;img.className='photothumb';var del=document.createElement('button');del.className='thumbdel';del.textContent='×';(function(i){del.addEventListener('click',function(e){e.stopPropagation();selectedFiles.splice(i,1);renderPreviews();});})(idx);wrap.appendChild(img);wrap.appendChild(del);prev.appendChild(wrap);});el('photo-label').textContent=selectedFiles.length?selectedFiles.length+' photo(s) selected — click to add more':'Click to add photos (up to 5)';}
+  el('submit-btn').addEventListener('click',async function(){
+    if(!val('sn')||!val('sp')||!val('se')||!val('sl')||!val('smk')||!val('smo')||!val('syr')||!val('sco')||!val('stp')){showToast('Please fill in all required fields',true);return;}
+    var btn=this;btn.disabled=true;btn.textContent='Processing...';
+    try{
+      var photoUrls=[];
+      for(var i=0;i<selectedFiles.length;i++){btn.textContent='Processing photo '+(i+1)+' of '+selectedFiles.length+'...';photoUrls.push(await compressImage(selectedFiles[i]));}
+      btn.textContent='Submitting...';
+      var listing=await api({action:'create',entity:'CarListing'},'POST',{seller_name:val('sn'),seller_phone:val('sp'),seller_email:val('se'),location:val('sl'),make:val('smk'),model:val('smo'),year:parseInt(val('syr')),odometer:parseInt(el('sod').value)||null,condition:val('sco'),listing_type:val('stp'),sale_price:parseFloat(el('spr').value)||null,description:val('sds'),photos:photoUrls,status:'Active'});
+      if(val('stp')==='Sell the parts'){var parts=collectParts();for(var j=0;j<parts.length;j++){await api({action:'create',entity:'CarPart'},'POST',Object.assign({},parts[j],{car_listing_id:listing.id}));}}
+      closeModal('m-sell');showToast('Your listing is live!');
+      ['sn','sp','se','smo','sod','spr','sds'].forEach(function(id){if(el(id))el(id).value='';});
+      ['sl','smk','syr','sco','stp'].forEach(function(id){if(el(id))el(id).selectedIndex=0;});
+      el('parts-list').innerHTML='';el('photo-previews').innerHTML='';selectedFiles=[];
+      el('price-wrap').style.display='none';el('parts-wrap').style.display='none';
+      el('photo-label').textContent='Click to add photos (up to 5)';
       loadListings();
-    } catch(e) {
-      showToast('Error: ' + e.message, true);
-    }
-    btn.disabled = false; btn.textContent = 'Submit Listing';
+    }catch(e){showToast('Error: '+e.message,true);}
+    btn.disabled=false;btn.textContent='Submit Listing';
   });
-
-  // ---- LISTINGS ----
-  function priceLbl(l) {
-    if (l.listing_type === 'Sell the car' && l.sale_price) return 'NZD $' + Number(l.sale_price).toLocaleString();
-    if (l.listing_type === 'Get rid of it (free/scrap)') return 'Free / Scrap';
-    return 'Parts Available';
-  }
-
-  async function loadListings() {
-    el('listings-container').innerHTML = '<div class="spinner"></div>';
-    try {
-      var data = await api({ action:'list', entity:'CarListing' });
-      allListings = Array.isArray(data) ? data : (data.items || []);
-      var active = allListings.filter(function(l) { return l.status === 'Active'; });
-      el('stat-count').textContent = active.length;
-      renderListings(active);
-    } catch(e) {
-      el('listings-container').innerHTML = '<div class="emptystate"><div class="emptyico">&#x26A0;</div><h3>Could not load listings</h3><p style="color:var(--g4)">' + e.message + '</p></div>';
-    }
-  }
-
-  function renderListings(list) {
-    var c = el('listings-container');
-    c.innerHTML = '';
-    if (!list.length) {
-      var empty = document.createElement('div'); empty.className = 'emptystate';
-      empty.innerHTML = '<div class="emptyico">&#x1F697;</div><h3>No listings yet</h3><p style="color:var(--g4)">Be the first to list your car!</p>';
-      var btn = document.createElement('button'); btn.className = 'btn btng'; btn.style.marginTop = '1.5rem';
-      btn.textContent = '+ List My Car'; btn.addEventListener('click', openSell);
-      empty.appendChild(btn); c.appendChild(empty); return;
-    }
-    var grid = document.createElement('div'); grid.className = 'cardgrid';
-    list.forEach(function(listing) {
-      var lid = listing.id;
-      var card = document.createElement('div'); card.className = 'carcard';
-      var imgDiv = document.createElement('div'); imgDiv.className = 'cardimg';
-      if (listing.photos && listing.photos.length && listing.photos[0]) {
-        var img = document.createElement('img'); img.src = listing.photos[0]; img.loading = 'lazy'; imgDiv.appendChild(img);
-      } else { imgDiv.innerHTML = '&#x1F697;'; }
-      var body = document.createElement('div'); body.className = 'cardbody';
-      var title = document.createElement('div'); title.className = 'cardtitle';
-      title.textContent = [(listing.year||''), (listing.make||''), (listing.model||'')].filter(Boolean).join(' ');
-      var sub = document.createElement('div'); sub.className = 'cardsub';
-      sub.textContent = listing.odometer ? Number(listing.odometer).toLocaleString() + ' km' : 'Odometer N/A';
-      var badges = document.createElement('div'); badges.className = 'badgeset';
-      var b = document.createElement('span'); b.className = 'bdg ' + (condMap[listing.condition]||'bgry');
-      b.textContent = listing.condition || ''; badges.appendChild(b);
-      var price = document.createElement('div'); price.className = 'cardprice';
-      price.textContent = priceLbl(listing);
-      var foot = document.createElement('div'); foot.className = 'cardfoot';
-      var loc = document.createElement('div'); loc.className = 'cardloc';
-      loc.innerHTML = '&#x1F4CD; ' + (listing.location || 'NZ');
-      var enqBtn = document.createElement('button'); enqBtn.className = 'btn btng';
-      enqBtn.style.fontSize = '.77rem'; enqBtn.style.padding = '.33rem .8rem';
-      enqBtn.textContent = 'Enquire';
-      enqBtn.addEventListener('click', function(e) { e.stopPropagation(); openContact(lid); });
-      foot.appendChild(loc); foot.appendChild(enqBtn);
-      body.appendChild(title); body.appendChild(sub); body.appendChild(badges); body.appendChild(price); body.appendChild(foot);
-      card.appendChild(imgDiv); card.appendChild(body);
-      card.addEventListener('click', function() { openDetail(lid); });
-      grid.appendChild(card);
-    });
-    c.appendChild(grid);
-  }
-
-  function filterListings() {
-    var t = val('f-type'), co = val('f-cond'), l = val('f-loc'), q = el('f-q').value.toLowerCase();
-    renderListings(allListings.filter(function(x) {
-      if (x.status !== 'Active') return false;
-      if (t && x.listing_type !== t) return false;
-      if (co && x.condition !== co) return false;
-      if (l && x.location !== l) return false;
-      if (q && !((x.make||'') + ' ' + (x.model||'')).toLowerCase().includes(q)) return false;
-      return true;
-    }));
-  }
-  window.filterListings = filterListings;
-
-  // ---- DETAIL MODAL ----
-  el('detail-close').addEventListener('click', function() { closeModal('m-detail'); });
-  el('m-detail').addEventListener('click', function(e) { if (e.target === this) closeModal('m-detail'); });
-
-  async function openDetail(id) {
-    currentId = id;
-    openModal('m-detail');
-    var body = el('detail-body');
-    body.innerHTML = '<div class="spinner"></div>';
-    var l = allListings.find(function(x) { return x.id === id; }); if (!l) return;
-    el('detail-title').textContent = [(l.year||''), (l.make||''), (l.model||'')].filter(Boolean).join(' ');
-    body.innerHTML = '';
-
-    // Photos — all stored as CDN URLs now
-    if (l.photos && l.photos.length) {
-      var photoRow = document.createElement('div'); photoRow.style.cssText = 'display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem';
-      l.photos.forEach(function(p) {
-        if (!p) return;
-        var pi = document.createElement('img'); pi.src = p; pi.style.cssText = 'height:160px;border-radius:10px;object-fit:cover;flex:1;min-width:130px';
-        photoRow.appendChild(pi);
-      });
-      body.appendChild(photoRow);
-    }
-
-    var grid = document.createElement('div'); grid.className = 'detgrid';
-    var fields = [['Make',l.make],['Model',l.model],['Year',l.year],['Odometer',l.odometer?Number(l.odometer).toLocaleString()+' km':'N/A'],['Condition',l.condition],['Location',l.location],['Listing Type',l.listing_type],['Price',priceLbl(l)]];
-    fields.forEach(function(f) {
-      var d = document.createElement('div'); d.className = 'detitem';
-      var lbl = document.createElement('label'); lbl.textContent = f[0];
-      var sp = document.createElement('span'); sp.textContent = f[1]||'';
-      d.appendChild(lbl); d.appendChild(sp); grid.appendChild(d);
-    });
-    body.appendChild(grid);
-
-    if (l.description) {
-      var sep = document.createElement('div'); sep.className = 'fsep'; sep.style.marginTop = '1rem'; sep.textContent = 'Description';
-      var desc = document.createElement('p'); desc.style.cssText = 'color:var(--g4);font-size:.88rem;line-height:1.7'; desc.textContent = l.description;
-      body.appendChild(sep); body.appendChild(desc);
-    }
-
-    if (l.listing_type === 'Sell the parts') {
-      try {
-        var parts = await api({ action:'filter', entity:'CarPart', car_listing_id: id });
-        parts = Array.isArray(parts) ? parts : (parts.items || []);
-        if (parts.length) {
-          var psep = document.createElement('div'); psep.className = 'fsep'; psep.style.marginTop = '1.25rem'; psep.textContent = 'Parts for Sale';
-          body.appendChild(psep);
-          parts.forEach(function(p) {
-            var pi = document.createElement('div'); pi.className = 'partitem';
-            var pn = document.createElement('span'); pn.className = 'partname'; pn.textContent = p.part_name;
-            var pp = document.createElement('span'); pp.className = 'partprice'; pp.textContent = p.status==='Sold' ? 'SOLD' : 'NZD $' + Number(p.price||0).toLocaleString();
-            pi.appendChild(pn); pi.appendChild(pp); body.appendChild(pi);
-          });
-        }
-      } catch(e) {}
-    }
-
-    var contactBtn = document.createElement('button'); contactBtn.className = 'btn btng'; contactBtn.style.cssText = 'width:100%;margin-top:1.5rem';
-    contactBtn.textContent = 'Contact Seller';
-    contactBtn.addEventListener('click', function() { closeModal('m-detail'); openContact(id); });
-    body.appendChild(contactBtn);
-  }
-
-  // ---- CONTACT MODAL ----
-  function openContact(id) {
-    currentId = id;
-    ['cn','cph','ce','cm'].forEach(function(i) { if(el(i)) el(i).value=''; });
-    el('contact-form').style.display = 'block';
-    el('contact-success').style.display = 'none';
-    el('contact-footer').style.display = 'flex';
-    openModal('m-contact');
-  }
-  el('contact-close').addEventListener('click', function() { closeModal('m-contact'); });
-  el('contact-cancel').addEventListener('click', function() { closeModal('m-contact'); });
-  el('m-contact').addEventListener('click', function(e) { if (e.target === this) closeModal('m-contact'); });
-  el('contact-submit').addEventListener('click', async function() {
-    if (!val('cn')||!val('ce')||!val('cm')) { showToast('Please fill in name, email and message', true); return; }
-    try {
-      await api({ action:'create', entity:'BuyerEnquiry' }, 'POST', {
-        car_listing_id: currentId, buyer_name:val('cn'), buyer_email:val('ce'),
-        buyer_phone:val('cph'), enquiry_type:val('ctp'), message:val('cm'), status:'New'
-      });
-      el('contact-form').style.display = 'none';
-      el('contact-success').style.display = 'block';
-      el('contact-footer').style.display = 'none';
-    } catch(e) { showToast('Error: ' + e.message, true); }
-  });
-
-  // ---- ADMIN LOGIN ----
-  el('login-close').addEventListener('click', function() { closeModal('m-login'); });
-  el('login-cancel').addEventListener('click', function() { closeModal('m-login'); });
-  el('m-login').addEventListener('click', function(e) { if (e.target === this) closeModal('m-login'); });
-  el('admin-pass').addEventListener('keydown', function(e) { if (e.key === 'Enter') el('login-submit').click(); });
-  el('login-submit').addEventListener('click', function() {
-    if (el('admin-pass').value === ADMIN_PW) { closeModal('m-login'); goAdmin(); }
-    else { el('login-err').style.display = 'block'; }
-  });
-
-  // ---- ADMIN TABS ----
-  window.switchTab = function(tab) {
-    el('tab-listings').style.display = tab==='listings' ? 'block' : 'none';
-    el('tab-enquiries').style.display = tab==='enquiries' ? 'block' : 'none';
-    el('tbl').classList.toggle('active', tab==='listings');
-    el('tbe').classList.toggle('active', tab==='enquiries');
-    if (tab === 'enquiries') loadAdminEnquiries();
-  };
-
-  // ---- ADMIN LISTINGS ----
-  async function loadAdminListings() {
-    var tb = el('admin-listings-body');
-    tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr>';
-    try {
-      var data = await api({ action:'list', entity:'CarListing' });
-      var rows = Array.isArray(data) ? data : (data.items||[]);
-      if (!rows.length) { tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:2.5rem;color:var(--g6)">No listings yet.</td></tr>'; return; }
-      var sc = { Active:'bgrn', Sold:'bgry', Removed:'bred' };
-      tb.innerHTML = '';
-      rows.forEach(function(l) {
-        var tr = document.createElement('tr');
-        function addTd(html) { var td = document.createElement('td'); td.innerHTML = html; tr.appendChild(td); }
-        addTd('<strong>' + [(l.year||''),(l.make||''),(l.model||'')].filter(Boolean).join(' ') + '</strong><br/><small style="color:var(--g6)">' + (l.location||'') + '</small>');
-        addTd((l.seller_name||'') + '<br/><small style="color:var(--g6)">' + (l.seller_email||'') + '</small>');
-        addTd(l.listing_type||'');
-        addTd('<span class="bdg ' + (condMap[l.condition]||'bgry') + '">' + (l.condition||'') + '</span>');
-        addTd(l.sale_price ? 'NZD $'+Number(l.sale_price).toLocaleString() : l.listing_type==='Get rid of it (free/scrap)' ? 'Free' : 'Parts');
-        addTd('<span class="bdg ' + (sc[l.status]||'bgry') + '">' + (l.status||'Active') + '</span>');
-        var atd = document.createElement('td'); atd.style.cssText = 'display:flex;gap:.4rem;flex-wrap:wrap';
-        function addABtn(cls, txt, st) {
-          var b = document.createElement('button'); b.className = cls; b.textContent = txt;
-          b.addEventListener('click', (function(lid, s){ return function(){ setStatus(lid,s); }; })(l.id, st));
-          atd.appendChild(b);
-        }
-        if (l.status !== 'Sold') addABtn('abg','Mark Sold','Sold');
-        if (l.status !== 'Removed') addABtn('abr','Remove','Removed');
-        if (l.status !== 'Active') addABtn('abg','Restore','Active');
-        tr.appendChild(atd); tb.appendChild(tr);
-      });
-    } catch(e) { tb.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#f87171;padding:2rem">Failed: ' + e.message + '</td></tr>'; }
-  }
-
-  async function setStatus(id, status) {
-    try { await api({ action:'update', entity:'CarListing', id:id }, 'POST', { status:status }); showToast('Marked as ' + status); loadAdminListings(); loadListings(); }
-    catch(e) { showToast('Failed.', true); }
-  }
-
-  // ---- ADMIN ENQUIRIES ----
-  async function loadAdminEnquiries() {
-    var tb = el('admin-enquiries-body');
-    tb.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr>';
-    try {
-      var data = await api({ action:'list', entity:'BuyerEnquiry' });
-      var rows = Array.isArray(data) ? data : (data.items||[]);
-      if (!rows.length) { tb.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:2.5rem;color:var(--g6)">No enquiries yet.</td></tr>'; return; }
-      var sc = { New:'bylw', Responded:'bgrn', Closed:'bgry' };
-      tb.innerHTML = '';
-      rows.forEach(function(enq) {
-        var tr = document.createElement('tr');
-        function addTd(html) { var td = document.createElement('td'); td.innerHTML = html; tr.appendChild(td); }
-        addTd('<strong>' + (enq.buyer_name||'') + '</strong>');
-        addTd(enq.enquiry_type||'');
-        var msgTd = document.createElement('td'); msgTd.style.cssText = 'max-width:180px;font-size:.82rem;color:var(--g4)';
-        msgTd.textContent = (enq.message||'').substring(0,75) + (enq.message&&enq.message.length>75?'...':'');
-        tr.appendChild(msgTd);
-        addTd((enq.buyer_email||'') + '<br/>' + (enq.buyer_phone||''));
-        addTd('<span class="bdg ' + (sc[enq.status]||'bgry') + '">' + (enq.status||'New') + '</span>');
-        var atd = document.createElement('td'); atd.style.cssText = 'display:flex;gap:.4rem';
-        function addEBtn(cls, txt, st) {
-          var b = document.createElement('button'); b.className = cls; b.textContent = txt;
-          b.addEventListener('click', (function(eid, s){ return function(){ setEnqStatus(eid,s); }; })(enq.id, st));
-          atd.appendChild(b);
-        }
-        if (enq.status !== 'Responded') addEBtn('abg','Responded','Responded');
-        if (enq.status !== 'Closed') addEBtn('abr','Close','Closed');
-        tr.appendChild(atd); tb.appendChild(tr);
-      });
-    } catch(e) { tb.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#f87171;padding:2rem">Failed.</td></tr>'; }
-  }
-
-  async function setEnqStatus(id, status) {
-    try { await api({ action:'update', entity:'BuyerEnquiry', id:id }, 'POST', { status:status }); showToast('Updated'); loadAdminEnquiries(); }
-    catch(e) { showToast('Failed.', true); }
-  }
-
-  // ---- BOOT ----
+  function priceLbl(l){if(l.listing_type==='Sell the car'&&l.sale_price)return 'NZD $'+Number(l.sale_price).toLocaleString();if(l.listing_type==='Get rid of it (free/scrap)')return 'Free / Scrap';return 'Parts Available';}
+  async function loadListings(){el('listings-container').innerHTML='<div class="spinner"></div>';try{var data=await api({action:'list',entity:'CarListing'});allListings=Array.isArray(data)?data:(data.items||[]);var active=allListings.filter(function(l){return l.status==='Active';});el('stat-count').textContent=active.length;renderListings(active);}catch(e){el('listings-container').innerHTML='<div class="emptystate"><div class="emptyico">&#x26A0;</div><h3>Could not load listings</h3><p style="color:var(--g6);margin-top:.5rem">'+e.message+'</p></div>';}}
+  function renderListings(list){var c=el('listings-container');c.innerHTML='';if(!list.length){var empty=document.createElement('div');empty.className='emptystate';empty.innerHTML='<div class="emptyico">&#x1F697;</div><h3 style="color:var(--g4)">No listings yet</h3>';var b=document.createElement('button');b.className='btn btng';b.style.marginTop='1.5rem';b.textContent='+ List My Car';b.addEventListener('click',window.openSell);empty.appendChild(b);c.appendChild(empty);return;}var grid=document.createElement('div');grid.className='cardgrid';list.forEach(function(listing){var lid=listing.id;var card=document.createElement('div');card.className='carcard';var imgDiv=document.createElement('div');imgDiv.className='cardimg';if(listing.photos&&listing.photos.length&&listing.photos[0]){var img=document.createElement('img');img.src=listing.photos[0];img.loading='lazy';imgDiv.appendChild(img);}else{imgDiv.innerHTML='&#x1F697;';}var body=document.createElement('div');body.className='cardbody';var title=document.createElement('div');title.className='cardtitle';title.textContent=[(listing.year||''),(listing.make||''),(listing.model||'')].filter(Boolean).join(' ');var sub=document.createElement('div');sub.className='cardsub';sub.textContent=listing.odometer?Number(listing.odometer).toLocaleString()+' km':'Odometer N/A';var badges=document.createElement('div');badges.className='badgeset';var bdg=document.createElement('span');bdg.className='bdg '+(condMap[listing.condition]||'bgry');bdg.textContent=listing.condition||'';badges.appendChild(bdg);var price=document.createElement('div');price.className='cardprice';price.textContent=priceLbl(listing);var foot=document.createElement('div');foot.className='cardfoot';var loc=document.createElement('div');loc.className='cardloc';loc.innerHTML='&#x1F4CD; '+(listing.location||'NZ');var enqBtn=document.createElement('button');enqBtn.className='btn btng';enqBtn.style.fontSize='.77rem';enqBtn.style.padding='.33rem .8rem';enqBtn.textContent='Enquire';enqBtn.addEventListener('click',function(e){e.stopPropagation();openContact(lid);});foot.appendChild(loc);foot.appendChild(enqBtn);body.appendChild(title);body.appendChild(sub);body.appendChild(badges);body.appendChild(price);body.appendChild(foot);card.appendChild(imgDiv);card.appendChild(body);card.addEventListener('click',function(){openDetail(lid);});grid.appendChild(card);});c.appendChild(grid);}
+  el('detail-close').addEventListener('click',function(){closeModal('m-detail');});el('m-detail').addEventListener('click',function(e){if(e.target===this)closeModal('m-detail');});
+  async function openDetail(id){currentId=id;openModal('m-detail');var body=el('detail-body');body.innerHTML='<div class="spinner"></div>';var l=allListings.find(function(x){return x.id===id;});if(!l)return;el('detail-title').textContent=[(l.year||''),(l.make||''),(l.model||'')].filter(Boolean).join(' ');body.innerHTML='';if(l.photos&&l.photos.length){var pr=document.createElement('div');pr.style.cssText='display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem';l.photos.forEach(function(p){if(!p)return;var pi=document.createElement('img');pi.src=p;pi.style.cssText='height:160px;border-radius:10px;object-fit:cover;flex:1;min-width:130px';pr.appendChild(pi);});body.appendChild(pr);}var grid=document.createElement('div');grid.className='detgrid';[['Make',l.make],['Model',l.model],['Year',l.year],['Odometer',l.odometer?Number(l.odometer).toLocaleString()+' km':'N/A'],['Condition',l.condition],['Location',l.location],['Type',l.listing_type],['Price',priceLbl(l)]].forEach(function(f){var d=document.createElement('div');d.className='detitem';var lb=document.createElement('label');lb.textContent=f[0];var sp=document.createElement('span');sp.textContent=f[1]||'';d.appendChild(lb);d.appendChild(sp);grid.appendChild(d);});body.appendChild(grid);if(l.description){var sep=document.createElement('div');sep.className='fsep';sep.style.marginTop='1rem';sep.textContent='Description';var desc=document.createElement('p');desc.style.cssText='color:var(--g4);font-size:.88rem;line-height:1.7';desc.textContent=l.description;body.appendChild(sep);body.appendChild(desc);}if(l.listing_type==='Sell the parts'){try{var parts=await api({action:'filter',entity:'CarPart',car_listing_id:id});parts=Array.isArray(parts)?parts:(parts.items||[]);if(parts.length){var ps=document.createElement('div');ps.className='fsep';ps.style.marginTop='1.25rem';ps.textContent='Parts for Sale';body.appendChild(ps);parts.forEach(function(p){var pi=document.createElement('div');pi.className='partitem';var pn=document.createElement('span');pn.className='partname';pn.textContent=p.part_name;var pp=document.createElement('span');pp.className='partprice';pp.textContent=p.status==='Sold'?'SOLD':'NZD $'+Number(p.price||0).toLocaleString();pi.appendChild(pn);pi.appendChild(pp);body.appendChild(pi);});}}catch(e){}}var cb=document.createElement('button');cb.className='btn btng';cb.style.cssText='width:100%;margin-top:1.5rem';cb.textContent='Contact Seller';cb.addEventListener('click',function(){closeModal('m-detail');openContact(id);});body.appendChild(cb);}
+  function openContact(id){currentId=id;['cn','cph','ce','cm'].forEach(function(i){if(el(i))el(i).value='';});el('contact-form').style.display='block';el('contact-success').style.display='none';el('contact-footer').style.display='flex';openModal('m-contact');}
+  el('contact-close').addEventListener('click',function(){closeModal('m-contact');});el('contact-cancel').addEventListener('click',function(){closeModal('m-contact');});el('m-contact').addEventListener('click',function(e){if(e.target===this)closeModal('m-contact');});
+  el('contact-submit').addEventListener('click',async function(){if(!val('cn')||!val('ce')||!val('cm')){showToast('Please fill in name, email and message',true);return;}try{await api({action:'create',entity:'BuyerEnquiry'},'POST',{car_listing_id:currentId,buyer_name:val('cn'),buyer_email:val('ce'),buyer_phone:val('cph'),enquiry_type:val('ctp'),message:val('cm'),status:'New'});el('contact-form').style.display='none';el('contact-success').style.display='block';el('contact-footer').style.display='none';}catch(e){showToast('Error: '+e.message,true);}});
+  el('login-close').addEventListener('click',function(){closeModal('m-login');});el('login-cancel').addEventListener('click',function(){closeModal('m-login');});el('m-login').addEventListener('click',function(e){if(e.target===this)closeModal('m-login');});
+  el('admin-pass').addEventListener('keydown',function(e){if(e.key==='Enter')el('login-submit').click();});
+  el('login-submit').addEventListener('click',function(){if(el('admin-pass').value===ADMIN_PW){closeModal('m-login');goAdmin();}else{el('login-err').style.display='block';}});
+  async function loadAdminListings(){var tb=el('admin-listings-body');tb.innerHTML='<tr><td colspan="7" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr>';try{var data=await api({action:'list',entity:'CarListing'});var rows=Array.isArray(data)?data:(data.items||[]);if(!rows.length){tb.innerHTML='<tr><td colspan="7" style="text-align:center;padding:2.5rem;color:var(--g6)">No listings yet.</td></tr>';return;}var sc={Active:'bgrn',Sold:'bgry',Removed:'bred'};tb.innerHTML='';rows.forEach(function(l){var tr=document.createElement('tr');function addTd(html){var td=document.createElement('td');td.innerHTML=html;tr.appendChild(td);}addTd('<strong>'+[(l.year||''),(l.make||''),(l.model||'')].filter(Boolean).join(' ')+'</strong><br/><small style="color:var(--g6)">'+(l.location||'')+'</small>');addTd((l.seller_name||'')+'<br/><small style="color:var(--g6)">'+(l.seller_email||'')+'</small>');addTd(l.listing_type||'');addTd('<span class="bdg '+(condMap[l.condition]||'bgry')+'">'+(l.condition||'')+'</span>');addTd(l.sale_price?'NZD $'+Number(l.sale_price).toLocaleString():l.listing_type==='Get rid of it (free/scrap)'?'Free':'Parts');addTd('<span class="bdg '+(sc[l.status]||'bgry')+'">'+(l.status||'Active')+'</span>');var atd=document.createElement('td');atd.style.cssText='display:flex;gap:.4rem;flex-wrap:wrap';function addABtn(cls,txt,st){var b=document.createElement('button');b.className=cls;b.textContent=txt;b.addEventListener('click',(function(lid,s){return function(){setStatus(lid,s);};})(l.id,st));atd.appendChild(b);}if(l.status!=='Sold')addABtn('abg','Mark Sold','Sold');if(l.status!=='Removed')addABtn('abr','Remove','Removed');if(l.status!=='Active')addABtn('abg','Restore','Active');tr.appendChild(atd);tb.appendChild(tr);});}catch(e){tb.innerHTML='<tr><td colspan="7" style="text-align:center;color:#f87171;padding:2rem">Failed: '+e.message+'</td></tr>';}}
+  async function setStatus(id,status){try{await api({action:'update',entity:'CarListing',id:id},'POST',{status:status});showToast('Marked as '+status);loadAdminListings();loadListings();}catch(e){showToast('Failed: '+e.message,true);}}
+  async function loadAdminEnquiries(){var tb=el('admin-enquiries-body');tb.innerHTML='<tr><td colspan="6" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr>';try{var data=await api({action:'list',entity:'BuyerEnquiry'});var rows=Array.isArray(data)?data:(data.items||[]);if(!rows.length){tb.innerHTML='<tr><td colspan="6" style="text-align:center;padding:2.5rem;color:var(--g6)">No enquiries yet.</td></tr>';return;}var sc={New:'bylw',Responded:'bgrn',Closed:'bgry'};tb.innerHTML='';rows.forEach(function(enq){var tr=document.createElement('tr');function addTd(html){var td=document.createElement('td');td.innerHTML=html;tr.appendChild(td);}addTd('<strong>'+(enq.buyer_name||'')+'</strong>');addTd(enq.enquiry_type||'');var msgTd=document.createElement('td');msgTd.style.cssText='max-width:180px;font-size:.82rem;color:var(--g4)';msgTd.textContent=(enq.message||'').substring(0,75)+(enq.message&&enq.message.length>75?'...':'');tr.appendChild(msgTd);addTd((enq.buyer_email||'')+'<br/>'+(enq.buyer_phone||''));addTd('<span class="bdg '+(sc[enq.status]||'bgry')+'">'+(enq.status||'New')+'</span>');var atd=document.createElement('td');atd.style.cssText='display:flex;gap:.4rem';function addEBtn(cls,txt,st){var b=document.createElement('button');b.className=cls;b.textContent=txt;b.addEventListener('click',(function(eid,s){return function(){setEnqStatus(eid,s);};})(enq.id,st));atd.appendChild(b);}if(enq.status!=='Responded')addEBtn('abg','Responded','Responded');if(enq.status!=='Closed')addEBtn('abr','Close','Closed');tr.appendChild(atd);tb.appendChild(tr);});}catch(e){tb.innerHTML='<tr><td colspan="6" style="text-align:center;color:#f87171;padding:2rem">Failed.</td></tr>';}}
+  async function setEnqStatus(id,status){try{await api({action:'update',entity:'BuyerEnquiry',id:id},'POST',{status:status});showToast('Updated');loadAdminEnquiries();}catch(e){showToast('Failed.',true);}}
   loadListings();
-
 })();
-</script>
-</body>
-</html>
+</script></body></html>
