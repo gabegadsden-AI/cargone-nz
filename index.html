@@ -2,126 +2,244 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CarGone NZ</title>
+  <title>CarGone NZ — Sell, Scrap or Part Out Your Car for Cash</title>
+  <meta name="description" content="CarGone NZ connects sellers with buyers across New Zealand. Sell your car, scrap it for free, or part it out — fast, free and simple. Get a cash offer today."/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2316a34a'/%3E%3Ctext x='50' y='71' font-family='Arial,sans-serif' font-size='62' font-weight='900' fill='white' text-anchor='middle'%3ECG%3C/text%3E%3C/svg%3E"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="CarGone NZ — Turn Your Unwanted Car Into Cash or Closure"/>
+  <meta property="og:description" content="Sell it, scrap it, or part it out. CarGone NZ connects sellers with buyers across New Zealand — fast, free and simple."/>
+  <meta property="og:image" content="cargone-og.png"/>
+  <meta property="og:site_name" content="CarGone NZ"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="CarGone NZ — Turn Your Unwanted Car Into Cash or Closure"/>
+  <meta name="twitter:description" content="Sell it, scrap it, or part it out. CarGone NZ connects sellers with buyers across New Zealand."/>
+  <meta name="twitter:image" content="cargone-og.png"/>
+  <meta name="theme-color" content="#16a34a"/>
+  <!-- ===== Google Analytics 4 — paste your Measurement ID (looks like G-XXXXXXXXXX) between the quotes below ===== -->
+  <script>
+    var GA_MEASUREMENT_ID = ''; /* e.g. 'G-ABC1234XYZ' — leave blank to keep analytics off */
+    if (GA_MEASUREMENT_ID) {
+      var _ga = document.createElement('script'); _ga.async = true;
+      _ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+      document.head.appendChild(_ga);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID);
+    }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <style>
-    :root{--blk:#0a0a0a;--drk:#111111;--grn:#16a34a;--gl:#22c55e;--gd:#15803d;--w:#fff;--g4:#a1a1aa;--g6:#52525b;--g2:#e4e4e7}
+    :root{
+      --bg:#f5f5f7;--surface:#ffffff;--inset:#f0f0f3;
+      --grn:#16a34a;--gl:#15803d;--gd:#166534;
+      --ink:#1d1d1f;--w:#1d1d1f;--g2:#3a3a3c;--g4:#6e6e73;--g6:#9a9aa0;
+      --line:#e3e3e8;--line2:#d2d2d7;--gold:#f5a623;
+      --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
+      --shadow-h:0 4px 14px rgba(0,0,0,.08),0 18px 44px rgba(0,0,0,.09);
+    }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Inter',sans-serif;background:var(--blk);color:var(--w);min-height:100vh}
-    nav{background:var(--drk);border-bottom:1px solid #1f1f1f;padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-    .logo{display:flex;align-items:center;gap:.4rem;font-size:1.4rem;font-weight:900;cursor:pointer;letter-spacing:-.5px}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+    nav{background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line);padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .logo{display:flex;align-items:center;gap:.4rem;font-size:1.4rem;font-weight:900;cursor:pointer;letter-spacing:-.5px;color:var(--ink)}
     .logo .gr{color:var(--gl)}.logo .nz{color:var(--g4);font-weight:500;font-size:1rem}
     .navlinks{display:flex;gap:1.5rem;align-items:center}
-    .nb{background:none;border:none;color:var(--g4);font-size:.93rem;font-weight:500;cursor:pointer;font-family:inherit;padding:.3rem 0;transition:color .15s}.nb:hover{color:var(--w)}
+    .nb{background:none;border:none;color:var(--g4);font-size:.93rem;font-weight:500;cursor:pointer;font-family:inherit;padding:.3rem 0;transition:color .15s}.nb:hover{color:var(--ink)}
     .btn{padding:.6rem 1.4rem;border-radius:8px;font-weight:600;font-size:.9rem;cursor:pointer;border:none;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem;font-family:inherit}
     .btng{background:var(--grn);color:#fff}.btng:hover{background:var(--gd)}
-    .btno{background:transparent;border:1.5px solid #3f3f3f;color:var(--w)}.btno:hover{border-color:var(--w)}
+    .btno{background:transparent;border:1.5px solid var(--line2);color:var(--ink)}.btno:hover{border-color:var(--ink)}
     .btnlg{padding:.85rem 2rem;font-size:1rem;border-radius:10px}
-    .hero{padding:5.5rem 2rem 4rem;text-align:center;background:radial-gradient(ellipse at center top,#16a34a18 0%,transparent 65%)}
-    .pill{display:inline-block;background:#16a34a20;border:1px solid #16a34a50;color:var(--gl);padding:.3rem 1rem;border-radius:100px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.5rem}
+    .hero{padding:5.5rem 2rem 4rem;text-align:center;background:radial-gradient(ellipse at center top,#16a34a14 0%,transparent 60%)}
+    .pill{display:inline-block;background:#16a34a14;border:1px solid #16a34a45;color:var(--gl);padding:.3rem 1rem;border-radius:100px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.5rem}
     .hero h1{font-size:clamp(2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-2px;margin-bottom:1.2rem}
     .hero h1 em{color:var(--gl);font-style:normal}
     .hero p{font-size:1.1rem;color:var(--g4);max-width:520px;margin:0 auto 2.5rem;line-height:1.75}
     .heroctarow{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);background:#1a1a1a;border-top:1px solid #222;border-bottom:1px solid #222}
-    .stat{padding:1.75rem 1.5rem;text-align:center;border-right:1px solid #222}.stat:last-child{border-right:none}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .stat{padding:1.75rem 1.5rem;text-align:center;border-right:1px solid var(--line)}.stat:last-child{border-right:none}
     .statnum{font-size:2rem;font-weight:900;color:var(--gl)}.statlbl{font-size:.75rem;color:var(--g4);margin-top:.3rem;text-transform:uppercase;letter-spacing:.04em}
     .sec{padding:3rem 2rem;max-width:1200px;margin:0 auto}
-    .sectitle{font-size:1.6rem;font-weight:800;margin-bottom:1.75rem}.sectitle span{color:var(--gl)}
-    .filterbar{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem;padding:1.25rem;background:var(--drk);border-radius:12px;border:1px solid #1f1f1f}
-    .filterbar select,.filterbar input{background:#0a0a0a;border:1.5px solid #2a2a2a;color:var(--w);padding:.55rem 1rem;border-radius:8px;font-size:.88rem;font-family:inherit;flex:1;min-width:140px;cursor:pointer}
+    .sectitle{font-size:1.6rem;font-weight:800;margin-bottom:1.75rem;color:var(--ink)}.sectitle span{color:var(--gl)}
+    .filterbar{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem;padding:1.25rem;background:var(--surface);border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .filterbar select,.filterbar input{background:var(--bg);border:1.5px solid var(--line2);color:var(--ink);padding:.55rem 1rem;border-radius:8px;font-size:.88rem;font-family:inherit;flex:1;min-width:140px;cursor:pointer}
     .cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
-    .carcard{background:var(--drk);border:1px solid #1f1f1f;border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s;cursor:pointer}
-    .carcard:hover{transform:translateY(-3px);border-color:var(--grn)}
-    .cardimg{width:100%;height:190px;background:#0d0d0d;display:flex;align-items:center;justify-content:center;font-size:3.5rem;color:#2a2a2a;overflow:hidden}
+    .carcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s;cursor:pointer;box-shadow:var(--shadow)}
+    .carcard:hover{transform:translateY(-3px);border-color:#16a34a66;box-shadow:var(--shadow-h)}
+    .cardimg{width:100%;height:190px;background:var(--inset);display:flex;align-items:center;justify-content:center;font-size:3.5rem;color:#c7c7cc;overflow:hidden}
     .cardimg img{width:100%;height:100%;object-fit:cover}
     .cardbody{padding:1.25rem}
-    .cardtitle{font-size:1.05rem;font-weight:700;margin-bottom:.3rem}
+    .cardtitle{font-size:1.05rem;font-weight:700;margin-bottom:.3rem;color:var(--ink)}
     .cardsub{font-size:.82rem;color:var(--g4);margin-bottom:.75rem}
     .badgeset{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.85rem}
     .bdg{padding:.22rem .6rem;border-radius:100px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
-    .bgrn{background:#16a34a20;color:var(--gl);border:1px solid #16a34a40}
-    .bylw{background:#ca8a0420;color:#fbbf24;border:1px solid #ca8a0440}
-    .bred{background:#dc262620;color:#f87171;border:1px solid #dc262640}
-    .bgry{background:#27272a;color:var(--g4)}
+    .bgrn{background:#16a34a16;color:var(--gl);border:1px solid #16a34a40}
+    .bylw{background:#f59e0b1f;color:#b45309;border:1px solid #f59e0b55}
+    .bred{background:#dc26261a;color:#dc2626;border:1px solid #dc262640}
+    .bgry{background:#eceef2;color:var(--g4)}
     .cardprice{font-size:1.35rem;font-weight:900;color:var(--gl)}
-    .cardfoot{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:1rem;border-top:1px solid #1a1a1a}
+    .cardfoot{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line)}
     .cardloc{font-size:.8rem;color:var(--g4)}
-    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:300;display:none;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(6px)}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:300;display:none;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px)}
     .overlay.open{display:flex}
-    .modal{background:var(--drk);border:1px solid #2a2a2a;border-radius:16px;width:100%;max-width:680px;max-height:92vh;overflow-y:auto}
+    .modal{background:var(--surface);border:1px solid var(--line);border-radius:16px;width:100%;max-width:680px;max-height:92vh;overflow-y:auto;box-shadow:0 20px 70px rgba(0,0,0,.22)}
     .modalsm{max-width:440px}
-    .modalhd{padding:1.5rem 1.75rem;border-bottom:1px solid #1f1f1f;display:flex;align-items:center;justify-content:space-between}
-    .modalttl{font-size:1.1rem;font-weight:800}
-    .modalx{background:#1f1f1f;border:none;color:var(--g4);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;line-height:1}
-    .modalx:hover{background:#2a2a2a;color:#fff}
+    .modalhd{padding:1.5rem 1.75rem;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+    .modalttl{font-size:1.1rem;font-weight:800;color:var(--ink)}
+    .modalx{background:var(--inset);border:none;color:var(--g4);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;line-height:1}
+    .modalx:hover{background:#e3e3e8;color:var(--ink)}
     .modalbdy{padding:1.75rem}
-    .modalft{padding:1.25rem 1.75rem;border-top:1px solid #1f1f1f;display:flex;justify-content:flex-end;gap:.75rem}
+    .modalft{padding:1.25rem 1.75rem;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:.75rem}
     .fg2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
     .fcol{grid-column:1/-1}
     .fgrp{display:flex;flex-direction:column;gap:.4rem}
-    .flbl{font-size:.82rem;font-weight:600;color:var(--g2)}.flbl em{color:var(--gl);font-style:normal}
-    .finp,.fsel,.ftxt{background:#0a0a0a;border:1.5px solid #2a2a2a;color:#fff;padding:.7rem 1rem;border-radius:10px;font-size:.92rem;font-family:inherit;width:100%;transition:border-color .2s}
+    .flbl{font-size:.82rem;font-weight:600;color:var(--g2)}.flbl em{color:#dc2626;font-style:normal}
+    .finp,.fsel,.ftxt{background:var(--bg);border:1.5px solid var(--line2);color:var(--ink);padding:.7rem 1rem;border-radius:10px;font-size:.92rem;font-family:inherit;width:100%;transition:border-color .2s}
+    .finp::placeholder,.ftxt::placeholder{color:#aeaeb2}
     .finp:focus,.fsel:focus,.ftxt:focus{outline:none;border-color:var(--grn)}
     .ftxt{resize:vertical;min-height:85px}
     .fsep{font-size:.73rem;font-weight:700;color:var(--gl);text-transform:uppercase;letter-spacing:.1em;margin:1.25rem 0 .75rem;padding-bottom:.5rem;border-bottom:1px solid #16a34a30}
-    .partrow{background:#0a0a0a;border:1px solid #222;border-radius:10px;padding:1rem;display:grid;grid-template-columns:2fr 1fr auto;gap:.75rem;align-items:end;margin-bottom:.75rem}
-    .btnrm{background:#dc262620;border:1px solid #dc262640;color:#f87171;padding:.6rem .9rem;border-radius:8px;cursor:pointer;font-family:inherit;font-size:.9rem}
-    .btnadd{background:#16a34a18;border:1.5px dashed #16a34a50;color:var(--gl);padding:.65rem 1rem;border-radius:8px;cursor:pointer;font-size:.88rem;font-weight:600;width:100%;font-family:inherit}
-    .btnadd:hover{background:#16a34a28}
-    .photodrop{border:2px dashed #2a2a2a;border-radius:10px;padding:2rem;text-align:center;cursor:pointer;transition:border-color .2s;margin-top:.5rem}
+    .partrow{background:var(--inset);border:1px solid var(--line);border-radius:10px;padding:1rem;display:grid;grid-template-columns:2fr 1fr auto;gap:.75rem;align-items:end;margin-bottom:.75rem}
+    .btnrm{background:#dc26261a;border:1px solid #dc262640;color:#dc2626;padding:.6rem .9rem;border-radius:8px;cursor:pointer;font-family:inherit;font-size:.9rem}
+    .btnadd{background:#16a34a14;border:1.5px dashed #16a34a55;color:var(--gl);padding:.65rem 1rem;border-radius:8px;cursor:pointer;font-size:.88rem;font-weight:600;width:100%;font-family:inherit}
+    .btnadd:hover{background:#16a34a22}
+    .photodrop{border:2px dashed var(--line2);border-radius:10px;padding:2rem;text-align:center;cursor:pointer;transition:border-color .2s;margin-top:.5rem;color:var(--g4)}
     .photodrop:hover{border-color:var(--grn)}
     .photoprev{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem}
     .thumbwrap{position:relative;display:inline-block}
-    .photothumb{width:80px;height:60px;object-fit:cover;border-radius:7px;border:1px solid #2a2a2a}
+    .photothumb{width:80px;height:60px;object-fit:cover;border-radius:7px;border:1px solid var(--line2)}
     .thumbdel{position:absolute;top:-5px;right:-5px;background:#dc2626;border:none;color:#fff;border-radius:50%;width:18px;height:18px;font-size:.7rem;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
-    .howsec{background:var(--drk);padding:5rem 2rem;border-top:1px solid #1a1a1a}
+    .howsec{background:var(--surface);padding:5rem 2rem;border-top:1px solid var(--line)}
     .howgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;max-width:960px;margin:2.5rem auto 0}
     .howstep{text-align:center}
-    .howico{width:64px;height:64px;background:#16a34a18;border:1px solid #16a34a40;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 1rem}
-    .howstep h3{font-size:.95rem;font-weight:700;margin-bottom:.4rem}
-    .howstep p{font-size:.83rem;color:var(--g4);line-height:1.65}
+    .howico{position:relative;width:72px;height:72px;background:#16a34a14;border:1px solid #16a34a40;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1.1rem}
+    .hownum{position:absolute;top:-9px;right:-9px;width:28px;height:28px;border-radius:50%;background:var(--grn);color:#fff;font-size:.82rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:3px solid var(--surface)}
+    .howstep h3{font-size:1rem;font-weight:700;margin-bottom:.45rem;color:var(--ink)}
+    .howstep p{font-size:.85rem;color:var(--g4);line-height:1.65}
+    .svcsec{padding:5rem 2rem;max-width:1200px;margin:0 auto}
+    .svchead{text-align:center;margin-bottom:2.75rem}
+    .svchead h2{font-size:1.9rem;font-weight:900;margin-top:.75rem;letter-spacing:-1px;color:var(--ink)}
+    .svchead h2 span{color:var(--gl)}
+    .svchead p{color:var(--g4);max-width:580px;margin:1rem auto 0;line-height:1.75;font-size:1rem}
+    .svcgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.25rem}
+    .svccard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.6rem;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column;text-align:left;box-shadow:var(--shadow)}
+    .svccard:hover{transform:translateY(-3px);border-color:#16a34a66;box-shadow:var(--shadow-h)}
+    .svcico{width:54px;height:54px;background:#16a34a14;border:1px solid #16a34a40;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;margin-bottom:1.1rem}
+    .svccard h3{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;color:var(--ink)}
+    .svccard p{font-size:.85rem;color:var(--g4);line-height:1.65;flex:1}
+    .svcmore{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.15rem;font-size:.84rem;font-weight:700;color:var(--gl);transition:gap .2s}
+    .svccard:hover .svcmore{gap:.75rem}
+    .svccta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.75rem}
     .detgrid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1rem 0}
     .detitem label{font-size:.75rem;color:var(--g4);display:block;margin-bottom:.2rem}
-    .detitem span{font-size:.92rem;font-weight:600}
-    .partitem{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1rem;background:#0a0a0a;border-radius:8px;margin-bottom:.5rem}
-    .partname{font-weight:600;font-size:.88rem}.partprice{color:var(--gl);font-weight:700}
-    .successbox{background:#16a34a18;border:1px solid #16a34a40;border-radius:12px;padding:2rem;text-align:center}
+    .detitem span{font-size:.92rem;font-weight:600;color:var(--ink)}
+    .partitem{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1rem;background:var(--inset);border-radius:8px;margin-bottom:.5rem}
+    .partname{font-weight:600;font-size:.88rem;color:var(--ink)}.partprice{color:var(--gl);font-weight:700}
+    .successbox{background:#16a34a14;border:1px solid #16a34a40;border-radius:12px;padding:2rem;text-align:center}
     .successbox h3{color:var(--gl);font-size:1.1rem;margin-bottom:.4rem}
-    .adminbar{background:var(--drk);border-bottom:1px solid #1a1a1a;padding:1rem 2rem;display:flex;align-items:center;gap:1rem}
+    .adminbar{background:var(--surface);border-bottom:1px solid var(--line);padding:1rem 2rem;display:flex;align-items:center;gap:1rem}
     .adminpill{background:var(--gd);color:#fff;padding:.2rem .75rem;border-radius:100px;font-size:.72rem;font-weight:700;text-transform:uppercase}
-    .tabbar{display:flex;gap:.3rem;background:#0a0a0a;padding:.4rem;border-radius:10px;margin-bottom:2rem}
+    .tabbar{display:flex;gap:.3rem;background:var(--inset);padding:.4rem;border-radius:10px;margin-bottom:2rem}
     .tabbtn{flex:1;padding:.65rem;border-radius:8px;border:none;background:transparent;color:var(--g4);font-size:.88rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s}
-    .tabbtn.active{background:var(--drk);color:#fff}
-    .tablewrap{background:var(--drk);border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;overflow-x:auto}
+    .tabbtn.active{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+    .tablewrap{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;overflow-x:auto;box-shadow:var(--shadow)}
     table{width:100%;border-collapse:collapse;min-width:680px}
-    th{background:#0a0a0a;padding:.9rem 1rem;text-align:left;font-size:.75rem;font-weight:700;color:var(--g4);text-transform:uppercase;letter-spacing:.05em}
-    td{padding:.9rem 1rem;font-size:.87rem;border-top:1px solid #181818;vertical-align:middle}
-    tr:hover td{background:#0d0d0d}
-    .abg{background:#16a34a20;border:1px solid #16a34a40;color:var(--gl);padding:.3rem .75rem;border-radius:7px;cursor:pointer;font-size:.77rem;font-weight:700;font-family:inherit}
-    .abr{background:#dc262620;border:1px solid #dc262640;color:#f87171;padding:.3rem .75rem;border-radius:7px;cursor:pointer;font-size:.77rem;font-weight:700;font-family:inherit}
-    .emptystate{text-align:center;padding:5rem 2rem}
+    th{background:var(--inset);padding:.9rem 1rem;text-align:left;font-size:.75rem;font-weight:700;color:var(--g4);text-transform:uppercase;letter-spacing:.05em}
+    td{padding:.9rem 1rem;font-size:.87rem;border-top:1px solid var(--line);vertical-align:middle;color:var(--ink)}
+    tr:hover td{background:#fafafb}
+    .abg{background:#16a34a16;border:1px solid #16a34a40;color:var(--gl);padding:.3rem .75rem;border-radius:7px;cursor:pointer;font-size:.77rem;font-weight:700;font-family:inherit}
+    .abr{background:#dc26261a;border:1px solid #dc262640;color:#dc2626;padding:.3rem .75rem;border-radius:7px;cursor:pointer;font-size:.77rem;font-weight:700;font-family:inherit}
+    .emptystate{text-align:center;padding:5rem 2rem;color:var(--g4)}
     .emptyico{font-size:4rem;margin-bottom:1rem}
-    footer{background:var(--drk);border-top:1px solid #1a1a1a;padding:3rem 2rem;text-align:center}
+    footer{background:var(--surface);border-top:1px solid var(--line);padding:3rem 2rem;text-align:center}
     .footlinks{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
     .footlinks button{background:none;border:none;color:var(--g4);font-size:.85rem;cursor:pointer;font-family:inherit}
-    .footlinks button:hover{color:var(--w)}
+    .footlinks button:hover{color:var(--ink)}
     footer p{color:var(--g6);font-size:.82rem}
     .page{display:none}.page.active{display:block}
-    .spinner{width:40px;height:40px;border:3px solid #1f1f1f;border-top-color:var(--grn);border-radius:50%;animation:spn .8s linear infinite;margin:4rem auto}
+    .spinner{width:40px;height:40px;border:3px solid var(--line);border-top-color:var(--grn);border-radius:50%;animation:spn .8s linear infinite;margin:4rem auto}
     @keyframes spn{to{transform:rotate(360deg)}}
-    .toast{position:fixed;bottom:2rem;right:2rem;background:#15803d;color:#fff;padding:1rem 1.5rem;border-radius:12px;font-weight:600;font-size:.88rem;z-index:9999;animation:tfu .3s ease;box-shadow:0 8px 30px rgba(0,0,0,.6)}
+    .toast{position:fixed;bottom:2rem;right:2rem;background:#15803d;color:#fff;padding:1rem 1.5rem;border-radius:12px;font-weight:600;font-size:.88rem;z-index:9999;animation:tfu .3s ease;box-shadow:0 8px 30px rgba(0,0,0,.2)}
     .toasterr{background:#dc2626}
     @keyframes tfu{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}
-    @media(max-width:620px){.fg2{grid-template-columns:1fr}.partrow{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat{border-right:none;border-bottom:1px solid #222}.hidemob{display:none}}
+    /* ===== Reviews ===== */
+    .revsec{background:var(--bg);border-top:1px solid var(--line);padding:5rem 2rem}
+    .revwrap{max-width:1120px;margin:0 auto}
+    .revhead{text-align:center;margin-bottom:2.5rem}
+    .revhead h2{font-size:1.9rem;font-weight:900;margin-top:.75rem;letter-spacing:-1px;color:var(--ink)}
+    .revhead h2 span{color:var(--gl)}
+    .revsummary{display:inline-flex;align-items:center;gap:.9rem;margin-top:1.1rem;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:14px;padding:.85rem 1.4rem}
+    .revavg{font-size:2.2rem;font-weight:900;color:var(--ink);line-height:1}
+    .revstars-lg{font-size:1.15rem;letter-spacing:2px;color:var(--gold)}
+    .revcount{color:var(--g4);font-size:.82rem;margin-top:.2rem}
+    .revformcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.75rem;max-width:580px;margin:0 auto 3rem;box-shadow:var(--shadow)}
+    .revformcard h3{font-size:1.15rem;font-weight:800;margin-bottom:1.1rem;color:var(--ink)}
+    .starpick{display:flex;gap:.25rem}
+    .starbtn{background:none;border:none;cursor:pointer;font-size:1.9rem;line-height:1;color:#d2d2d7;transition:color .12s,transform .12s;padding:0;font-family:inherit}
+    .starbtn.on{color:var(--gold)}
+    .starbtn:hover{transform:scale(1.12)}
+    .revgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.25rem}
+    .revcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.4rem 1.5rem;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .revcardhd{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;margin-bottom:.35rem}
+    .revname{font-weight:700;font-size:.98rem;color:var(--ink)}
+    .revdate{font-size:.74rem;color:var(--g6);white-space:nowrap;margin-top:.15rem}
+    .revstars{color:var(--gold);font-size:.95rem;letter-spacing:1px;margin-bottom:.6rem}
+    .revtext{font-size:.9rem;color:var(--g2);line-height:1.65;text-wrap:pretty}
+    .revreply{margin-top:1rem;padding:.85rem 1rem;background:#16a34a0e;border-left:3px solid var(--grn);border-radius:0 10px 10px 0}
+    .revreply-lbl{font-size:.7rem;font-weight:700;color:var(--gl);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem;display:flex;align-items:center;gap:.35rem}
+    .revreply-txt{font-size:.85rem;color:var(--g2);line-height:1.6;text-wrap:pretty}
+    /* ===== Mobile ===== */
+    @media (max-width:760px){
+      nav{padding:0 1.1rem;height:60px}
+      .hidemob{display:none}
+      .logo{font-size:1.2rem}
+      .navlinks{gap:.65rem}
+      .hero{padding:3.5rem 1.25rem 2.5rem}
+      .hero p{font-size:1rem;margin-bottom:2rem}
+      .heroctarow{gap:.65rem}
+      .btnlg{padding:.75rem 1.4rem;font-size:.95rem}
+      .stats{grid-template-columns:1fr 1fr}
+      .stat{padding:1.25rem 1rem}
+      .stat:nth-child(2n){border-right:none}
+      .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .sec{padding:2.5rem 1.25rem}
+      .howsec,.svcsec,.revsec{padding:3rem 1.25rem}
+      .sectitle{font-size:1.35rem}
+      .svchead h2,.revhead h2{font-size:1.45rem}
+      .filterbar{padding:1rem}
+      .filterbar select,.filterbar input{min-width:0;flex:1 1 calc(50% - .4rem)}
+      .fg2{grid-template-columns:1fr}
+      .detgrid{grid-template-columns:1fr 1fr}
+      .modalbdy{padding:1.25rem}
+      .modalhd{padding:1.1rem 1.25rem}
+      .modalft{padding:1rem 1.25rem}
+      .partrow{grid-template-columns:1fr 1fr}
+      .partrow .btnrm{grid-column:1/-1}
+      .adminbar{padding:.85rem 1.1rem;flex-wrap:wrap;gap:.6rem}
+      .footlinks{gap:1.1rem 1.4rem}
+      .toast{left:1rem;right:1rem;bottom:1rem;text-align:center}
+    }
+    @media (max-width:430px){
+      .filterbar select,.filterbar input{flex:1 1 100%}
+      .heroctarow .btnlg{width:100%;justify-content:center}
+      .svccta{flex-direction:column}
+      .svccta .btnlg{width:100%;justify-content:center}
+    }
   </style>
 </head>
 <body>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#16a34a"/>
+    <text x="50" y="62" font-family="Inter, sans-serif" font-size="46" font-weight="900" fill="#ffffff" text-anchor="middle">CG</text>
+  </svg>
+</template>
 <nav>
   <div class="logo" onclick="goHome()">&#x1F697; Car<span class="gr">Gone</span><span class="nz"> NZ</span></div>
   <div class="navlinks">
     <button class="nb hidemob" onclick="goHome()">Browse</button>
     <button class="nb hidemob" onclick="goHow()">How It Works</button>
+    <button class="nb hidemob" onclick="goServices()">Services</button>
+    <button class="nb hidemob" onclick="goReviews()">Reviews</button>
     <button class="btn btng" onclick="openSell()">+ List My Car</button>
     <button class="nb" style="font-size:.8rem;color:var(--g6)" onclick="openAdminLogin()">Admin</button>
   </div>
@@ -147,76 +265,131 @@
     <div class="filterbar">
       <select id="f-type" onchange="filterListings()"><option value="">All Types</option><option>Sell the car</option><option>Get rid of it (free/scrap)</option><option>Sell the parts</option></select>
       <select id="f-cond" onchange="filterListings()"><option value="">All Conditions</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Poor</option><option>Parts Only</option></select>
-      <select id="f-loc" onchange="filterListings()"><option value="">All Regions</option><option>Auckland</option><option>Wellington</option><option>Christchurch</option><option>Hamilton</option><option>Tauranga</option><option>Dunedin</option><option>Other</option></select>
+      <select id="f-loc" onchange="filterListings()"><option value="">All Regions</option><option>Auckland</option><option>Wellington</option><option>Christchurch</option><option>Hamilton</option><option>Tauranga</option><option>Dunedin</option><option>Palmerston North</option><option>Other</option></select>
       <input type="text" id="f-q" placeholder="Search make or model..." oninput="filterListings()"/>
     </div>
     <div id="listings-container"><div class="spinner"></div></div>
   </div>
   <div class="howsec" id="how-section">
-    <div style="text-align:center"><div class="pill">Simple Process</div><h2 style="font-size:1.9rem;font-weight:900;margin-top:.75rem;letter-spacing:-1px">How CarGone NZ Works</h2></div>
+    <div style="text-align:center"><div class="pill">Simple Process</div><h2 style="font-size:1.9rem;font-weight:900;margin-top:.75rem;letter-spacing:-1px">How It Works &ndash; <span style="color:var(--gl)">3 Easy Steps</span></h2></div>
     <div class="howgrid">
-      <div class="howstep"><div class="howico">&#x1F4DD;</div><h3>1. List Your Car</h3><p>Fill in your details, upload photos, choose &mdash; sell, scrap or part it out.</p></div>
-      <div class="howstep"><div class="howico">&#x1F440;</div><h3>2. Get Seen</h3><p>Your listing goes live instantly, visible to buyers across New Zealand.</p></div>
-      <div class="howstep"><div class="howico">&#x1F4AC;</div><h3>3. Get Enquiries</h3><p>Buyers contact you directly through the built-in enquiry form.</p></div>
-      <div class="howstep"><div class="howico">&#x2705;</div><h3>4. Done Deal</h3><p>Agree on a price, sort the handover, and get that car gone!</p></div>
+      <div class="howstep"><div class="howico">&#x1F4DE;<span class="hownum">1</span></div><h3>Contact Us</h3><p>Call us or fill out our online form for an instant, no&#8209;obligation quote on your car.</p></div>
+      <div class="howstep"><div class="howico">&#x1F69B;<span class="hownum">2</span></div><h3>Arrange Removal</h3><p>Accept the quote and we&rsquo;ll arrange free, same&#8209;day removal at a time that suits you.</p></div>
+      <div class="howstep"><div class="howico">&#x1F4B5;<span class="hownum">3</span></div><h3>Get Cash</h3><p>Get paid in cash on the spot when we collect your car &mdash; quick, easy and hassle&#8209;free.</p></div>
+    </div>
+  </div>
+  <div class="svcsec" id="services-section">
+    <div class="svchead">
+      <div class="pill">What We Offer</div>
+      <h2>A Full Range of <span>Car Services</span></h2>
+      <p>From a quick cash sale to free scrap pickup and eco-friendly recycling, CarGone NZ covers every way to move on from an unwanted vehicle &mdash; fast, fair and hassle-free.</p>
+    </div>
+    <div class="svcgrid">
+      <div class="svccard" onclick="openSell()"><div class="svcico">&#x1F4B0;</div><h3>Cash for Cars</h3><p>Top dollar for any car, running or not. List it and connect with buyers across NZ in minutes.</p><span class="svcmore">Get a quote &rarr;</span></div>
+      <div class="svccard" onclick="openSell()"><div class="svcico">&#x1F69B;</div><h3>Car Removal &amp; Towing</h3><p>Arrange free pickup from your driveway, garage or the roadside &mdash; anywhere across New Zealand.</p><span class="svcmore">Get a quote &rarr;</span></div>
+      <div class="svccard" onclick="openSell()"><div class="svcico">&#x267B;&#xFE0F;</div><h3>Scrap Car Removal</h3><p>Old, dead or rusted out? List it as free/scrap and have it hauled away at no cost to you.</p><span class="svcmore">Get a quote &rarr;</span></div>
+      <div class="svccard" onclick="openSell()"><div class="svcico">&#x1F527;</div><h3>Car Wreckers</h3><p>Part out an end-of-life vehicle and sell components individually to recover real value.</p><span class="svcmore">Get a quote &rarr;</span></div>
+      <div class="svccard" onclick="openSell()"><div class="svcico">&#x1F4B5;</div><h3>Sell Your Car for Cash</h3><p>Skip the private-sale hassle. List direct and deal with genuine buyers &mdash; no time-wasters.</p><span class="svcmore">Get a quote &rarr;</span></div>
+      <div class="svccard" onclick="openSell()"><div class="svcico">&#x1F69A;</div><h3>Cash for Trucks &amp; Utes</h3><p>Work trucks, utes and heavy vehicles welcome, whatever the size, age or condition.</p><span class="svcmore">Get a quote &rarr;</span></div>
+      <div class="svccard" onclick="openSell()"><div class="svcico">&#x1F30F;</div><h3>Car Recycling</h3><p>Move your vehicle on responsibly &mdash; fluids drained, parts reused and metals recovered.</p><span class="svcmore">Get a quote &rarr;</span></div>
+      <div class="svccard" onclick="openSell()"><div class="svcico">&#x1F699;</div><h3>4WD &amp; SUV Buyers</h3><p>4WDs, SUVs and family wagons wanted in any condition, anywhere across the country.</p><span class="svcmore">Get a quote &rarr;</span></div>
+      <div class="svccard" onclick="openSell()"><div class="svcico">&#x1F6E0;&#xFE0F;</div><h3>Damaged &amp; Non-Runners</h3><p>Written off, accident-damaged or won't start? No WOF or rego? List it &mdash; it's still wanted.</p><span class="svcmore">Get a quote &rarr;</span></div>
+    </div>
+    <div class="svccta">
+      <button class="btn btng btnlg" onclick="openSell()">&#x1F697; Get a Cash Offer</button>
+      <button class="btn btno btnlg" onclick="goListings()">Browse Listings</button>
+    </div>
+  </div>
+  <div class="revsec" id="reviews-section">
+    <div class="revwrap">
+      <div class="revhead">
+        <div class="pill">Reviews</div>
+        <h2>What Our <span>Customers Say</span></h2>
+        <div class="revsummary" id="rev-summary"></div>
+      </div>
+      <div class="revformcard">
+        <h3>Leave a Review</h3>
+        <div class="fg2">
+          <div class="fgrp"><label class="flbl">Your Name <em>*</em></label><input class="finp" id="rv-name" placeholder="e.g. John Smith"/></div>
+          <div class="fgrp"><label class="flbl">Email <span style="color:var(--g6);font-weight:400">(optional)</span></label><input class="finp" id="rv-email" type="email" placeholder="your@email.com"/></div>
+          <div class="fgrp fcol"><label class="flbl">Your Rating <em>*</em></label><div class="starpick" id="rv-stars"><button type="button" class="starbtn" data-v="1">&#9733;</button><button type="button" class="starbtn" data-v="2">&#9733;</button><button type="button" class="starbtn" data-v="3">&#9733;</button><button type="button" class="starbtn" data-v="4">&#9733;</button><button type="button" class="starbtn" data-v="5">&#9733;</button></div></div>
+          <div class="fgrp fcol"><label class="flbl">Your Review <em>*</em></label><textarea class="ftxt" id="rv-text" placeholder="Tell others about your experience with CarGone NZ..."></textarea></div>
+        </div>
+        <div style="display:flex;justify-content:flex-end;margin-top:1.1rem"><button class="btn btng" id="rv-submit">Submit Review</button></div>
+      </div>
+      <div id="reviews-container"><div class="spinner"></div></div>
     </div>
   </div>
   <footer>
-    <div class="footlinks"><button onclick="goHome()">Browse Cars</button><button onclick="goHow()">How It Works</button><button onclick="openSell()">List a Car</button><button onclick="openAdminLogin()">Admin</button></div>
+    <div class="footlinks"><button onclick="goHome()">Browse Cars</button><button onclick="goHow()">How It Works</button><button onclick="goServices()">Services</button><button onclick="goReviews()">Reviews</button><button onclick="openSell()">List a Car</button><button onclick="openAdminLogin()">Admin</button></div>
     <p>&copy; 2026 CarGone NZ. All rights reserved.</p>
   </footer>
 </div>
 <div class="page" id="page-admin">
-  <div class="adminbar"><span style="font-weight:800">CarGone NZ</span><span class="adminpill">Admin</span><div style="flex:1"></div><button class="btn btno" onclick="goHome()" style="font-size:.82rem;padding:.4rem 1rem">&larr; Back</button></div>
+  <div class="adminbar"><span style="font-weight:800">CarGone NZ</span><span class="adminpill">Admin</span><div style="flex:1"></div><button class="btn btno" onclick="goHome()" style="font-size:.82rem;padding:.4rem 1rem">&larr; Back</button><button class="btn btno" onclick="adminLogout()" style="font-size:.82rem;padding:.4rem 1rem">Logout</button></div>
   <div class="sec">
-    <div class="tabbar"><button class="tabbtn active" id="tbl" onclick="switchTab('listings')">&#x1F697; Listings</button><button class="tabbtn" id="tbe" onclick="switchTab('enquiries')">&#x1F4AC; Enquiries</button></div>
+    <div class="tabbar"><button class="tabbtn active" id="tbl" onclick="switchTab('listings')">&#x1F697; Listings</button><button class="tabbtn" id="tbe" onclick="switchTab('enquiries')">&#x1F4AC; Enquiries</button><button class="tabbtn" id="tbr" onclick="switchTab('reviews')">&#x2B50; Reviews</button></div>
     <div id="tab-listings"><h2 class="sectitle">All <span>Listings</span></h2><div class="tablewrap"><table><thead><tr><th>Car</th><th>Seller</th><th>Type</th><th>Condition</th><th>Price</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-listings-body"></tbody></table></div></div>
     <div id="tab-enquiries" style="display:none"><h2 class="sectitle">Buyer <span>Enquiries</span></h2><div class="tablewrap"><table><thead><tr><th>Buyer</th><th>Interest</th><th>Message</th><th>Contact</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-enquiries-body"></tbody></table></div></div>
+    <div id="tab-reviews" style="display:none"><h2 class="sectitle">Customer <span>Reviews</span></h2><p style="color:var(--g4);font-size:.85rem;margin:-1rem 0 1.25rem">New reviews stay hidden from the public until you approve them.</p><div class="tablewrap"><table><thead><tr><th>Reviewer</th><th>Rating</th><th>Review</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-reviews-body"></tbody></table></div></div>
   </div>
 </div>
-<div class="overlay" id="m-sell"><div class="modal"><div class="modalhd"><div class="modalttl">&#x1F697; List Your Unwanted Car</div><button class="modalx" id="sell-close">&times;</button></div><div class="modalbdy"><div class="fsep">Your Details</div><div class="fg2"><div class="fgrp"><label class="flbl">Full Name <em>*</em></label><input class="finp" id="sn" placeholder="e.g. John Smith"/></div><div class="fgrp"><label class="flbl">Phone <em>*</em></label><input class="finp" id="sp" type="tel" placeholder="021 xxx xxxx"/></div><div class="fgrp fcol"><label class="flbl">Email <em>*</em></label><input class="finp" id="se" type="email" placeholder="your@email.com"/></div><div class="fgrp"><label class="flbl">Region <em>*</em></label><select class="fsel" id="sl"><option value="">Select region...</option><option>Auckland</option><option>Wellington</option><option>Christchurch</option><option>Hamilton</option><option>Tauranga</option><option>Dunedin</option><option>Other</option></select></div></div><div class="fsep">Car Details</div><div class="fg2"><div class="fgrp"><label class="flbl">Make <em>*</em></label><select class="fsel" id="smk"><option value="">Select make...</option><option>Toyota</option><option>Ford</option><option>Holden</option><option>Nissan</option><option>Mazda</option><option>Honda</option><option>Mitsubishi</option><option>Subaru</option><option>Hyundai</option><option>Kia</option><option>BMW</option><option>Mercedes-Benz</option><option>Volkswagen</option><option>Audi</option><option>Suzuki</option><option>Isuzu</option><option>Jeep</option><option>Land Rover</option><option>Chevrolet</option><option>Other</option></select></div><div class="fgrp"><label class="flbl">Model <em>*</em></label><input class="finp" id="smo" placeholder="e.g. Corolla, Ranger"/></div><div class="fgrp"><label class="flbl">Year <em>*</em></label><select class="fsel" id="syr"><option value="">Select year...</option></select></div><div class="fgrp"><label class="flbl">Odometer (km)</label><input class="finp" id="sod" type="number" placeholder="e.g. 180000"/></div><div class="fgrp"><label class="flbl">Condition <em>*</em></label><select class="fsel" id="sco"><option value="">Select condition...</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Poor</option><option>Parts Only</option></select></div><div class="fgrp"><label class="flbl">I Want To... <em>*</em></label><select class="fsel" id="stp"><option value="">Select option...</option><option value="Sell the car">Sell the Car</option><option value="Get rid of it (free/scrap)">Get Rid of It (Free / Scrap)</option><option value="Sell the parts">Sell the Parts</option></select></div><div class="fgrp fcol" id="price-wrap" style="display:none"><label class="flbl">Asking Price (NZD) <em>*</em></label><input class="finp" id="spr" type="number" placeholder="e.g. 2500"/></div><div class="fgrp fcol"><label class="flbl">Description</label><textarea class="ftxt" id="sds" placeholder="Known issues, history, why you are selling..."></textarea></div></div><div id="parts-wrap" style="display:none"><div class="fsep">Parts for Sale</div><div id="parts-list"></div><button class="btnadd" id="add-part-btn">+ Add Part</button></div><div class="fsep">Photos</div><div class="photodrop" id="photo-drop"><div style="font-size:2.5rem">&#x1F4F7;</div><p id="photo-label" style="color:var(--g4);margin-top:.5rem">Click to add photos (up to 5)</p></div><input type="file" id="photo-input" multiple accept="image/*" style="display:none"/><div class="photoprev" id="photo-previews"></div></div><div class="modalft"><button class="btn btno" id="sell-cancel">Cancel</button><button class="btn btng" id="submit-btn">Submit Listing</button></div></div></div>
-<div class="overlay" id="m-detail"><div class="modal" style="max-width:760px"><div class="modalhd"><div class="modalttl" id="detail-title">Car Details</div><button class="modalx" id="detail-close">&times;</button></div><div class="modalbdy" id="detail-body"></div></div></div>
+<div class="overlay" id="m-sell"><div class="modal"><div class="modalhd"><div class="modalttl">&#x1F697; List Your Unwanted Car</div><button class="modalx" id="sell-close">&times;</button></div><div class="modalbdy"><div class="fsep">Your Details</div><div class="fg2"><div class="fgrp"><label class="flbl">Full Name <em>*</em></label><input class="finp" id="sn" placeholder="e.g. John Smith"/></div><div class="fgrp"><label class="flbl">Phone <em>*</em></label><input class="finp" id="sp" type="tel" placeholder="021 xxx xxxx"/></div><div class="fgrp fcol"><label class="flbl">Email <em>*</em></label><input class="finp" id="se" type="email" placeholder="your@email.com"/></div><div class="fgrp"><label class="flbl">Region <em>*</em></label><select class="fsel" id="sl"><option value="">Select region...</option><option>Auckland</option><option>Wellington</option><option>Christchurch</option><option>Hamilton</option><option>Tauranga</option><option>Dunedin</option><option>Palmerston North</option><option>Other</option></select></div></div><div class="fsep">Car Details</div><div class="fg2"><div class="fgrp"><label class="flbl">Make <em>*</em></label><select class="fsel" id="smk"><option value="">Select make...</option><option>Toyota</option><option>Ford</option><option>Holden</option><option>Nissan</option><option>Mazda</option><option>Honda</option><option>Mitsubishi</option><option>Subaru</option><option>Hyundai</option><option>Kia</option><option>BMW</option><option>Mercedes-Benz</option><option>Volkswagen</option><option>Audi</option><option>Suzuki</option><option>Isuzu</option><option>Jeep</option><option>Land Rover</option><option>Chevrolet</option><option>Other</option></select></div><div class="fgrp"><label class="flbl">Model <em>*</em></label><input class="finp" id="smo" placeholder="e.g. Corolla, Ranger"/></div><div class="fgrp"><label class="flbl">Year <em>*</em></label><select class="fsel" id="syr"><option value="">Select year...</option></select></div><div class="fgrp"><label class="flbl">Odometer (km)</label><input class="finp" id="sod" type="number" placeholder="e.g. 180000"/></div><div class="fgrp"><label class="flbl">Condition <em>*</em></label><select class="fsel" id="sco"><option value="">Select condition...</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Poor</option><option>Parts Only</option></select></div><div class="fgrp"><label class="flbl">I Want To... <em>*</em></label><select class="fsel" id="stp"><option value="">Select option...</option><option value="Sell the car">Sell the Car</option><option value="Get rid of it (free/scrap)">Get Rid of It (Free / Scrap)</option><option value="Sell the parts">Sell the Parts</option></select></div><div class="fgrp fcol" id="price-wrap" style="display:none"><label class="flbl">Asking Price (NZD) <em>*</em></label><input class="finp" id="spr" type="number" placeholder="e.g. 2500"/></div><div class="fgrp fcol"><label class="flbl">Description</label><textarea class="ftxt" id="sds" placeholder="Known issues, history, why you are selling..."></textarea></div></div><div id="parts-wrap" style="display:none"><div class="fsep">Parts for Sale</div><div id="parts-list"></div><button class="btnadd" id="add-part-btn">+ Add Part</button></div><div class="fsep">Photos</div><div class="photodrop" id="photo-drop"><div style="font-size:2.5rem">&#x1F4F7;</div><p id="photo-label" style="color:var(--g4);margin-top:.5rem">Click to add photos (up to 5)</p></div><input type="file" id="photo-input" multiple accept="image/*" style="display:none"/><div class="photoprev" id="photo-previews"></div></div><div class="modalft"><button class="btn btno" id="sell-cancel">Cancel</button><button class="btn btng" id="submit-btn">Submit Listing</button></div></div></div>
+<div class="overlay" id="m-detail"><div class="modal" style="max-width:760px"><div class="modalhd"><div class="modalttl" id="detail-title">Car Details</div><div style="display:flex;align-items:center;gap:.5rem"><button class="btn btno" id="detail-share" style="font-size:.78rem;padding:.45rem .85rem;gap:.35rem">&#x1F517; Copy link</button><button class="modalx" id="detail-close">&times;</button></div></div><div class="modalbdy" id="detail-body"></div></div></div>
 <div class="overlay" id="m-contact"><div class="modal modalsm"><div class="modalhd"><div class="modalttl">&#x1F4EC; Contact Seller</div><button class="modalx" id="contact-close">&times;</button></div><div class="modalbdy"><div id="contact-form"><div class="fg2"><div class="fgrp"><label class="flbl">Name <em>*</em></label><input class="finp" id="cn" placeholder="Your full name"/></div><div class="fgrp"><label class="flbl">Phone</label><input class="finp" id="cph" type="tel" placeholder="021 xxx xxxx"/></div><div class="fgrp fcol"><label class="flbl">Email <em>*</em></label><input class="finp" id="ce" type="email" placeholder="your@email.com"/></div><div class="fgrp fcol"><label class="flbl">Interested in...</label><select class="fsel" id="ctp"><option value="Whole Car">The whole car</option><option value="Specific Part">A specific part</option><option value="General Enquiry">General enquiry</option></select></div><div class="fgrp fcol"><label class="flbl">Message <em>*</em></label><textarea class="ftxt" id="cm" placeholder="Hi, I am interested in your car..."></textarea></div></div></div><div id="contact-success" style="display:none"><div class="successbox"><h3>&#x2705; Enquiry Sent!</h3><p style="margin-top:.5rem">The seller will be in touch soon.</p></div></div></div><div class="modalft" id="contact-footer"><button class="btn btno" id="contact-cancel">Cancel</button><button class="btn btng" id="contact-submit">Send Enquiry</button></div></div></div>
+<div class="overlay" id="m-respond"><div class="modal modalsm"><div class="modalhd"><div class="modalttl">&#x1F4AC; Respond to Review</div><button class="modalx" id="respond-close">&times;</button></div><div class="modalbdy"><div id="respond-review" style="background:var(--inset);border-radius:10px;padding:1rem;margin-bottom:1rem"></div><div class="fgrp"><label class="flbl">Your Public Response</label><textarea class="ftxt" id="respond-text" placeholder="Thanks for your feedback..."></textarea></div></div><div class="modalft"><button class="btn btno" id="respond-cancel">Cancel</button><button class="btn btng" id="respond-submit">Post Response</button></div></div></div>
 <div class="overlay" id="m-login"><div class="modal modalsm"><div class="modalhd"><div class="modalttl">&#x1F510; Admin Login</div><button class="modalx" id="login-close">&times;</button></div><div class="modalbdy"><div class="fgrp" style="margin-bottom:1rem"><label class="flbl">Password</label><input class="finp" id="admin-pass" type="password" placeholder="Enter admin password"/></div><div id="login-err" style="color:#f87171;font-size:.83rem;display:none">Incorrect password.</div></div><div class="modalft"><button class="btn btno" id="login-cancel">Cancel</button><button class="btn btng" id="login-submit">Login</button></div></div></div>
 <script>
 (function(){
   var BASE='https://agent-e-286fe43d.base44.app/functions/cargoneNZ';
-  var ADMIN_PW='CarGoneAdmin2026!';
+  var adminToken=sessionStorage.getItem('cg_admin_token')||'';
   var allListings=[],currentId=null,selectedFiles=[],partIdx=0;
   var condMap={Excellent:'bgrn',Good:'bgrn',Fair:'bylw',Poor:'bred','Parts Only':'bgry'};
 
   function api(p,method,body){
     var qs=Object.keys(p).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(p[k]);}).join('&');
-    var opts={method:method||'GET',headers:{'Content-Type':'application/json'}};
+    var headers={'Content-Type':'application/json'};
+    if(adminToken)headers['X-Admin-Token']=adminToken;
+    var opts={method:method||'GET',headers:headers};
     if(body)opts.body=JSON.stringify(body);
-    return fetch(BASE+'?'+qs,opts).then(function(r){return r.json();}).then(function(d){if(d&&d.error)throw new Error(d.error);return d;});
+    return fetch(BASE+'?'+qs,opts).then(function(r){
+      if(r.status===401){adminToken='';sessionStorage.removeItem('cg_admin_token');var err=new Error('Your admin session has expired. Please log in again.');err.unauthorized=true;throw err;}
+      return r.json();
+    }).then(function(d){if(d&&d.error)throw new Error(d.error);return d;});
   }
 
-  // Compress + upload photo via function proxy
-  function uploadPhoto(file){
-    return new Promise(function(resolve,reject){
-      var reader=new FileReader();
-      reader.onload=function(e){
-        var img=new Image();
-        img.onload=function(){
-          var MAX=1000,w=img.width,h=img.height;
-          if(w>MAX){h=Math.round(h*MAX/w);w=MAX;}
-          if(h>MAX){w=Math.round(w*MAX/h);h=MAX;}
-          var c=document.createElement('canvas');c.width=w;c.height=h;
-          c.getContext('2d').drawImage(img,0,0,w,h);
-          c.toBlob(function(blob){
-            var fd=new FormData();
-            fd.append('file',blob,'photo.jpg');
-            fetch(BASE+'?action=upload-photo',{method:'POST',body:fd})
-              .then(function(r){return r.json();})
-              .then(function(d){if(d.error)reject(new Error(d.error));else resolve(d.url);})
-              .catch(reject);
-          },'image/jpeg',0.78);
+  // Upload photo via ImgBB free API (no auth needed, free tier, permanent hosting)
+  var IMGBB_KEY = 'da5f1f8282e5afb0f1ec8566a89d88ce';
+  function uploadPhoto(file) {
+    return new Promise(function(resolve, reject) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var img = new Image();
+        img.onload = function() {
+          // Compress to max 1000px, 70% quality
+          var MAX = 1000, w = img.width, h = img.height;
+          if(w > MAX){h = Math.round(h*MAX/w); w = MAX;}
+          if(h > MAX){w = Math.round(w*MAX/h); h = MAX;}
+          var c = document.createElement('canvas');
+          c.width = w; c.height = h;
+          c.getContext('2d').drawImage(img, 0, 0, w, h);
+          var dataUrl = c.toDataURL('image/jpeg', 0.70);
+          var base64 = dataUrl.split(',')[1];
+          // Upload to ImgBB
+          var fd = new FormData();
+          fd.append('key', IMGBB_KEY);
+          fd.append('image', base64);
+          fetch('https://api.imgbb.com/1/upload', { method: 'POST', body: fd })
+            .then(function(r){ return r.json(); })
+            .then(function(d){
+              if(d.success) resolve(d.data.url);
+              else reject(new Error('Photo upload failed: ' + (d.error && d.error.message || 'Unknown')));
+            }).catch(reject);
         };
-        img.onerror=function(){reject(new Error('Invalid image'));};
-        img.src=e.target.result;
+        img.onerror = function(){ reject(new Error('Invalid image')); };
+        img.src = e.target.result;
       };
-      reader.onerror=function(){reject(new Error('Cannot read file'));};
+      reader.onerror = function(){ reject(new Error('Cannot read file')); };
       reader.readAsDataURL(file);
     });
   }
@@ -231,10 +404,11 @@
   function goAdmin(){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});el('page-admin').classList.add('active');window.scrollTo(0,0);loadAdminListings();}
   function goListings(){el('listings-section').scrollIntoView({behavior:'smooth'});}
   function goHow(){el('how-section').scrollIntoView({behavior:'smooth'});}
-  window.goHome=goHome;window.goListings=goListings;window.goHow=goHow;
+  function goServices(){el('services-section').scrollIntoView({behavior:'smooth'});}
+  window.goHome=goHome;window.goListings=goListings;window.goHow=goHow;window.goServices=goServices;
   window.openAdminLogin=function(){el('admin-pass').value='';el('login-err').style.display='none';openModal('m-login');};
   window.openSell=function(){openModal('m-sell');};
-  window.switchTab=function(tab){el('tab-listings').style.display=tab==='listings'?'block':'none';el('tab-enquiries').style.display=tab==='enquiries'?'block':'none';el('tbl').classList.toggle('active',tab==='listings');el('tbe').classList.toggle('active',tab==='enquiries');if(tab==='enquiries')loadAdminEnquiries();};
+  window.switchTab=function(tab){el('tab-listings').style.display=tab==='listings'?'block':'none';el('tab-enquiries').style.display=tab==='enquiries'?'block':'none';el('tab-reviews').style.display=tab==='reviews'?'block':'none';el('tbl').classList.toggle('active',tab==='listings');el('tbe').classList.toggle('active',tab==='enquiries');el('tbr').classList.toggle('active',tab==='reviews');if(tab==='enquiries')loadAdminEnquiries();if(tab==='reviews')loadAdminReviews();};
   window.filterListings=function(){var t=val('f-type'),co=val('f-cond'),l=val('f-loc'),q=el('f-q').value.toLowerCase();renderListings(allListings.filter(function(x){if(x.status!=='Active')return false;if(t&&x.listing_type!==t)return false;if(co&&x.condition!==co)return false;if(l&&x.location!==l)return false;if(q&&!((x.make||'')+' '+(x.model||'')).toLowerCase().includes(q))return false;return true;}));};
   el('sell-close').addEventListener('click',function(){closeModal('m-sell');});
   el('sell-cancel').addEventListener('click',function(){closeModal('m-sell');});
@@ -245,6 +419,7 @@
   el('photo-drop').addEventListener('click',function(){el('photo-input').click();});
   el('photo-input').addEventListener('change',function(){selectedFiles=selectedFiles.concat(Array.from(this.files)).slice(0,5);renderPreviews();this.value='';});
   function renderPreviews(){var prev=el('photo-previews');prev.innerHTML='';selectedFiles.forEach(function(f,idx){var url=URL.createObjectURL(f);var wrap=document.createElement('div');wrap.className='thumbwrap';var img=document.createElement('img');img.src=url;img.className='photothumb';var del=document.createElement('button');del.className='thumbdel';del.textContent='×';(function(i){del.addEventListener('click',function(e){e.stopPropagation();selectedFiles.splice(i,1);renderPreviews();});})(idx);wrap.appendChild(img);wrap.appendChild(del);prev.appendChild(wrap);});el('photo-label').textContent=selectedFiles.length?selectedFiles.length+' photo(s) selected — click to add more':'Click to add photos (up to 5)';}
+
   el('submit-btn').addEventListener('click',async function(){
     if(!val('sn')||!val('sp')||!val('se')||!val('sl')||!val('smk')||!val('smo')||!val('syr')||!val('sco')||!val('stp')){showToast('Please fill in all required fields',true);return;}
     var btn=this;btn.disabled=true;btn.textContent='Processing...';
@@ -252,7 +427,8 @@
       var photoUrls=[];
       for(var i=0;i<selectedFiles.length;i++){
         btn.textContent='Uploading photo '+(i+1)+' of '+selectedFiles.length+'...';
-        photoUrls.push(await uploadPhoto(selectedFiles[i]));
+        var u=await uploadPhoto(selectedFiles[i]);
+        photoUrls.push(u);
       }
       btn.textContent='Submitting listing...';
       var listing=await api({action:'create',entity:'CarListing'},'POST',{seller_name:val('sn'),seller_phone:val('sp'),seller_email:val('se'),location:val('sl'),make:val('smk'),model:val('smo'),year:parseInt(val('syr')),odometer:parseInt(el('sod').value)||null,condition:val('sco'),listing_type:val('stp'),sale_price:parseFloat(el('spr').value)||null,description:val('sds'),photos:photoUrls,status:'Active'});
@@ -267,21 +443,52 @@
     }catch(e){showToast('Error: '+e.message,true);}
     btn.disabled=false;btn.textContent='Submit Listing';
   });
+
   function priceLbl(l){if(l.listing_type==='Sell the car'&&l.sale_price)return 'NZD $'+Number(l.sale_price).toLocaleString();if(l.listing_type==='Get rid of it (free/scrap)')return 'Free / Scrap';return 'Parts Available';}
   async function loadListings(){el('listings-container').innerHTML='<div class="spinner"></div>';try{var data=await api({action:'list',entity:'CarListing'});allListings=Array.isArray(data)?data:(data.items||[]);var active=allListings.filter(function(l){return l.status==='Active';});el('stat-count').textContent=active.length;renderListings(active);}catch(e){el('listings-container').innerHTML='<div class="emptystate"><div class="emptyico">&#x26A0;</div><h3>Could not load listings</h3><p style="color:var(--g6);margin-top:.5rem">'+e.message+'</p></div>';}}
   function renderListings(list){var c=el('listings-container');c.innerHTML='';if(!list.length){var empty=document.createElement('div');empty.className='emptystate';empty.innerHTML='<div class="emptyico">&#x1F697;</div><h3 style="color:var(--g4)">No listings yet</h3>';var b=document.createElement('button');b.className='btn btng';b.style.marginTop='1.5rem';b.textContent='+ List My Car';b.addEventListener('click',window.openSell);empty.appendChild(b);c.appendChild(empty);return;}var grid=document.createElement('div');grid.className='cardgrid';list.forEach(function(listing){var lid=listing.id;var card=document.createElement('div');card.className='carcard';var imgDiv=document.createElement('div');imgDiv.className='cardimg';if(listing.photos&&listing.photos.length&&listing.photos[0]){var img=document.createElement('img');img.src=listing.photos[0];img.loading='lazy';imgDiv.appendChild(img);}else{imgDiv.innerHTML='&#x1F697;';}var body=document.createElement('div');body.className='cardbody';var title=document.createElement('div');title.className='cardtitle';title.textContent=[(listing.year||''),(listing.make||''),(listing.model||'')].filter(Boolean).join(' ');var sub=document.createElement('div');sub.className='cardsub';sub.textContent=listing.odometer?Number(listing.odometer).toLocaleString()+' km':'Odometer N/A';var badges=document.createElement('div');badges.className='badgeset';var bdg=document.createElement('span');bdg.className='bdg '+(condMap[listing.condition]||'bgry');bdg.textContent=listing.condition||'';badges.appendChild(bdg);var price=document.createElement('div');price.className='cardprice';price.textContent=priceLbl(listing);var foot=document.createElement('div');foot.className='cardfoot';var loc=document.createElement('div');loc.className='cardloc';loc.innerHTML='&#x1F4CD; '+(listing.location||'NZ');var enqBtn=document.createElement('button');enqBtn.className='btn btng';enqBtn.style.fontSize='.77rem';enqBtn.style.padding='.33rem .8rem';enqBtn.textContent='Enquire';enqBtn.addEventListener('click',function(e){e.stopPropagation();openContact(lid);});foot.appendChild(loc);foot.appendChild(enqBtn);body.appendChild(title);body.appendChild(sub);body.appendChild(badges);body.appendChild(price);body.appendChild(foot);card.appendChild(imgDiv);card.appendChild(body);card.addEventListener('click',function(){openDetail(lid);});grid.appendChild(card);});c.appendChild(grid);}
-  el('detail-close').addEventListener('click',function(){closeModal('m-detail');});el('m-detail').addEventListener('click',function(e){if(e.target===this)closeModal('m-detail');});
-  async function openDetail(id){currentId=id;openModal('m-detail');var body=el('detail-body');body.innerHTML='<div class="spinner"></div>';var l=allListings.find(function(x){return x.id===id;});if(!l)return;el('detail-title').textContent=[(l.year||''),(l.make||''),(l.model||'')].filter(Boolean).join(' ');body.innerHTML='';if(l.photos&&l.photos.length){var pr=document.createElement('div');pr.style.cssText='display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem';l.photos.forEach(function(p){if(!p)return;var pi=document.createElement('img');pi.src=p;pi.style.cssText='height:160px;border-radius:10px;object-fit:cover;flex:1;min-width:130px';pr.appendChild(pi);});body.appendChild(pr);}var grid=document.createElement('div');grid.className='detgrid';[['Make',l.make],['Model',l.model],['Year',l.year],['Odometer',l.odometer?Number(l.odometer).toLocaleString()+' km':'N/A'],['Condition',l.condition],['Location',l.location],['Type',l.listing_type],['Price',priceLbl(l)]].forEach(function(f){var d=document.createElement('div');d.className='detitem';var lb=document.createElement('label');lb.textContent=f[0];var sp=document.createElement('span');sp.textContent=f[1]||'';d.appendChild(lb);d.appendChild(sp);grid.appendChild(d);});body.appendChild(grid);if(l.description){var sep=document.createElement('div');sep.className='fsep';sep.style.marginTop='1rem';sep.textContent='Description';var desc=document.createElement('p');desc.style.cssText='color:var(--g4);font-size:.88rem;line-height:1.7';desc.textContent=l.description;body.appendChild(sep);body.appendChild(desc);}if(l.listing_type==='Sell the parts'){try{var parts=await api({action:'filter',entity:'CarPart',car_listing_id:id});parts=Array.isArray(parts)?parts:(parts.items||[]);if(parts.length){var ps=document.createElement('div');ps.className='fsep';ps.style.marginTop='1.25rem';ps.textContent='Parts for Sale';body.appendChild(ps);parts.forEach(function(p){var pi=document.createElement('div');pi.className='partitem';var pn=document.createElement('span');pn.className='partname';pn.textContent=p.part_name;var pp=document.createElement('span');pp.className='partprice';pp.textContent=p.status==='Sold'?'SOLD':'NZD $'+Number(p.price||0).toLocaleString();pi.appendChild(pn);pi.appendChild(pp);body.appendChild(pi);});}}catch(e){}}var cb=document.createElement('button');cb.className='btn btng';cb.style.cssText='width:100%;margin-top:1.5rem';cb.textContent='Contact Seller';cb.addEventListener('click',function(){closeModal('m-detail');openContact(id);});body.appendChild(cb);}
+  el('detail-close').addEventListener('click',function(){closeModal('m-detail');clearCarHash();});el('m-detail').addEventListener('click',function(e){if(e.target===this){closeModal('m-detail');clearCarHash();}});
+  async function openDetail(id){currentId=id;var _h='#car='+encodeURIComponent(id);if(location.hash!==_h)location.hash=_h;openModal('m-detail');var body=el('detail-body');body.innerHTML='<div class="spinner"></div>';var l=allListings.find(function(x){return x.id===id;});if(!l)return;if(window.gtag)gtag('event','view_listing',{listing_id:id});el('detail-title').textContent=[(l.year||''),(l.make||''),(l.model||'')].filter(Boolean).join(' ');body.innerHTML='';if(l.photos&&l.photos.length){var pr=document.createElement('div');pr.style.cssText='display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem';l.photos.forEach(function(p){if(!p)return;var pi=document.createElement('img');pi.src=p;pi.style.cssText='height:160px;border-radius:10px;object-fit:cover;flex:1;min-width:130px';pr.appendChild(pi);});body.appendChild(pr);}var grid=document.createElement('div');grid.className='detgrid';[['Make',l.make],['Model',l.model],['Year',l.year],['Odometer',l.odometer?Number(l.odometer).toLocaleString()+' km':'N/A'],['Condition',l.condition],['Location',l.location],['Type',l.listing_type],['Price',priceLbl(l)]].forEach(function(f){var d=document.createElement('div');d.className='detitem';var lb=document.createElement('label');lb.textContent=f[0];var sp=document.createElement('span');sp.textContent=f[1]||'';d.appendChild(lb);d.appendChild(sp);grid.appendChild(d);});body.appendChild(grid);if(l.description){var sep=document.createElement('div');sep.className='fsep';sep.style.marginTop='1rem';sep.textContent='Description';var desc=document.createElement('p');desc.style.cssText='color:var(--g4);font-size:.88rem;line-height:1.7';desc.textContent=l.description;body.appendChild(sep);body.appendChild(desc);}if(l.listing_type==='Sell the parts'){try{var parts=await api({action:'filter',entity:'CarPart',car_listing_id:id});parts=Array.isArray(parts)?parts:(parts.items||[]);if(parts.length){var ps=document.createElement('div');ps.className='fsep';ps.style.marginTop='1.25rem';ps.textContent='Parts for Sale';body.appendChild(ps);parts.forEach(function(p){var pi=document.createElement('div');pi.className='partitem';var pn=document.createElement('span');pn.className='partname';pn.textContent=p.part_name;var pp=document.createElement('span');pp.className='partprice';pp.textContent=p.status==='Sold'?'SOLD':'NZD $'+Number(p.price||0).toLocaleString();pi.appendChild(pn);pi.appendChild(pp);body.appendChild(pi);});}}catch(e){}}var cb=document.createElement('button');cb.className='btn btng';cb.style.cssText='width:100%;margin-top:1.5rem';cb.textContent='Contact Seller';cb.addEventListener('click',function(){closeModal('m-detail');openContact(id);});body.appendChild(cb);}
   function openContact(id){currentId=id;['cn','cph','ce','cm'].forEach(function(i){if(el(i))el(i).value='';});el('contact-form').style.display='block';el('contact-success').style.display='none';el('contact-footer').style.display='flex';openModal('m-contact');}
   el('contact-close').addEventListener('click',function(){closeModal('m-contact');});el('contact-cancel').addEventListener('click',function(){closeModal('m-contact');});el('m-contact').addEventListener('click',function(e){if(e.target===this)closeModal('m-contact');});
   el('contact-submit').addEventListener('click',async function(){if(!val('cn')||!val('ce')||!val('cm')){showToast('Please fill in name, email and message',true);return;}try{await api({action:'create',entity:'BuyerEnquiry'},'POST',{car_listing_id:currentId,buyer_name:val('cn'),buyer_email:val('ce'),buyer_phone:val('cph'),enquiry_type:val('ctp'),message:val('cm'),status:'New'});el('contact-form').style.display='none';el('contact-success').style.display='block';el('contact-footer').style.display='none';}catch(e){showToast('Error: '+e.message,true);}});
   el('login-close').addEventListener('click',function(){closeModal('m-login');});el('login-cancel').addEventListener('click',function(){closeModal('m-login');});el('m-login').addEventListener('click',function(e){if(e.target===this)closeModal('m-login');});
   el('admin-pass').addEventListener('keydown',function(e){if(e.key==='Enter')el('login-submit').click();});
-  el('login-submit').addEventListener('click',function(){if(el('admin-pass').value===ADMIN_PW){closeModal('m-login');goAdmin();}else{el('login-err').style.display='block';}});
-  async function loadAdminListings(){var tb=el('admin-listings-body');tb.innerHTML='<tr><td colspan="7" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr>';try{var data=await api({action:'list',entity:'CarListing'});var rows=Array.isArray(data)?data:(data.items||[]);if(!rows.length){tb.innerHTML='<tr><td colspan="7" style="text-align:center;padding:2.5rem;color:var(--g6)">No listings yet.</td></tr>';return;}var sc={Active:'bgrn',Sold:'bgry',Removed:'bred'};tb.innerHTML='';rows.forEach(function(l){var tr=document.createElement('tr');function addTd(html){var td=document.createElement('td');td.innerHTML=html;tr.appendChild(td);}addTd('<strong>'+[(l.year||''),(l.make||''),(l.model||'')].filter(Boolean).join(' ')+'</strong><br/><small style="color:var(--g6)">'+(l.location||'')+'</small>');addTd((l.seller_name||'')+'<br/><small style="color:var(--g6)">'+(l.seller_email||'')+'</small>');addTd(l.listing_type||'');addTd('<span class="bdg '+(condMap[l.condition]||'bgry')+'">'+(l.condition||'')+'</span>');addTd(l.sale_price?'NZD $'+Number(l.sale_price).toLocaleString():l.listing_type==='Get rid of it (free/scrap)'?'Free':'Parts');addTd('<span class="bdg '+(sc[l.status]||'bgry')+'">'+(l.status||'Active')+'</span>');var atd=document.createElement('td');atd.style.cssText='display:flex;gap:.4rem;flex-wrap:wrap';function addABtn(cls,txt,st){var b=document.createElement('button');b.className=cls;b.textContent=txt;b.addEventListener('click',(function(lid,s){return function(){setStatus(lid,s);};})(l.id,st));atd.appendChild(b);}if(l.status!=='Sold')addABtn('abg','Mark Sold','Sold');if(l.status!=='Removed')addABtn('abr','Remove','Removed');if(l.status!=='Active')addABtn('abg','Restore','Active');tr.appendChild(atd);tb.appendChild(tr);});}catch(e){tb.innerHTML='<tr><td colspan="7" style="text-align:center;color:#f87171;padding:2rem">Failed: '+e.message+'</td></tr>';}}
+  el('login-submit').addEventListener('click',async function(){var btn=this,err=el('login-err');err.style.display='none';var pw=el('admin-pass').value;if(!pw){err.textContent='Please enter your password.';err.style.display='block';return;}btn.disabled=true;btn.textContent='Logging in...';try{var res=await fetch(BASE+'?action=login&entity=AdminAuth',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:pw})});if(res.status===401){err.textContent='Incorrect password.';err.style.display='block';}else if(!res.ok){err.textContent='Login unavailable. The backend update may not be deployed yet.';err.style.display='block';}else{var data=await res.json();if(data&&data.token){adminToken=data.token;sessionStorage.setItem('cg_admin_token',adminToken);el('admin-pass').value='';closeModal('m-login');goAdmin();}else{err.textContent='Login failed. Please try again.';err.style.display='block';}}}catch(e){err.textContent='Could not reach the server. Please try again.';err.style.display='block';}btn.disabled=false;btn.textContent='Login';});
+  window.adminLogout=function(){adminToken='';sessionStorage.removeItem('cg_admin_token');goHome();showToast('Logged out');};
+  async function loadAdminListings(){var tb=el('admin-listings-body');tb.innerHTML='<tr><td colspan="7" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr>';try{var data=await api({action:'list',entity:'CarListing'});var rows=Array.isArray(data)?data:(data.items||[]);if(!rows.length){tb.innerHTML='<tr><td colspan="7" style="text-align:center;padding:2.5rem;color:var(--g6)">No listings yet.</td></tr>';return;}var sc={Active:'bgrn',Sold:'bgry',Removed:'bred'};tb.innerHTML='';rows.forEach(function(l){var tr=document.createElement('tr');function addTd(html){var td=document.createElement('td');td.innerHTML=html;tr.appendChild(td);}addTd('<strong>'+[(l.year||''),(l.make||''),(l.model||'')].filter(Boolean).join(' ')+'</strong><br/><small style="color:var(--g6)">'+(l.location||'')+'</small>');addTd((l.seller_name||'')+'<br/><small style="color:var(--g6)">'+(l.seller_email||'')+'</small>');addTd(l.listing_type||'');addTd('<span class="bdg '+(condMap[l.condition]||'bgry')+'">'+(l.condition||'')+'</span>');addTd(l.sale_price?'NZD $'+Number(l.sale_price).toLocaleString():l.listing_type==='Get rid of it (free/scrap)'?'Free':'Parts');addTd('<span class="bdg '+(sc[l.status]||'bgry')+'">'+(l.status||'Active')+'</span>');var atd=document.createElement('td');atd.style.cssText='display:flex;gap:.4rem;flex-wrap:wrap';function addABtn(cls,txt,fn){var b=document.createElement('button');b.className=cls;b.textContent=txt;b.addEventListener('click',fn);atd.appendChild(b);}if(l.status!=='Sold')addABtn('abg','Mark Sold',(function(lid){return function(){setStatus(lid,'Sold');};})(l.id));if(l.status!=='Removed')addABtn('abr','Remove',(function(lid){return function(){setStatus(lid,'Removed');};})(l.id));if(l.status!=='Active')addABtn('abg','Restore',(function(lid){return function(){setStatus(lid,'Active');};})(l.id));addABtn('abr','Delete',(function(lid,desc){return function(){deleteListing(lid,desc);};})(l.id,[(l.year||''),(l.make||''),(l.model||'')].filter(Boolean).join(' ')));tr.appendChild(atd);tb.appendChild(tr);});}catch(e){tb.innerHTML='<tr><td colspan="7" style="text-align:center;color:#f87171;padding:2rem">Failed: '+e.message+'</td></tr>';}}
   async function setStatus(id,status){try{await api({action:'update',entity:'CarListing',id:id},'POST',{status:status});showToast('Marked as '+status);loadAdminListings();loadListings();}catch(e){showToast('Failed: '+e.message,true);}}
-  async function loadAdminEnquiries(){var tb=el('admin-enquiries-body');tb.innerHTML='<tr><td colspan="6" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr>';try{var data=await api({action:'list',entity:'BuyerEnquiry'});var rows=Array.isArray(data)?data:(data.items||[]);if(!rows.length){tb.innerHTML='<tr><td colspan="6" style="text-align:center;padding:2.5rem;color:var(--g6)">No enquiries yet.</td></tr>';return;}var sc={New:'bylw',Responded:'bgrn',Closed:'bgry'};tb.innerHTML='';rows.forEach(function(enq){var tr=document.createElement('tr');function addTd(html){var td=document.createElement('td');td.innerHTML=html;tr.appendChild(td);}addTd('<strong>'+(enq.buyer_name||'')+'</strong>');addTd(enq.enquiry_type||'');var msgTd=document.createElement('td');msgTd.style.cssText='max-width:180px;font-size:.82rem;color:var(--g4)';msgTd.textContent=(enq.message||'').substring(0,75)+(enq.message&&enq.message.length>75?'...':'');tr.appendChild(msgTd);addTd((enq.buyer_email||'')+'<br/>'+(enq.buyer_phone||''));addTd('<span class="bdg '+(sc[enq.status]||'bgry')+'">'+(enq.status||'New')+'</span>');var atd=document.createElement('td');atd.style.cssText='display:flex;gap:.4rem';function addEBtn(cls,txt,st){var b=document.createElement('button');b.className=cls;b.textContent=txt;b.addEventListener('click',(function(eid,s){return function(){setEnqStatus(eid,s);};})(enq.id,st));atd.appendChild(b);}if(enq.status!=='Responded')addEBtn('abg','Responded','Responded');if(enq.status!=='Closed')addEBtn('abr','Close','Closed');tr.appendChild(atd);tb.appendChild(tr);});}catch(e){tb.innerHTML='<tr><td colspan="6" style="text-align:center;color:#f87171;padding:2rem">Failed.</td></tr>';}}
-  async function setEnqStatus(id,status){try{await api({action:'update',entity:'BuyerEnquiry',id:id},'POST',{status:status});showToast('Updated');loadAdminEnquiries();}catch(e){showToast('Failed.',true);}}
-  loadListings();
+  async function deleteListing(id,desc){if(!window.confirm('Permanently delete '+(desc||'this listing')+'?\n\nThis cannot be undone.'))return;try{await api({action:'delete',entity:'CarListing',id:id},'POST');showToast('Listing deleted');loadAdminListings();loadListings();}catch(e){showToast('Failed: '+e.message,true);}}
+  async function loadAdminEnquiries(){var tb=el('admin-enquiries-body');tb.innerHTML='<tr><td colspan="6" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr>';try{var data=await api({action:'list',entity:'BuyerEnquiry'});var rows=Array.isArray(data)?data:(data.items||[]);rows=rows.filter(function(e){return e.enquiry_type!=='__REVIEW__';});if(!rows.length){tb.innerHTML='<tr><td colspan="6" style="text-align:center;padding:2.5rem;color:var(--g6)">No enquiries yet.</td></tr>';return;}var sc={New:'bylw',Responded:'bgrn',Closed:'bgry'};tb.innerHTML='';rows.forEach(function(enq){var st=enq.status||'New';var tr=document.createElement('tr');function addTd(html){var td=document.createElement('td');td.innerHTML=html;tr.appendChild(td);}addTd('<strong>'+(enq.buyer_name||'')+'</strong>');addTd(enq.enquiry_type||'');var msgTd=document.createElement('td');msgTd.style.cssText='max-width:180px;font-size:.82rem;color:var(--g4)';msgTd.textContent=(enq.message||'').substring(0,75)+(enq.message&&enq.message.length>75?'...':'');tr.appendChild(msgTd);addTd((enq.buyer_email||'')+'<br/>'+(enq.buyer_phone||''));addTd('<span class="bdg '+(sc[st]||'bgry')+'">'+st+'</span>');var atd=document.createElement('td');atd.style.cssText='display:flex;gap:.4rem;flex-wrap:wrap';function addEBtn(cls,txt,fn){var b=document.createElement('button');b.className=cls;b.textContent=txt;b.addEventListener('click',fn);atd.appendChild(b);}if(st!=='Responded')addEBtn('abg','Responded',(function(eid){return function(){setEnqStatus(eid,'Responded');};})(enq.id));if(st!=='Closed')addEBtn('abr','Close',(function(eid){return function(){setEnqStatus(eid,'Closed');};})(enq.id));if(st!=='New')addEBtn('abg','Reopen',(function(eid){return function(){setEnqStatus(eid,'New');};})(enq.id));addEBtn('abr','Delete',(function(eid,nm){return function(){deleteEnquiry(eid,nm);};})(enq.id,enq.buyer_name||'this enquiry'));tr.appendChild(atd);tb.appendChild(tr);});}catch(e){tb.innerHTML='<tr><td colspan="6" style="text-align:center;color:#f87171;padding:2rem">Failed.</td></tr>';}}
+  async function setEnqStatus(id,status){try{await api({action:'update',entity:'BuyerEnquiry',id:id},'POST',{status:status});showToast('Marked '+status);loadAdminEnquiries();}catch(e){showToast('Failed: '+e.message,true);}}
+  async function deleteEnquiry(id,nm){if(!window.confirm('Permanently delete the enquiry from '+nm+'?\n\nThis cannot be undone.'))return;try{await api({action:'delete',entity:'BuyerEnquiry',id:id},'POST');showToast('Enquiry deleted');loadAdminEnquiries();}catch(e){showToast('Failed: '+e.message,true);}}
+  // ===== REVIEWS =====
+  var REVIEW_TYPE='__REVIEW__';
+  var rvRating=0,respondId=null,respondData=null;
+  function escapeHtml(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function starStr(n){var s='';for(var i=1;i<=5;i++){s+=(i<=n?'\u2605':'\u2606');}return s;}
+  function fmtDate(d){if(!d)return '';try{return new Date(d).toLocaleDateString('en-NZ',{day:'numeric',month:'short',year:'numeric'});}catch(_){return '';}}
+  function parseReview(e){var d={r:0,t:'',resp:'',approved:false};try{var p=JSON.parse(e.message||'{}');d.r=p.r||0;d.t=p.t||'';d.resp=p.resp||'';d.approved=p.approved===true;}catch(_){d.t=e.message||'';}return {id:e.id,name:e.buyer_name||'Anonymous',email:e.buyer_email||'',date:e.created_date,status:e.status,r:d.r,t:d.t,resp:d.resp,approved:d.approved};}
+  function getReviews(rows){return rows.filter(function(e){return e.enquiry_type===REVIEW_TYPE;}).map(parseReview).sort(function(a,b){return new Date(b.date)-new Date(a.date);});}
+  (function(){var wrap=el('rv-stars');if(!wrap)return;var btns=wrap.querySelectorAll('.starbtn');function paint(n){btns.forEach(function(b){b.classList.toggle('on',parseInt(b.dataset.v)<=n);});}btns.forEach(function(b){b.addEventListener('mouseenter',function(){paint(parseInt(b.dataset.v));});b.addEventListener('click',function(){rvRating=parseInt(b.dataset.v);paint(rvRating);});});wrap.addEventListener('mouseleave',function(){paint(rvRating);});})();
+  async function loadReviews(){var c=el('reviews-container');if(!c)return;c.innerHTML='<div class="spinner"></div>';try{var data=await api({action:'list',entity:'BuyerEnquiry'});var rows=Array.isArray(data)?data:(data.items||[]);var reviews=getReviews(rows).filter(function(r){return r.approved===true;});renderReviewSummary(reviews);renderReviews(reviews);}catch(e){c.innerHTML='<div class="emptystate"><div class="emptyico">&#x26A0;</div><h3>Could not load reviews</h3></div>';}}
+  function renderReviewSummary(reviews){var s=el('rev-summary');if(!s)return;if(!reviews.length){s.innerHTML='<span class="revcount">No reviews yet \u2014 be the first to leave one!</span>';return;}var avg=reviews.reduce(function(a,r){return a+(r.r||0);},0)/reviews.length;s.innerHTML='<span class="revavg">'+avg.toFixed(1)+'</span><div style="text-align:left"><div class="revstars-lg">'+starStr(Math.round(avg))+'</div><div class="revcount">Based on '+reviews.length+' review'+(reviews.length>1?'s':'')+'</div></div>';}
+  function renderReviews(reviews){var c=el('reviews-container');c.innerHTML='';if(!reviews.length)return;var grid=document.createElement('div');grid.className='revgrid';reviews.forEach(function(r){var card=document.createElement('div');card.className='revcard';var hd=document.createElement('div');hd.className='revcardhd';var nm=document.createElement('span');nm.className='revname';nm.textContent=r.name;var dt=document.createElement('span');dt.className='revdate';dt.textContent=fmtDate(r.date);hd.appendChild(nm);hd.appendChild(dt);var stars=document.createElement('div');stars.className='revstars';stars.textContent=starStr(r.r);var txt=document.createElement('div');txt.className='revtext';txt.textContent=r.t;card.appendChild(hd);card.appendChild(stars);card.appendChild(txt);if(r.resp){var reply=document.createElement('div');reply.className='revreply';var lbl=document.createElement('div');lbl.className='revreply-lbl';lbl.textContent='\u21B3 CarGone NZ replied';var rt=document.createElement('div');rt.className='revreply-txt';rt.textContent=r.resp;reply.appendChild(lbl);reply.appendChild(rt);card.appendChild(reply);}grid.appendChild(card);});c.appendChild(grid);}
+  el('rv-submit').addEventListener('click',async function(){var name=val('rv-name'),text=val('rv-text');if(!name||!rvRating||!text){showToast('Please add your name, a star rating and a review',true);return;}var btn=this;btn.disabled=true;btn.textContent='Submitting...';try{await api({action:'create',entity:'BuyerEnquiry'},'POST',{buyer_name:name,buyer_email:val('rv-email'),enquiry_type:REVIEW_TYPE,message:JSON.stringify({r:rvRating,t:text,resp:'',approved:false}),status:'New'});el('rv-name').value='';el('rv-email').value='';el('rv-text').value='';rvRating=0;el('rv-stars').querySelectorAll('.starbtn').forEach(function(b){b.classList.remove('on');});showToast('Thanks! Your review will appear once approved.');loadReviews();}catch(e){showToast('Error: '+e.message,true);}btn.disabled=false;btn.textContent='Submit Review';});
+  window.goReviews=function(){el('reviews-section').scrollIntoView({behavior:'smooth'});};
+  async function loadAdminReviews(){var tb=el('admin-reviews-body');tb.innerHTML='<tr><td colspan="5" style="text-align:center;padding:2.5rem;color:var(--g6)">Loading...</td></tr>';try{var data=await api({action:'list',entity:'BuyerEnquiry'});var rows=Array.isArray(data)?data:(data.items||[]);var reviews=getReviews(rows);if(!reviews.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;padding:2.5rem;color:var(--g6)">No reviews yet.</td></tr>';return;}tb.innerHTML='';reviews.forEach(function(r){var tr=document.createElement('tr');if(!r.approved)tr.style.background='#f59e0b0c';function addTd(html){var td=document.createElement('td');td.innerHTML=html;tr.appendChild(td);}addTd('<strong>'+escapeHtml(r.name)+'</strong><br/><small style="color:var(--g6)">'+fmtDate(r.date)+'</small>');addTd('<span style="color:var(--gold)">'+starStr(r.r)+'</span>');var mtd=document.createElement('td');mtd.style.cssText='max-width:240px;font-size:.84rem;color:var(--g2)';mtd.textContent=r.t;tr.appendChild(mtd);addTd((r.approved?'<span class="bdg bgrn">Published</span>':'<span class="bdg bylw">Pending</span>')+'<br/>'+(r.resp?'<span class="bdg bgry" style="margin-top:.3rem;display:inline-block">Replied</span>':''));var atd=document.createElement('td');atd.style.cssText='display:flex;gap:.4rem;flex-wrap:wrap';var ab=document.createElement('button');ab.className=r.approved?'abr':'abg';ab.textContent=r.approved?'Hide':'Approve';ab.addEventListener('click',(function(rv){return function(){setReviewApproval(rv,!rv.approved);};})(r));atd.appendChild(ab);var rb=document.createElement('button');rb.className='abg';rb.textContent=r.resp?'Edit Reply':'Respond';rb.addEventListener('click',(function(rv){return function(){openRespond(rv);};})(r));atd.appendChild(rb);var db=document.createElement('button');db.className='abr';db.textContent='Delete';db.addEventListener('click',(function(id,nm){return function(){deleteReview(id,nm);};})(r.id,r.name));atd.appendChild(db);tr.appendChild(atd);tb.appendChild(tr);});}catch(e){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:#dc2626;padding:2rem">Failed to load reviews.</td></tr>';}}
+  async function setReviewApproval(rv,approve){try{await api({action:'update',entity:'BuyerEnquiry',id:rv.id},'POST',{message:JSON.stringify({r:rv.r,t:rv.t,resp:rv.resp,approved:approve}),status:rv.resp?'Responded':'New'});showToast(approve?'Review published':'Review hidden from public');loadAdminReviews();}catch(e){showToast('Failed: '+e.message,true);}}
+  function openRespond(rv){respondId=rv.id;respondData=rv;el('respond-review').innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin-bottom:.4rem"><strong>'+escapeHtml(rv.name)+'</strong><span style="color:var(--gold)">'+starStr(rv.r)+'</span></div><div style="font-size:.86rem;color:var(--g2);line-height:1.6">'+escapeHtml(rv.t)+'</div>';el('respond-text').value=rv.resp||'';openModal('m-respond');}
+  el('respond-close').addEventListener('click',function(){closeModal('m-respond');});el('respond-cancel').addEventListener('click',function(){closeModal('m-respond');});el('m-respond').addEventListener('click',function(e){if(e.target===this)closeModal('m-respond');});
+  el('respond-submit').addEventListener('click',async function(){if(!respondId)return;var resp=val('respond-text');var btn=this;btn.disabled=true;btn.textContent='Posting...';try{await api({action:'update',entity:'BuyerEnquiry',id:respondId},'POST',{message:JSON.stringify({r:respondData.r,t:respondData.t,resp:resp,approved:respondData.approved===true}),status:resp?'Responded':'New'});closeModal('m-respond');showToast('Response posted');loadAdminReviews();}catch(e){showToast('Failed: '+e.message,true);}btn.disabled=false;btn.textContent='Post Response';});
+  async function deleteReview(id,nm){if(!window.confirm('Delete the review from '+nm+'?\n\nThis cannot be undone.'))return;try{await api({action:'delete',entity:'BuyerEnquiry',id:id},'POST');showToast('Review deleted');loadAdminReviews();}catch(e){showToast('Failed: '+e.message,true);}}
+  // ===== Deep links: shareable per-listing URLs (#car=<id>) =====
+  function parseCarHash(){var m=(location.hash||'').match(/car=([^&]+)/);return m?decodeURIComponent(m[1]):null;}
+  function clearCarHash(){if(parseCarHash())history.replaceState(null,'',location.pathname+location.search);}
+  function checkDeepLink(){var id=parseCarHash();if(id){if(currentId!==null&&String(currentId)===String(id)&&el('m-detail').classList.contains('open'))return;var l=allListings.find(function(x){return String(x.id)===String(id);});if(l)openDetail(l.id);}else if(el('m-detail').classList.contains('open')){closeModal('m-detail');}}
+  var shareBtn=el('detail-share');if(shareBtn)shareBtn.addEventListener('click',function(){var url=location.href;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){showToast('Link copied \u2014 share it anywhere');},function(){showToast(url);});}else{showToast(url);}});
+  window.addEventListener('hashchange',checkDeepLink);
+  loadListings().then(checkDeepLink);
+  loadReviews();
 })();
 </script></body></html>
