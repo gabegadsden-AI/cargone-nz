@@ -187,6 +187,44 @@
     .revreply{margin-top:1rem;padding:.85rem 1rem;background:#16a34a0e;border-left:3px solid var(--grn);border-radius:0 10px 10px 0}
     .revreply-lbl{font-size:.7rem;font-weight:700;color:var(--gl);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem;display:flex;align-items:center;gap:.35rem}
     .revreply-txt{font-size:.85rem;color:var(--g2);line-height:1.6;text-wrap:pretty}
+    /* ===== Buy & Sell Safely ===== */
+    .safesec{padding:5rem 2rem;max-width:1120px;margin:0 auto}
+    .safehead{text-align:center;margin-bottom:2.75rem}
+    .safehead h2{font-size:1.9rem;font-weight:900;margin-top:.75rem;letter-spacing:-1px;color:var(--ink)}
+    .safehead h2 span{color:var(--gl)}
+    .safehead p{color:var(--g4);max-width:580px;margin:1rem auto 0;line-height:1.75;font-size:1rem}
+    .safecols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+    .safecard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.9rem;box-shadow:var(--shadow)}
+    .safecard h3{display:flex;align-items:center;gap:.6rem;font-size:1.15rem;font-weight:800;margin-bottom:1.35rem;color:var(--ink)}
+    .safelist{list-style:none;display:flex;flex-direction:column;gap:1.05rem}
+    .safelist li{display:flex;gap:.8rem;font-size:.9rem;line-height:1.6;color:var(--g4);text-wrap:pretty}
+    .safelist li strong{color:var(--ink);font-weight:700}
+    .safetick{flex:none;width:22px;height:22px;border-radius:50%;background:#16a34a16;border:1px solid #16a34a40;color:var(--gl);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:900;margin-top:.12rem}
+    .safenote{margin-top:1.75rem;background:#f59e0b14;border:1px solid #f59e0b55;border-radius:12px;padding:1.1rem 1.4rem;display:flex;gap:.8rem;font-size:.88rem;color:#8a5208;line-height:1.65;text-wrap:pretty}
+    /* ===== FAQ ===== */
+    .faqsec{background:var(--surface);border-top:1px solid var(--line);padding:5rem 2rem}
+    .faqwrap{max-width:760px;margin:0 auto}
+    .faqhead{text-align:center;margin-bottom:2.5rem}
+    .faqhead h2{font-size:1.9rem;font-weight:900;margin-top:.75rem;letter-spacing:-1px;color:var(--ink)}
+    .faqhead h2 span{color:var(--gl)}
+    .faqitem{border:1px solid var(--line);border-radius:12px;margin-bottom:.75rem;background:var(--surface);overflow:hidden;transition:border-color .2s,box-shadow .2s}
+    .faqitem[open]{border-color:#16a34a55;box-shadow:var(--shadow)}
+    .faqitem summary{list-style:none;cursor:pointer;padding:1.2rem 1.4rem;font-size:1rem;font-weight:700;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .faqitem summary::-webkit-details-marker{display:none}
+    .faqq-ico{flex:none;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--line2);color:var(--g4);display:flex;align-items:center;justify-content:center;font-size:1.15rem;line-height:1;transition:transform .2s,color .2s,border-color .2s}
+    .faqitem[open] .faqq-ico{transform:rotate(45deg);color:var(--gl);border-color:var(--gl)}
+    .faqa{padding:0 1.4rem 1.35rem;font-size:.92rem;color:var(--g4);line-height:1.7;text-wrap:pretty}
+    .faqa a{color:var(--gl);font-weight:600;cursor:pointer}
+    /* ===== Legal pages ===== */
+    .legalwrap{max-width:760px;margin:0 auto;padding:3.5rem 2rem 5rem}
+    .legalwrap h1{font-size:2rem;font-weight:900;letter-spacing:-1px;margin-bottom:.4rem;color:var(--ink)}
+    .legalmeta{color:var(--g6);font-size:.82rem;margin-bottom:2.25rem}
+    .legalwrap h2{font-size:1.15rem;font-weight:800;margin:2rem 0 .7rem;color:var(--ink)}
+    .legalwrap p{font-size:.93rem;color:var(--g2);line-height:1.75;margin-bottom:1rem;text-wrap:pretty}
+    .legalwrap ul{margin:0 0 1rem 1.2rem;display:flex;flex-direction:column;gap:.5rem}
+    .legalwrap li{font-size:.93rem;color:var(--g2);line-height:1.7;text-wrap:pretty}
+    .legalwrap a{color:var(--gl);font-weight:600;cursor:pointer}
+    .legalintro{background:var(--inset);border:1px solid var(--line);border-radius:12px;padding:1.25rem 1.4rem;font-size:.9rem;color:var(--g4);line-height:1.7;margin-bottom:2rem;text-wrap:pretty}
     /* ===== Mobile ===== */
     @media (max-width:760px){
       nav{padding:0 1.1rem;height:60px}
@@ -202,7 +240,10 @@
       .stat:nth-child(2n){border-right:none}
       .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
       .sec{padding:2.5rem 1.25rem}
-      .howsec,.svcsec,.revsec{padding:3rem 1.25rem}
+      .howsec,.svcsec,.revsec,.faqsec,.safesec{padding:3rem 1.25rem}
+      .safecols{grid-template-columns:1fr}
+      .legalwrap{padding:2.5rem 1.25rem 3.5rem}
+      .legalwrap h1{font-size:1.6rem}
       .sectitle{font-size:1.35rem}
       .svchead h2,.revhead h2{font-size:1.45rem}
       .filterbar{padding:1rem}
@@ -239,7 +280,9 @@
     <button class="nb hidemob" onclick="goHome()">Browse</button>
     <button class="nb hidemob" onclick="goHow()">How It Works</button>
     <button class="nb hidemob" onclick="goServices()">Services</button>
+    <button class="nb hidemob" onclick="goSafety()">Safety</button>
     <button class="nb hidemob" onclick="goReviews()">Reviews</button>
+    <button class="nb hidemob" onclick="goFaq()">FAQ</button>
     <button class="btn btng" onclick="openSell()">+ List My Car</button>
     <button class="nb" style="font-size:.8rem;color:var(--g6)" onclick="openAdminLogin()">Admin</button>
   </div>
@@ -300,6 +343,34 @@
       <button class="btn btno btnlg" onclick="goListings()">Browse Listings</button>
     </div>
   </div>
+  <div class="safesec" id="safety-section">
+    <div class="safehead">
+      <div class="pill">&#x1F6E1;&#xFE0F; Peace of Mind</div>
+      <h2>Buy &amp; Sell <span>Safely</span></h2>
+      <p>CarGone NZ connects you directly with other Kiwis. A few simple precautions keep every deal smooth, fair and safe for both sides.</p>
+    </div>
+    <div class="safecols">
+      <div class="safecard">
+        <h3>&#x1F4B0; For Buyers</h3>
+        <ul class="safelist">
+          <li><span class="safetick">&#10003;</span><span><strong>Inspect before you pay.</strong> See the vehicle in person, or arrange an independent inspection, before handing over any money.</span></li>
+          <li><span class="safetick">&#10003;</span><span><strong>Verify the vehicle.</strong> Check the rego, WOF and ownership on the NZTA website, and confirm the plate and VIN match the car.</span></li>
+          <li><span class="safetick">&#10003;</span><span><strong>Meet in a safe, public place.</strong> Daytime, with someone you trust, is best &mdash; especially for cash deals.</span></li>
+          <li><span class="safetick">&#10003;</span><span><strong>Never pay a deposit to &ldquo;hold&rdquo; a car.</strong> Be wary of anyone who refuses to meet or pushes for upfront payment.</span></li>
+        </ul>
+      </div>
+      <div class="safecard">
+        <h3>&#x1F697; For Sellers</h3>
+        <ul class="safelist">
+          <li><span class="safetick">&#10003;</span><span><strong>Confirm payment first.</strong> Count cash, or wait until a transfer actually lands in your account, before releasing the vehicle.</span></li>
+          <li><span class="safetick">&#10003;</span><span><strong>Notify the change of ownership.</strong> Tell NZTA you&rsquo;ve sold or disposed of the vehicle so you&rsquo;re no longer liable for it.</span></li>
+          <li><span class="safetick">&#10003;</span><span><strong>Remove your belongings &amp; data.</strong> Clear the glovebox and boot, and unpair your phone from the car&rsquo;s system.</span></li>
+          <li><span class="safetick">&#10003;</span><span><strong>Keep a record.</strong> Note the buyer&rsquo;s name and the date, and keep a copy of your listing for your records.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="safenote"><span>&#9888;&#65039;</span><span><strong>CarGone NZ is a marketplace, not a party to your sale.</strong> We don&rsquo;t take payment or handle vehicles on your behalf, so always deal directly, trust your instincts, and walk away from anything that feels off. More in our <a style="color:var(--gl);font-weight:700;cursor:pointer" onclick="goFaq()">FAQ</a>.</span></div>
+  </div>
   <div class="revsec" id="reviews-section">
     <div class="revwrap">
       <div class="revhead">
@@ -320,8 +391,24 @@
       <div id="reviews-container"><div class="spinner"></div></div>
     </div>
   </div>
+  <div class="faqsec" id="faq-section">
+    <div class="faqwrap">
+      <div class="faqhead">
+        <div class="pill">Good to Know</div>
+        <h2>Frequently Asked <span>Questions</span></h2>
+      </div>
+      <details class="faqitem"><summary>Is it free to list my car?<span class="faqq-ico">+</span></summary><div class="faqa">Yes &mdash; listing a vehicle on CarGone NZ is completely free, whether you want to sell it, part it out, or get rid of it as scrap. There are no fees to post a listing.</div></details>
+      <details class="faqitem"><summary>Do you take cars that don&rsquo;t run, or have no WOF or rego?<span class="faqq-ico">+</span></summary><div class="faqa">Absolutely. Damaged, non-running, written-off and deregistered vehicles are all welcome. List it as &ldquo;Get rid of it (free/scrap)&rdquo; or &ldquo;Sell the parts&rdquo; and you&rsquo;ll still connect with people who want it.</div></details>
+      <details class="faqitem"><summary>How does removal work?<span class="faqq-ico">+</span></summary><div class="faqa">Once you and a buyer agree, removal is arranged at a time that suits you &mdash; often same day. Many scrap and parts buyers will collect the vehicle directly from your driveway, garage or the roadside, anywhere in New Zealand.</div></details>
+      <details class="faqitem"><summary>When and how do I get paid?<span class="faqq-ico">+</span></summary><div class="faqa">Payment is arranged directly between you and the buyer, and for scrap and cash sales is usually paid in person when the vehicle is collected. Always confirm the money has cleared before releasing the car.</div></details>
+      <details class="faqitem"><summary>What areas do you cover?<span class="faqq-ico">+</span></summary><div class="faqa">CarGone NZ is nationwide. You&rsquo;ll find buyers and sellers across Auckland, Wellington, Christchurch, Hamilton, Tauranga, Dunedin, Palmerston North and everywhere in between.</div></details>
+      <details class="faqitem"><summary>Do I need to tell NZTA when I sell or scrap my car?<span class="faqq-ico">+</span></summary><div class="faqa">Yes. To make sure you&rsquo;re no longer responsible for the vehicle, notify NZTA that you&rsquo;ve sold or disposed of it (a change of ownership, or a notice of disposal). You can do this online on the NZTA website.</div></details>
+      <details class="faqitem"><summary>Is my contact information safe?<span class="faqq-ico">+</span></summary><div class="faqa">Enquiries reach you through the form on this site, and we only share what&rsquo;s needed to connect a genuine buyer with a seller. See our <a onclick="goPrivacy()">Privacy Policy</a> for the full detail on what we collect and why.</div></details>
+      <details class="faqitem"><summary>Can I sell individual parts instead of the whole car?<span class="faqq-ico">+</span></summary><div class="faqa">Yes. Choose &ldquo;Sell the parts&rdquo; when you list, then add each part with its own price. It&rsquo;s a great way to recover real value from an end-of-life vehicle.</div></details>
+    </div>
+  </div>
   <footer>
-    <div class="footlinks"><button onclick="goHome()">Browse Cars</button><button onclick="goHow()">How It Works</button><button onclick="goServices()">Services</button><button onclick="goReviews()">Reviews</button><button onclick="openSell()">List a Car</button><button onclick="openAdminLogin()">Admin</button></div>
+    <div class="footlinks"><button onclick="goHome()">Browse Cars</button><button onclick="goHow()">How It Works</button><button onclick="goServices()">Services</button><button onclick="goSafety()">Safety</button><button onclick="goReviews()">Reviews</button><button onclick="goFaq()">FAQ</button><button onclick="openSell()">List a Car</button><button onclick="goPrivacy()">Privacy</button><button onclick="goTerms()">Terms</button><button onclick="openAdminLogin()">Admin</button></div>
     <p>&copy; 2026 CarGone NZ. All rights reserved.</p>
   </footer>
 </div>
@@ -333,6 +420,77 @@
     <div id="tab-enquiries" style="display:none"><h2 class="sectitle">Buyer <span>Enquiries</span></h2><div class="tablewrap"><table><thead><tr><th>Buyer</th><th>Interest</th><th>Message</th><th>Contact</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-enquiries-body"></tbody></table></div></div>
     <div id="tab-reviews" style="display:none"><h2 class="sectitle">Customer <span>Reviews</span></h2><p style="color:var(--g4);font-size:.85rem;margin:-1rem 0 1.25rem">New reviews stay hidden from the public until you approve them.</p><div class="tablewrap"><table><thead><tr><th>Reviewer</th><th>Rating</th><th>Review</th><th>Status</th><th>Actions</th></tr></thead><tbody id="admin-reviews-body"></tbody></table></div></div>
   </div>
+</div>
+<div class="page" id="page-privacy">
+  <div class="adminbar"><span style="font-weight:800">CarGone NZ</span><div style="flex:1"></div><button class="btn btno" onclick="goHome()" style="font-size:.82rem;padding:.4rem 1rem">&larr; Back to site</button></div>
+  <div class="legalwrap">
+    <h1>Privacy Policy</h1>
+    <div class="legalmeta">Last updated 23 June 2026</div>
+    <div class="legalintro">This policy explains what personal information CarGone NZ (&ldquo;we&rdquo;, &ldquo;us&rdquo;) collects, why we collect it, and how we look after it &mdash; in line with the New Zealand Privacy Act 2020.</div>
+    <h2>What we collect</h2>
+    <p>We only collect information you choose to give us, plus a little your browser sends automatically:</p>
+    <ul>
+      <li><strong>When you list a vehicle:</strong> your name, phone number, email address, region, and the details and photos of your vehicle.</li>
+      <li><strong>When you enquire about a listing:</strong> your name, email address, an optional phone number, and your message.</li>
+      <li><strong>When you leave a review:</strong> your name, an optional email address, your rating and your review.</li>
+      <li><strong>Automatically:</strong> basic technical information such as your browser and device type, used to keep the site working.</li>
+    </ul>
+    <h2>Why we collect it</h2>
+    <ul>
+      <li>To publish your listing and connect you with buyers or sellers.</li>
+      <li>To pass your enquiry to the relevant seller so they can respond.</li>
+      <li>To display approved reviews and reply to them.</li>
+      <li>To operate, maintain and improve the website.</li>
+    </ul>
+    <h2>How we share it</h2>
+    <p>When you make an enquiry, the contact details and message you provide are shared with the relevant seller so they can get back to you. We do not sell your personal information. We may disclose information where the law requires us to.</p>
+    <h2>How we store and protect it</h2>
+    <p>Your information is held securely with our backend service provider. We take reasonable steps to protect it from loss, misuse and unauthorised access, and we keep it only for as long as we need it for the purposes above, or as the law requires.</p>
+    <h2>Cookies and analytics</h2>
+    <p>The site uses a small amount of local storage in your browser to function. If website analytics are switched on in future, we will update this policy to explain what is collected and why.</p>
+    <h2>Your rights</h2>
+    <p>Under the Privacy Act 2020 you can ask to see the personal information we hold about you, and ask us to correct it. To make a request, get in touch using the enquiry form on this website.</p>
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy from time to time. The date at the top shows when it was last changed.</p>
+    <h2>Contact</h2>
+    <p>Questions about this policy or your information? Please contact us through the enquiry form on this site.<!-- TODO: replace with the client's real business email / phone / postal address once provided --></p>
+  </div>
+  <footer>
+    <div class="footlinks"><button onclick="goHome()">Home</button><button onclick="goTerms()">Terms of Use</button><button onclick="openSell()">List a Car</button></div>
+    <p>&copy; 2026 CarGone NZ. All rights reserved.</p>
+  </footer>
+</div>
+<div class="page" id="page-terms">
+  <div class="adminbar"><span style="font-weight:800">CarGone NZ</span><div style="flex:1"></div><button class="btn btno" onclick="goHome()" style="font-size:.82rem;padding:.4rem 1rem">&larr; Back to site</button></div>
+  <div class="legalwrap">
+    <h1>Terms of Use</h1>
+    <div class="legalmeta">Last updated 23 June 2026</div>
+    <div class="legalintro">These terms govern your use of the CarGone NZ website. By using the site, you agree to them. Please read them alongside our <a onclick="goPrivacy()">Privacy Policy</a>.</div>
+    <h2>1. About CarGone NZ</h2>
+    <p>CarGone NZ is an online marketplace that connects people who want to sell, scrap or part out a vehicle with potential buyers across New Zealand. We provide the platform &mdash; we are not a party to any sale, purchase or removal arranged between users.</p>
+    <h2>2. Listing a vehicle</h2>
+    <p>You may only list a vehicle you own or are authorised to sell. The information and photos you provide must be accurate and not misleading. You are responsible for the content of your listing.</p>
+    <h2>3. Enquiries and buying</h2>
+    <p>Enquiries are passed to the relevant seller. Before buying, do your own due diligence: inspect the vehicle, and verify its ownership, registration and WOF status. See the safety guidance on our home page.</p>
+    <h2>4. Acceptable use</h2>
+    <p>You must not use CarGone NZ to post unlawful, fraudulent, offensive or infringing content, to list stolen vehicles, to misuse other people&rsquo;s contact details, or to send spam.</p>
+    <h2>5. Reviews</h2>
+    <p>Reviews must be genuine and based on a real experience. We may decline, edit or remove reviews, and reviews are published only once approved.</p>
+    <h2>6. Our role and liability</h2>
+    <p>Listings and reviews are created by users. We do not guarantee the accuracy of any listing, the condition of any vehicle, or that any sale or removal will take place. To the extent permitted by law, we are not liable for any loss arising from dealings between users or reliance on listings. Nothing in these terms limits rights you may have under the Consumer Guarantees Act 1993 or the Fair Trading Act 1986 where they apply.</p>
+    <h2>7. Removing content</h2>
+    <p>We may edit or remove any listing or review, or restrict access to the site, at our discretion &mdash; for example, where content breaches these terms.</p>
+    <h2>8. Changes to these terms</h2>
+    <p>We may update these terms from time to time. Continuing to use the site means you accept the current version.</p>
+    <h2>9. Governing law</h2>
+    <p>These terms are governed by the laws of New Zealand.</p>
+    <h2>Contact</h2>
+    <p>Questions about these terms? Please contact us through the enquiry form on this site.<!-- TODO: replace with the client's real business contact details once provided --></p>
+  </div>
+  <footer>
+    <div class="footlinks"><button onclick="goHome()">Home</button><button onclick="goPrivacy()">Privacy Policy</button><button onclick="openSell()">List a Car</button></div>
+    <p>&copy; 2026 CarGone NZ. All rights reserved.</p>
+  </footer>
 </div>
 <div class="overlay" id="m-sell"><div class="modal"><div class="modalhd"><div class="modalttl">&#x1F697; List Your Unwanted Car</div><button class="modalx" id="sell-close">&times;</button></div><div class="modalbdy"><div class="fsep">Your Details</div><div class="fg2"><div class="fgrp"><label class="flbl">Full Name <em>*</em></label><input class="finp" id="sn" placeholder="e.g. John Smith"/></div><div class="fgrp"><label class="flbl">Phone <em>*</em></label><input class="finp" id="sp" type="tel" placeholder="021 xxx xxxx"/></div><div class="fgrp fcol"><label class="flbl">Email <em>*</em></label><input class="finp" id="se" type="email" placeholder="your@email.com"/></div><div class="fgrp"><label class="flbl">Region <em>*</em></label><select class="fsel" id="sl"><option value="">Select region...</option><option>Auckland</option><option>Wellington</option><option>Christchurch</option><option>Hamilton</option><option>Tauranga</option><option>Dunedin</option><option>Palmerston North</option><option>Other</option></select></div></div><div class="fsep">Car Details</div><div class="fg2"><div class="fgrp"><label class="flbl">Make <em>*</em></label><select class="fsel" id="smk"><option value="">Select make...</option><option>Toyota</option><option>Ford</option><option>Holden</option><option>Nissan</option><option>Mazda</option><option>Honda</option><option>Mitsubishi</option><option>Subaru</option><option>Hyundai</option><option>Kia</option><option>BMW</option><option>Mercedes-Benz</option><option>Volkswagen</option><option>Audi</option><option>Suzuki</option><option>Isuzu</option><option>Jeep</option><option>Land Rover</option><option>Chevrolet</option><option>Other</option></select></div><div class="fgrp"><label class="flbl">Model <em>*</em></label><input class="finp" id="smo" placeholder="e.g. Corolla, Ranger"/></div><div class="fgrp"><label class="flbl">Year <em>*</em></label><select class="fsel" id="syr"><option value="">Select year...</option></select></div><div class="fgrp"><label class="flbl">Odometer (km)</label><input class="finp" id="sod" type="number" placeholder="e.g. 180000"/></div><div class="fgrp"><label class="flbl">Condition <em>*</em></label><select class="fsel" id="sco"><option value="">Select condition...</option><option>Excellent</option><option>Good</option><option>Fair</option><option>Poor</option><option>Parts Only</option></select></div><div class="fgrp"><label class="flbl">I Want To... <em>*</em></label><select class="fsel" id="stp"><option value="">Select option...</option><option value="Sell the car">Sell the Car</option><option value="Get rid of it (free/scrap)">Get Rid of It (Free / Scrap)</option><option value="Sell the parts">Sell the Parts</option></select></div><div class="fgrp fcol" id="price-wrap" style="display:none"><label class="flbl">Asking Price (NZD) <em>*</em></label><input class="finp" id="spr" type="number" placeholder="e.g. 2500"/></div><div class="fgrp fcol"><label class="flbl">Description</label><textarea class="ftxt" id="sds" placeholder="Known issues, history, why you are selling..."></textarea></div></div><div id="parts-wrap" style="display:none"><div class="fsep">Parts for Sale</div><div id="parts-list"></div><button class="btnadd" id="add-part-btn">+ Add Part</button></div><div class="fsep">Photos</div><div class="photodrop" id="photo-drop"><div style="font-size:2.5rem">&#x1F4F7;</div><p id="photo-label" style="color:var(--g4);margin-top:.5rem">Click to add photos (up to 5)</p></div><input type="file" id="photo-input" multiple accept="image/*" style="display:none"/><div class="photoprev" id="photo-previews"></div></div><div class="modalft"><button class="btn btno" id="sell-cancel">Cancel</button><button class="btn btng" id="submit-btn">Submit Listing</button></div></div></div>
 <div class="overlay" id="m-detail"><div class="modal" style="max-width:760px"><div class="modalhd"><div class="modalttl" id="detail-title">Car Details</div><div style="display:flex;align-items:center;gap:.5rem"><button class="btn btno" id="detail-share" style="font-size:.78rem;padding:.45rem .85rem;gap:.35rem">&#x1F517; Copy link</button><button class="modalx" id="detail-close">&times;</button></div></div><div class="modalbdy" id="detail-body"></div></div></div>
@@ -358,15 +516,14 @@
     }).then(function(d){if(d&&d.error)throw new Error(d.error);return d;});
   }
 
-  // Upload photo via ImgBB free API (no auth needed, free tier, permanent hosting)
-  var IMGBB_KEY = 'da5f1f8282e5afb0f1ec8566a89d88ce';
+  // Upload photo via server-side proxy — key is never exposed to the browser
   function uploadPhoto(file) {
     return new Promise(function(resolve, reject) {
       var reader = new FileReader();
       reader.onload = function(e) {
         var img = new Image();
         img.onload = function() {
-          // Compress to max 1000px, 70% quality
+          // Compress to max 1000px, 70% quality before sending
           var MAX = 1000, w = img.width, h = img.height;
           if(w > MAX){h = Math.round(h*MAX/w); w = MAX;}
           if(h > MAX){w = Math.round(w*MAX/h); h = MAX;}
@@ -375,15 +532,16 @@
           c.getContext('2d').drawImage(img, 0, 0, w, h);
           var dataUrl = c.toDataURL('image/jpeg', 0.70);
           var base64 = dataUrl.split(',')[1];
-          // Upload to ImgBB
-          var fd = new FormData();
-          fd.append('key', IMGBB_KEY);
-          fd.append('image', base64);
-          fetch('https://api.imgbb.com/1/upload', { method: 'POST', body: fd })
+          // Send to our backend proxy — IMGBB_KEY lives there, never in browser
+          fetch(BASE + '?action=upload', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ image: base64 })
+          })
             .then(function(r){ return r.json(); })
             .then(function(d){
-              if(d.success) resolve(d.data.url);
-              else reject(new Error('Photo upload failed: ' + (d.error && d.error.message || 'Unknown')));
+              if(d.url) resolve(d.url);
+              else reject(new Error('Photo upload failed: ' + (d.error || 'Unknown')));
             }).catch(reject);
         };
         img.onerror = function(){ reject(new Error('Invalid image')); };
@@ -406,6 +564,11 @@
   function goHow(){el('how-section').scrollIntoView({behavior:'smooth'});}
   function goServices(){el('services-section').scrollIntoView({behavior:'smooth'});}
   window.goHome=goHome;window.goListings=goListings;window.goHow=goHow;window.goServices=goServices;
+  function showPage(pid){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});el(pid).classList.add('active');window.scrollTo(0,0);}
+  window.goPrivacy=function(){showPage('page-privacy');};
+  window.goTerms=function(){showPage('page-terms');};
+  window.goSafety=function(){showPage('page-home');el('safety-section').scrollIntoView({behavior:'smooth'});};
+  window.goFaq=function(){showPage('page-home');el('faq-section').scrollIntoView({behavior:'smooth'});};
   window.openAdminLogin=function(){el('admin-pass').value='';el('login-err').style.display='none';openModal('m-login');};
   window.openSell=function(){openModal('m-sell');};
   window.switchTab=function(tab){el('tab-listings').style.display=tab==='listings'?'block':'none';el('tab-enquiries').style.display=tab==='enquiries'?'block':'none';el('tab-reviews').style.display=tab==='reviews'?'block':'none';el('tbl').classList.toggle('active',tab==='listings');el('tbe').classList.toggle('active',tab==='enquiries');el('tbr').classList.toggle('active',tab==='reviews');if(tab==='enquiries')loadAdminEnquiries();if(tab==='reviews')loadAdminReviews();};
