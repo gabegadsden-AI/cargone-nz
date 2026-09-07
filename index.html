@@ -23,7 +23,7 @@
   <meta name="theme-color" content="#16a34a"/>
   <!-- ===== Google Analytics 4 — paste your Measurement ID (looks like G-XXXXXXXXXX) between the quotes below ===== -->
   <script>
-    var GA_MEASUREMENT_ID = ''; /* e.g. 'G-ABC1234XYZ' — leave blank to keep analytics off */
+    var GA_MEASUREMENT_ID = 'G-W6R2L9K4P1'; /* e.g. 'G-ABC1234XYZ' — leave blank to keep analytics off */
     if (GA_MEASUREMENT_ID) {
       var _ga = document.createElement('script'); _ga.async = true;
       _ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
@@ -161,6 +161,9 @@
     .footlinks button{background:none;border:none;color:var(--g4);font-size:.85rem;cursor:pointer;font-family:inherit}
     .footlinks button:hover{color:var(--ink)}
     footer p{color:var(--g6);font-size:.82rem}
+    footer .footcontact{margin-bottom:.6rem;font-size:.9rem}
+    footer .footcontact a{color:var(--g2);font-weight:600;text-decoration:none}
+    footer .footcontact a:hover{color:var(--gl)}
     .page{display:none}.page.active{display:block}
     .spinner{width:40px;height:40px;border:3px solid var(--line);border-top-color:var(--grn);border-radius:50%;animation:spn .8s linear infinite;margin:4rem auto}
     @keyframes spn{to{transform:rotate(360deg)}}
@@ -289,6 +292,7 @@
     <button class="nb hidemob" onclick="goSafety()">Safety</button>
     <button class="nb hidemob" onclick="goReviews()">Reviews</button>
     <button class="nb hidemob" onclick="goFaq()">FAQ</button>
+    <a class="nb hidemob" href="tel:+64223428184">&#x1F4DE; 022 342 8184</a>
     <button class="btn btng" onclick="openSell()">+ List My Car</button>
     <button class="nb" style="font-size:.8rem;color:var(--g6)" onclick="openAdminLogin()">Admin</button>
   </div>
@@ -301,6 +305,7 @@
     <div class="heroctarow">
       <button class="btn btng btnlg" onclick="openSell()">&#x1F697; List My Car &mdash; Free</button>
       <button class="btn btno btnlg" onclick="goListings()">Browse Listings</button>
+      <a class="btn btno btnlg" href="tel:+64223428184">&#x1F4DE; Call 022 342 8184</a>
     </div>
   </div>
   <div class="stats">
@@ -322,7 +327,7 @@
   <div class="howsec" id="how-section">
     <div style="text-align:center"><div class="pill">Simple Process</div><h2 style="font-size:1.9rem;font-weight:900;margin-top:.75rem;letter-spacing:-1px">How It Works &ndash; <span style="color:var(--gl)">3 Easy Steps</span></h2></div>
     <div class="howgrid">
-      <div class="howstep"><div class="howico">&#x1F4DE;<span class="hownum">1</span></div><h3>Contact Us</h3><p>Call us or fill out our online form for an instant, no&#8209;obligation quote on your car.</p></div>
+      <div class="howstep"><div class="howico">&#x1F4DE;<span class="hownum">1</span></div><h3>Contact Us</h3><p>Call us on <a href="tel:+64223428184" style="color:var(--gl);font-weight:600">022 342 8184</a> or fill out our online form for an instant, no&#8209;obligation quote on your car.</p></div>
       <div class="howstep"><div class="howico">&#x1F69B;<span class="hownum">2</span></div><h3>Arrange Removal</h3><p>Accept the quote and we&rsquo;ll arrange free, same&#8209;day removal at a time that suits you.</p></div>
       <div class="howstep"><div class="howico">&#x1F4B5;<span class="hownum">3</span></div><h3>Get Cash</h3><p>Get paid in cash on the spot when we collect your car &mdash; quick, easy and hassle&#8209;free.</p></div>
     </div>
@@ -347,6 +352,7 @@
     <div class="svccta">
       <button class="btn btng btnlg" onclick="openSell()">&#x1F697; Get a Cash Offer</button>
       <button class="btn btno btnlg" onclick="goListings()">Browse Listings</button>
+      <a class="btn btno btnlg" href="tel:+64223428184">&#x1F4DE; Call 022 342 8184</a>
     </div>
   </div>
   <div class="safesec" id="safety-section">
@@ -410,11 +416,13 @@
       <details class="faqitem"><summary>What areas do you cover?<span class="faqq-ico">+</span></summary><div class="faqa">CarGone NZ is nationwide. You&rsquo;ll find buyers and sellers across Auckland, Wellington, Christchurch, Hamilton, Tauranga, Dunedin, Palmerston North and everywhere in between.</div></details>
       <details class="faqitem"><summary>Do I need to tell NZTA when I sell or scrap my car?<span class="faqq-ico">+</span></summary><div class="faqa">Yes. To make sure you&rsquo;re no longer responsible for the vehicle, notify NZTA that you&rsquo;ve sold or disposed of it (a change of ownership, or a notice of disposal). You can do this online on the NZTA website.</div></details>
       <details class="faqitem"><summary>Is my contact information safe?<span class="faqq-ico">+</span></summary><div class="faqa">Enquiries reach you through the form on this site, and we only share what&rsquo;s needed to connect a genuine buyer with a seller. See our <a onclick="goPrivacy()">Privacy Policy</a> for the full detail on what we collect and why.</div></details>
+      <details class="faqitem"><summary>How do I contact CarGone NZ?<span class="faqq-ico">+</span></summary><div class="faqa">Call us on <a href="tel:+64223428184">022 342 8184</a> or email <a href="mailto:Ashraf.ahin@yahoo.com">Ashraf.ahin@yahoo.com</a> &mdash; we&rsquo;re happy to help with any question about selling, scrapping or parting out a vehicle.</div></details>
       <details class="faqitem"><summary>Can I sell individual parts instead of the whole car?<span class="faqq-ico">+</span></summary><div class="faqa">Yes. Choose &ldquo;Sell the parts&rdquo; when you list, then add each part with its own price. It&rsquo;s a great way to recover real value from an end-of-life vehicle.</div></details>
     </div>
   </div>
   <footer>
     <div class="footlinks"><button onclick="goHome()">Browse Cars</button><button onclick="goHow()">How It Works</button><button onclick="goServices()">Services</button><button onclick="goSafety()">Safety</button><button onclick="goReviews()">Reviews</button><button onclick="goFaq()">FAQ</button><button onclick="openSell()">List a Car</button><button onclick="goPrivacy()">Privacy</button><button onclick="goTerms()">Terms</button><button onclick="openAdminLogin()">Admin</button></div>
+    <p class="footcontact">&#x1F4DE; <a href="tel:+64223428184">022 342 8184</a> &nbsp;&middot;&nbsp; &#x2709; <a href="mailto:Ashraf.ahin@yahoo.com">Ashraf.ahin@yahoo.com</a></p>
     <p>&copy; 2026 CarGone NZ. All rights reserved.</p>
   </footer>
 </div>
@@ -459,7 +467,7 @@
     <h2>Changes to this policy</h2>
     <p>We may update this policy from time to time. The date at the top shows when it was last changed.</p>
     <h2>Contact</h2>
-    <p>Questions about this policy or your information? Please contact us through the enquiry form on this site.<!-- TODO: replace with the client's real business email / phone / postal address once provided --></p>
+    <p>Questions about this policy or your information? Call us on <a href="tel:+64223428184">022 342 8184</a> or email <a href="mailto:Ashraf.ahin@yahoo.com">Ashraf.ahin@yahoo.com</a>.</p>
   </div>
   <footer>
     <div class="footlinks"><button onclick="goHome()">Home</button><button onclick="goTerms()">Terms of Use</button><button onclick="openSell()">List a Car</button></div>
@@ -491,7 +499,7 @@
     <h2>9. Governing law</h2>
     <p>These terms are governed by the laws of New Zealand.</p>
     <h2>Contact</h2>
-    <p>Questions about these terms? Please contact us through the enquiry form on this site.<!-- TODO: replace with the client's real business contact details once provided --></p>
+    <p>Questions about these terms? Call us on <a href="tel:+64223428184">022 342 8184</a> or email <a href="mailto:Ashraf.ahin@yahoo.com">Ashraf.ahin@yahoo.com</a>.</p>
   </div>
   <footer>
     <div class="footlinks"><button onclick="goHome()">Home</button><button onclick="goPrivacy()">Privacy Policy</button><button onclick="openSell()">List a Car</button></div>
